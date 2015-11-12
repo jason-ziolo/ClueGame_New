@@ -1,48 +1,128 @@
 package clueGame;
 
-public class BoardCell {
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 
+import javax.swing.JTextArea;
+
+public class BoardCell {
 	private int row;
 	private int column;
 	private char initial;
-	private DoorDirection doorDirection;
+	private boolean nameOutput = false;
 	
-	public static final char WALKWAY_INITIAL = 'W';
-	//public static final char CLOSET_INITIAL = 'X';
+	private int prow;
+	private int pcol;
 	
-	public BoardCell(int row, int column, char initial, DoorDirection doorDirection) {
+	DoorDirection doorDirection;
+	
+	public BoardCell(int row, int column) {
+		super();
 		this.row = row;
 		this.column = column;
-		this.initial = initial;
-		this.doorDirection = doorDirection;
+	}
+
+	public boolean isNameOutput() {
+		return nameOutput;
+	}
+
+	public void setNameOutput(boolean nameOutput) {
+		this.nameOutput = nameOutput;
+	}
+
+	public void draw(Graphics g){
+		
+		pcol = (this.getRow()) *ClueGame.REC_SIZE;  
+		prow = (this.getCol()) *ClueGame.REC_SIZE;
+		if (this.getInitial() == 'W') {		
+			g.setColor(Color.decode("#74828F"));  		//grey-ish	
+			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);		//draws and fills the box
+			g.setColor(Color.white);  											//draws the grid over the boxes
+			g.drawRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);
+		}
+		else {
+			g.setColor(Color.decode("#C25B56")); 	//red-ish
+			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);		//draws and fills the box
+		}
+	}
+	
+	public void drawOver(Graphics g){
+		pcol = (this.getRow()) *ClueGame.REC_SIZE;
+		prow = (this.getCol()) *ClueGame.REC_SIZE;
+		if (nameOutput){
+			g.setFont(new Font("Times New Roman", Font.BOLD, 15));
+			g.setColor(Color.white);
+			g.drawString(Board.getRoom(this.getInitial()), prow, pcol);
+		}
+		if(this.isDoorway()){
+			g.setColor(Color.black);
+			if(this.getDoorDirection() == DoorDirection.DOWN)
+				g.fillRect(prow, pcol + ClueGame.REC_SIZE *3/4 + 1, ClueGame.REC_SIZE, ClueGame.REC_SIZE/4);
+			else if (this.getDoorDirection() == DoorDirection.UP)
+				g.fillRect(prow, pcol - ClueGame.REC_SIZE * (3/4) + 1, ClueGame.REC_SIZE, ClueGame.REC_SIZE/4);
+			else if (this.getDoorDirection() == DoorDirection.RIGHT){
+				prow = prow+ClueGame.REC_SIZE*3/4+1; //java was being rude about me putting it in the next line for some reason
+				g.fillRect(prow, pcol, ClueGame.REC_SIZE/4, ClueGame.REC_SIZE);
+			}
+			else if (this.getDoorDirection() == DoorDirection.LEFT)
+				g.fillRect(prow, pcol + ClueGame.REC_SIZE * (3/4) + 1, ClueGame.REC_SIZE/4, ClueGame.REC_SIZE);
+		}
+	}
+	
+	public int getRow() {
+		return row;
+	}
+	
+	public int getCol() {
+		return column;
 	}
 	
 	public boolean isWalkway() {
-		if(initial == WALKWAY_INITIAL) {
-			return true;
-		}
-		return false;
+		return (initial == 'W');
 	}
 	
 	public boolean isRoom() {
-		if(initial == WALKWAY_INITIAL) {
-			return false;
-		}
-		return true;
+		return (initial != 'W' && initial != 'X');
 	}
 	
 	public boolean isDoorway() {
-		if(doorDirection != DoorDirection.NONE) {
-			return(true);
-		}
-		return false;
+		return (doorDirection != DoorDirection.NONE);
+	}
+	
+	public char getInitial() {
+		return initial;
 	}
 
 	public DoorDirection getDoorDirection() {
 		return doorDirection;
 	}
-
-	public char getInitial() {
-		return initial;
+	
+	public void setInitial(char initial) {
+		this.initial = initial;
 	}
+	
+	public void setRow(int row) {
+		this.row = row;
+	}
+	
+	public void setColumn(int col) {
+		column = col;
+	}
+	
+	public void setDoorDirection(char direction) {
+		if (direction == 'L') doorDirection = DoorDirection.LEFT;
+		else if (direction == 'R') doorDirection = DoorDirection.RIGHT;
+		else if (direction == 'U') doorDirection = DoorDirection.UP;
+		else if (direction == 'N') doorDirection = DoorDirection.NONE;
+		else doorDirection = DoorDirection.DOWN;
+	}
+	
+	//for texting purposes only
+	@Override
+	public String toString() {
+		return "BoardCell [row=" + row + ", column=" + column + ", initial=" + initial + ", doorDirection="
+				+ doorDirection + "]\n";
+	}
+
 }

@@ -7,83 +7,78 @@ import java.util.Map;
 import java.util.Set;
 
 public class IntBoard {
-	private Map<BoardCell, LinkedList<BoardCell>> adjacentMatrix;
+	
+	private Map<BoardCell, LinkedList<BoardCell>> adjMatrix;
 	private Set<BoardCell> visited;
 	private Set<BoardCell> targets;
 	private BoardCell[][] grid;
 	
-	public static final int TOTAL_X = 4;
-	public static final int TOTAL_Y = 4;
-	
-	public IntBoard() {
-		super();
-		adjacentMatrix = new HashMap<BoardCell, LinkedList<BoardCell>>();
-		visited = new HashSet<BoardCell>();
-		targets = new HashSet<BoardCell>(); //hash sets cause why not?
-		grid = new BoardCell[TOTAL_X][TOTAL_Y];
-		for(int i = 0; i < TOTAL_X; i++) {
-			for(int j = 0; j < TOTAL_Y; j++) {
+	public IntBoard(int rows, int cols) {
+		grid = new BoardCell[rows][cols];
+		
+		for (int i=0; i<rows; i++) {
+			for (int j=0; j<cols; j++) {
 				grid[i][j] = new BoardCell(i, j);
 			}
 		}
+		
+		adjMatrix = new HashMap<BoardCell, LinkedList<BoardCell>>();
+		visited = new HashSet<BoardCell>();
+		targets = new HashSet<BoardCell>();
+		calcAdjacencies();
+		
 	}
 	
-	public void calcAdjacencies(){
-		for(int i = 0; i < TOTAL_X; i++) {
-			for(int j = 0; j < TOTAL_Y; j++) {
-				LinkedList<BoardCell> neighbors = new LinkedList<BoardCell>();
-				if(i > 0) {
-					neighbors.add(grid[i - 1][j]);
-				}
-				if(i < TOTAL_X - 1) {
-					neighbors.add(grid[i + 1][j]);
-				}
-				if(j > 0) {
-					neighbors.add(grid[i][j - 1]);
-				}
-				if(j < TOTAL_Y - 1) {
-					neighbors.add(grid[i][j + 1]);
-				}
-				adjacentMatrix.put(grid[i][j], neighbors);
+	public void calcAdjacencies() {
+		
+		Set tempSet;
+		
+		for (int i=0; i<grid.length; i++) {
+			for (int j=0; j<grid[i].length; j++) {
+				tempSet = new HashSet<BoardCell>();
+				if (i > 0) tempSet.add(grid[i-1][j]);
+				if (j > 0) tempSet.add(grid[i][j-1]);
+				if (i < grid.length - 1) tempSet.add(grid[i+1][j]);
+				if (j < grid[i].length - 1) tempSet.add(grid[i][j+1]);
+				adjMatrix.put(grid[i][j], new LinkedList<BoardCell>(tempSet));
+				
 			}
 		}
 	}
 	
-	public void calcTargets(BoardCell startCell, int pathLength){
-		visited.clear(); //clear the visited set
-		targets.clear(); //clear the targets set
-		visited.add(startCell);
-		targets = findAllTargets(startCell, pathLength);
+	public void calcTargets(BoardCell startCell, int pathLength) {
+		
+		// Find all adjacent cells that have not been visited
+		LinkedList<BoardCell> tempCells = new LinkedList<BoardCell>(getAdjList(startCell));
+		LinkedList<BoardCell> adjacentCells = new LinkedList<BoardCell>();
+		for (BoardCell tempCell : tempCells) {
+			if (!visited.contains(tempCell)) {
+				adjacentCells.push(tempCell);
+			}
+		}
+		
+		// Recursive call for each of these cells
+		for (BoardCell cell : adjacentCells) {
+			visited.add(cell);
+			if (pathLength == 1) {
+				targets.add(cell);
+			} else {
+				calcTargets(cell, pathLength - 1);
+			}
+			visited.remove(cell);
+		}
 	}
 	
-	public Set<BoardCell> findAllTargets(BoardCell currentCell, int remainingSteps){
-		visited.add(currentCell);
-		LinkedList<BoardCell> adj = new LinkedList<BoardCell>(adjacentMatrix.get(currentCell));	//new linked list of cells that have not been visited
-		for (BoardCell i:visited){
-			adj.remove(i);
-		}
-		for (BoardCell i:adj){
-			if(remainingSteps == 1){
-				targets.add(i);
-			}
-			else {
-				targets.addAll(findAllTargets(i, remainingSteps-1));
-			}
-			visited.remove(i);
-		}
-		return targets;
-	}
-	
-	public LinkedList<BoardCell> getAdjList(BoardCell cell){
-		return adjacentMatrix.get(cell);
-	}
-
-	public BoardCell getCell(int i, int j) {
-		return grid[i][j];
-	}
-
 	public Set<BoardCell> getTargets() {
 		return targets;
+	}
+	
+	public LinkedList<BoardCell> getAdjList(BoardCell cell) {
+		return adjMatrix.get(cell);
+	}
+	
+	public BoardCell getCell(int row, int col) {
+		return grid[row][col];
 	}
 	
 }

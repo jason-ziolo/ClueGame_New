@@ -1,21 +1,18 @@
 package clueGame;
 
-@SuppressWarnings("serial")
-public class BadConfigFormatException extends Exception {
-	String message;
+public class BadConfigFormatException extends Exception  {
 	
+	/**
+	 * java made me do it
+	 */
+	private static final long serialVersionUID = 1L;
+
+	// Constructor with message passed in
 	public BadConfigFormatException(String message) {
-		this.message = message;
+		super(message);
 	}
 	
-	@Override
-	public String toString() {
-		return message;
+	public BadConfigFormatException() {
+		super("Bad config file format.");
 	}
-	
-	@Override
-	public String getMessage() {
-		return message;
-	}
-	
 }

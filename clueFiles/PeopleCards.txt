@@ -1,0 +1,6 @@
+Miss Scarlet,#EB0505,5,1
+Colonel Mustard,#FCDD14,14,21
+Mrs. White,#FFFFFF,12,0
+Mr. Green,#14FC69,3,18
+Mrs. Peacock,#1433FC,19,14
+Professor Plum,#BF1D73,0,12

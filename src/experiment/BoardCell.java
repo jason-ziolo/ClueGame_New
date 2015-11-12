@@ -1,15 +1,12 @@
 package experiment;
 
 public class BoardCell {
-	private int row, column;
+	private int row;
+	private int col;
 	
-	public BoardCell(int i, int j) {
-		row = i;
-		column = j;
-	}
-	
-	@Override
-	public String toString() {
-		return "[" + row + ", " + column + "]";
+	public BoardCell(int row, int col) {
+		super();
+		this.row = row;
+		this.col = col;
 	}
 }

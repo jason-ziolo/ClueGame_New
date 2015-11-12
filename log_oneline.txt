@@ -1,0 +1,150 @@
+04fd0b3af00eecdf27ff9a64e690dcdbbdc12641 moved all clue files to separate folder, deleted old logs
+83cea20d0753c704b14736015198d8c908446bb0 minor syntax fixing
+95a37a4ca5092fa9d0102b8835895bbdb3bfa47e board layout updated one last time.  Its probably finally ready
+3ef2f58a2a74877c46120a4f638fe5625399f596 git logs added
+85054fca5f8866b18c595ecfd731f096efbbc33e board displaying correctly along with players.  Should be good to go for Board GUI assignment
+41b21c81b64124ffb545414700e72080d49f2afc board drawn totes right
+fb19886a10f660c14b16e446e1b382bcd9f68acf Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+67fe3fbcbc88260f3c6e589cb4c036f6f30e40e1 Reverted board constructor to not use initialize(), updated detective notes dialog to read board info, file menu now functional
+9d81fd5242d94f790fbbc26955cfc7902b43b48f Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+ca9264f2568baddc6bf7bb110d16125fa1b29ff1 names on the board working, working on door directions
+92a1989ce50263a1ea7aac3ec5285530c30cb8eb Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+03e72eecda8bdbe142109f491fd37214f5074990 Barebones DetectiveNotesGUI
+64229b0b3e4738152efc9f96f8923508c25e2672 board drawn correctly, need to add door directions and names
+956a2661b5d1aa1dabffd00c24f9bc3b712549eb Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+7e3397062effa75e54d108e8d538e98da1febd59 DetectiveNotesGUI (actually added)
+1cd0845242d846cf3b50ac3127655eaa1e8fbb1f fixed conflicts.  DetectiveNotesGUI class not on github, probably forgot to 'add .'
+2dcea566a44590f6835b83dd8064d735319820ee board drawing.  Not resizing properly or writing room names
+84d73e86289cc8aef457e4e7a1c638c69290360d DetectiveNotesGUI WIP
+fff749c653e964c233b3e3f07f600002c82b95c7 Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+127cd3854d93220411f26a644871c86c6d8ee7a0 writing board work
+b20721d36203f428c325d26d030a51cdcac11edc Board default constructor made a function of explicit constructor
+c83c17e08d2b20ffc1416b394185aef96be8b90d Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+c0f224a840a620c19e48f0671d93e5459dac8260 Finished ClueGame JFrame skeleton w/ menubar
+358016d022038bc141871cc708ba8adc5f048474 merge conflicts fixed
+b3e314e1e832396f1cd777a182e4ef13951f49d5 Board extends Jpanel, board has paintComponent method, boardcell has draw method
+1bd524935eee10a817c0bf9397b25ca1a26f71e9 same as last commit, but inside directory
+d04b086dcffa21d3a930d1a8c1518c1a45258d78 little fixups
+b129e5342b87915cc2c79f2ac6d27e8651acf084 merge conflicts fixed
+47977ad04a17003ed0306dd012ec7fa420d64d82 Preparing for merge
+1b2daf38f6ceb625285477c0604e7da784a06fb4 fixed references to non-existant library card, all tests pass
+4f2a74006f7096263546c69bad5298618c77dfd5 disproveSuggestion functional, passed first two tests legitimatly
+7a166f90656913f910d49229ffb4e7101e955f63 wrote failing tests for disproveSuggestion
+ef387ad4d109ac2e18d35160aede053f0fd3c620 Cut out non-working tests and the disproveSuggestion function. Began rewriting tests
+e5abe4bfe603bfe03b093cf16f35bf61cd1d6d99 Finished example gui class
+ca57bc6f980fdce3658ee303e520fbc648874473 fixed a 'merge conflict' in .gitignore (should figure out why it keeps changing)
+f4886a8f7831f803fe250726916507e581dd591e Add ControlGUI_Example, merged GITHUB_INFO to README
+8ced138f0e862e592fd193c26b18223d8d65936d disproveSuggestion kinda working.
+fccd364857b83b59edc7855b0f27f17c4393ab66 disprove fixes
+a895d4c96795188b38c1353cc1400b704030f0eb fixed infinite loop
+1c86e11c8cf2626f8edd7252f33159fa0ec66605 disprove suggestion issues
+c6dae5e3569205096763cdcebbc6c38c41cef4e3 disprove suggestion failing tests written
+b84f4b16eccb53ed8b254caed4eeccd4b53f7b65 more disprove suggestion progress.  Weird bug in make suggestion with weapons not being added
+eaf25d0a83c8b43835ac6ec633ea38525c32433d progress on disprove suggestion
+38ff6b2bcabcc21cb87686b217706783450add3c Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+3541c8bc6dd62e6ff4a028caf47c7d0253fe84a8 working test for makeSuggestion
+cfe3444c6c002947667202d14ebe2a3237ba6f6b merge conflicts resolved
+91f9da693389061275bb49f1efd63e8527ae4b01 test picking location tests (3 total tests) passing
+5d545a777ba816fe0e033a4c95aa3c53495a8430 Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+18671c75b54efb1afd294733167ddb8989ee52cb Updated makeSuggestion to return a Solution object type, finished failing test for makeSuggestion
+c11a1a8ce1b58ad5db677fa79e7100953ed732b1 testPickLocation failing test complete
+1cf2c89a95aa2a13df8eb7168aaf3dafe5d6ed89 progress on pick location test
+bdc0b57b5b218c4e8f72f9da0c2ce55e229583f5 actually fixed all merge errors now.  Also committing halfway done testPickLocation test
+745563f0fd9e86bae1dbb9cf687d73bb396ccf4c merge conflicts fixed
+17a0b1c5f62086b7da7331ac245069bbdc971123 testPickLocation coming along. Still writing the failing test
+0f6f022c31837c90fa93adca072895e53449271e fixed merge conflicts
+d0b4f82c5a5cad9182ae6f945da4ff41f7ecba53 testMakeSuggestion failing test progress
+a38e8d8bc5473ee5caf265fbae4be410f1f3e04c added dealt cards to seen cards
+d4314dbccfdc895c7e8b654915f0f48d7aab2c6a also initialized seenCards in deal function
+ed12a57b6fb0d1ae16920a9deb89f802120af7f7 Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+6e599c2a25e74c89d41691a2973282b7ae14ad81 testPickLocation started
+8ad00e00018ee95e4dacc0e881efcbe129035be6 added skeleton tests, changed deal function to initialize hashsets
+a4112e0580b6f5d2a93d4d095f8d44fb5d3c7ffd log files up to date and github info txt file added for CluePlayer Part 1 submission
+bc3f68b03c6b8214845c1fbe23fe8e8ea010d023 Moved 'testAccusation' to GameActionTests and made minor comment and code cleanup changes.  All tests pass for part 1
+78673b1f61cb49b1640fb2b6bb6e7d049d2f3bb1 card dealing done, card dealing test passes
+712329e543679c77108f01e9b923a22835239020 finished card dealing test
+4ea2802c50c22e27e7498fa3188e58124252f5b2 implemented Card.equals, wrote more of deal test
+8b9e6c65376390cc982a6aae0636094554dbd115 began writing deal test, implemented SelectAnswer
+bbf37d3ffee55d259182eb65635040ae9046a95e passing 'testAccusation' test complete
+f441122a2fc89b3c9b3a7e865e67160994bb5c88 failing test for 'testAccusation' complete
+c4dfdeaa7960f3a366b713aade4e35fa90a83667 passing loadPeopleTest complete
+ed2dfc9c7c26cae2eba940d1acdad22797e3b74b Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+a88981e351c3cb69a8dab5338c4fa3a195896d7c writing people card loading tests
+1851de8a2cbe1eaa6ddaee624d3102d20c3c96bb Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+0868ab3b82b54984b0a46e96ba4f0d340663864f Changed loadRoomConfig to generate room cards
+04867ce358be82d44bc9649972b0cdb43c4159c4 merge conflicts fixed
+28f61799e4686b52be68b218959e610a530edb6d people loading method halfway done.  committing and pulling to resolve merge conflicts
+141412a3c6b9c40ff6c2485931e57da427b49e7e fixed merge conflicts
+cbeb3e828d519a7ce1799b57e2d91d0a684ba5fd Updated loadMiscConfigFiles, loadWeapons
+411e2639a6664fc3ae3dc64506a3a4096afd4639 more merge conflicts resolved from my testing branch
+f8214c60fc8105346e0e8c7f07ec42c1777fcd85 merge conflicts fixed
+18f279b6ecedd746c08a7607702f456cd9d57267 Reverted change to PeopleCards.txt, added testAllCardsLoaded
+de72cb0196d366a848ae92a8fa6489095ccbe658 failing test for loadingPeopleTest written
+e66ae6cba1c56a7865a76b9f34c1706b6decd268 Reduced PeopleCards.txt to essential info only
+ea5ed7b1ab1bc1e83775257295bbbb37f8afb3cf Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+3cc45f302b6768645b1b36a6e4349b87330b1934 setting up game load tests
+d177e696f7b7280ebbf5f8a3dbdead9f26f2ed34 Added PeopleCards.txt, updated .xlsx file
+06d4f160d702f39c02da3be17ac732aa033a2011 weaponCards.txt file created
+9b193faaa4210417574ee383da3a5e62523ffc3b board class updated with player and weapon Sets and load methods --skeleton
+3a63f781b4aa543d4f4be11ee382b7342902db45 Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+a5c8f3cf387e36f058cdfcb8464d22374c7cc7e8 added theAnswer Solution variable to Board
+734eac395bfc12c21496da1fd97a2f5cab66bc06 Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+1e80072ea1c9e97dc07021047619c0b2c582cd03 its making me commit in order to pull
+58db43ec2c2e658c88350070b316cc2d9bd137a3 fixed merge conflicts
+9f012009a8a4034bc1decf02f3c1462484126dd5 changes to Board, will merge
+9786d9e2ec9390dd85b4844c90931f6224cf39d2 fixed loadConfig methods - tests still pass
+146f3f051ebdec42398190734d65d83bf11d76ec added skeleton classes (for real)
+1dd50642e7aa285eca7c58343146dc53a0f3f8ea added skeleton classes
+3e9d2481d7c03aa705b08faff7a11028923c9638 test classes created and Person.java fixed
+e7669a9501803d9cad78f65e4092a88ae4572366 conflicts resolved
+9bfff9293628feb7940d33ffe2cc51ffcdf4e16d all skeleton classes done
+709f2518ef124e4c5f4044909060d69f9384dbbe added additional skeleton classes
+5089b69c23a4c029387e1d6c2cc91493cdf12399 Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+c70566420ef2192e2f1946d52484cf9480dda712 skeleton abstract player and Solution classes
+7ed48134a193469ff85d99415c1379a0aac0589a Added CardType Enum Class
+62c66a02b0533dfda600dd254002081f20157cc7 minor warnings fixed. Mostly closing scanners when throwing exceptions in the board class
+83aee324574071deb966303375e77e98ac97148a updated clueLayout.xlsx to better show tests
+a7995d65f005f5cd152a3c509ef6b3ce8e830604 Untracked log file
+ec2cb4c8f0933c9b922dda35da417d5ea98d95b8 ignored log.txt
+f5cabbd8e47ecdbe72ad4e7aaa303e62c905377f made new log.txt for blackboard
+2019c7d6dbadf9ff27e9d83e168b73b86fe371e3 log.txt updated
+0aecd02cee85ba9286fc419ccba30ad7d83491b8 Finished cleaning up code
+f1c4363ffb157462a4483cf2bd1832019028156c Updated .gitignore to ignore log file
+238fe6c7d6e168b626269b7b9a7e36095fc7d534 Cleaned up the code by adding comments, whitespace, etc...)
+7d23b9dfe79a7ad44f06fafe33b8b1945c32f91d Got adjacency and target tests to pass. Updated excel file as well, because some tests were changed to be more accurate).
+c362d5414c7eed30ba4985338ca75e9dd4ac9729 Started working on making targets and adjcency tests pass
+3621dda59e87e9588655d593ac444c6a93977c7c Formatted code in the calcAdjacencies function to look more readable.
+d57aa330e31c2a0a4228bf4cca631032b67dad8d Merge branch 'master' of https://github.com/erikkacsm/ClueGame
+09b4ec0c8576958a8cc54a93bacf2dc366835b89 Wrote the calcAdjacencies function that tests various locations and ensures that it meets the criteria.
+98a1e91c57898723e5d34b8d52392b37ac9c0867 Implemented the first version of calcTargets function
+0a905f187eba3a023c56765adbf2922ce02f4d21 Updated getAdjMatrix and getTargets to return the appropriate values
+8695ea0c5122bfb6d7e749bff8c6555d6f876fb6 Moved code to allocate variables out of initialize and into constructors to make bad config format exception tests more accurate
+6f6404a30cd492d0de7f2dd0f1304c2ad8cf2cb9 Added Cyndi's config files so that we could run her JUnit tests to ensure they succeed with our code
+42390d75356435ba54f757e486c4c737bf6b9258 Added Cyndi's test file
+7a79f79d26accdfffac249909b35dbee281beb34 Edited the color coding on the clueLayout excel file.
+d911687c14e25387b48633a68ea1669a5c8e4a36 Merge branch 'master' of https://github.com/erikkacsm/ClueGame
+58f0adeeadb98a61c19289fb8d758b98745c0284 created class CR_BoardAdjTargetTests.
+402c724feab75106e0193fdde1a12188182a0a32 Added more conditions to functions in Board so that an exception is thrown if the files have bad formats
+ca5222c2e7dec7cb231f2a7f369e2b8235778e77 Merge branch 'master' of https://github.com/erikkacsm/ClueGame
+b7b0a4502d90edc0a0c17cd953dd67039bff3560 Added skeleton functions for getting adj list and getting targets
+9ada58338fd3c7e47c20188ed7c4d4dd18feddef Color coded the clueLayout file to show which cells are being tested. Also edited the points being tested in CR_BoardAdjTargetTests.
+3041bf48ffcb3292a6e389e10821bc6451715cba Got most of the tests working, added bad format files
+3007134ecdc7b3e4c9f597b3dc9af62d3330809b Started working on making first jUnit tests pass
+3a727c1b62ad920a4ad290ff9e5fc1699405f723 Updated getters to return values that make JUnit tests compile without errors
+195ce7d9a4f4073b51c95b5a58f510177ae79849 added getNumRows to Board and added getDoorDirection to BoardCell
+cbc5e69d5296e1a5c1eb12ad59d14a07c6d87061 added getNumColumns and getRooms to Board
+88470ee9895107381fad6087e1f8f323fb7e538d Merge branch 'master' of https://github.com/erikkacsm/ClueGame
+eb966878e9b3c225820ade29004a18793ec13a7d Filled in the tests for testRooms, testBoardDimensions, FourDoorDirections, and testNumberOfDoorways.
+d63f110f329ae6c35d9a1a7d7c6652cf2c5c2ece Updated .gitignore to ignore temporary excel files
+8e0975244ebe8312f2288cab059a7461d6043538 Filled in the last half of the JUnit test file
+f9cb1e0b877be5c7dcea58de346e7bd3f0af23c7 Added skeleton tests for part I
+2c39676b253c0c4b04866c6d0fa75b21d5953547 Added doorDirection variable to BoardCell
+40fcb0fb4c1094433da6e1e528ec4970e9353a9b Finished creating class stubs
+ffb1c34916a90dd68f659e0db9416ba3e3d7e148 Added name fields to excel sheet and csv file
+794d39a3c4c3db08359a21790ff94fd31d2b1953 Added function stubs
+52e21252a96a92cec5fef91064d03dfa86431f84 created private ints row and column and private char initial in BoardCell. Also created functions isWalkway, isRoom, and isDoorway in BoardCell.
+fe9c42d6cfd38672029c8d5c69e17b62270c0307 added clueLayout.csv, clueLayout.xlsx, and clueLayoutLegend.txt files to the project folder
+ec6304892ab37697a1eaa29095631415ba42f66d Created new package clueGame and classes BadConfigFormatException, Board, BoardCell, and enum DoorDirection
+fc2e0e60d5257cbeb16fb8a69727b0cb9d760567 Changed board size back to (4, 4)
+39877dc0c62b7509f15e6fb5d47cf785ed8d113c Changed board from (4, 4) to (3, 4)
+4e9d6e2b78bf45d74a0a61d7e88881f148e91c9a Project Created

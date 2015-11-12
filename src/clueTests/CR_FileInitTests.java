@@ -1,3 +1,6 @@
+// In this file, we changed the file names of Cyndi's files so that they didn't 
+// conflict with our files. All of Cyndi's flies begin with "CR_".
+
 package clueTests;
 
 // Doing a static import allows me to write assertEquals rather than
@@ -14,6 +17,7 @@ import org.junit.Test;
 import clueGame.BadConfigFormatException;
 import clueGame.Board;
 import clueGame.BoardCell;
+//import clueGame.ClueGame;
 import clueGame.DoorDirection;
 
 public class CR_FileInitTests {
@@ -32,7 +36,7 @@ public class CR_FileInitTests {
 	public static void setUp() {
 		// Create a new Board using the valid files. Note that
 		// the default filenames must be attributes of the Board class. 
-		board = new Board("./CRader/ClueLayout.csv", "./CRader/ClueLegend.txt");
+		board = new Board("clueFiles/CR_ClueLayout.csv", "clueFiles/CR_ClueLegend.txt");
 		// Initialize will load BOTH config files 
 		board.initialize();
 	}
@@ -118,7 +122,7 @@ public class CR_FileInitTests {
 		// testing exceptions in lab writeup. 
 		// Note that we are using a LOCAL Board variable, not the static one 
 		// set up by @BeforeClass
-		Board board = new Board("./CRader/ClueLayoutBadColumns.csv", "./CRader/ClueLegend.txt");
+		Board board = new Board("clueFiles/CR_ClueLayoutBadColumns.csv", "clueFiles/CR_ClueLegend.txt");
 		// Instead of initialize, we call the two load functions directly
 		board.loadRoomConfig();
 		// This one should throw an exception
@@ -127,14 +131,14 @@ public class CR_FileInitTests {
 	// Test that an exception is thrown for a bad config file
 	@Test (expected = BadConfigFormatException.class)
 	public void testBadRoom() throws BadConfigFormatException, FileNotFoundException {
-		Board board = new Board("./CRader/ClueLayoutBadRoom.csv", "./CRader/ClueLegend.txt");
+		Board board = new Board("clueFiles/CR_ClueLayoutBadRoom.csv", "clueFiles/CR_ClueLegend.txt");
 		board.loadRoomConfig();
 		board.loadBoardConfig();
 	}
 	// Test that an exception is thrown for a bad room config file
 	@Test (expected = BadConfigFormatException.class)
 	public void testBadRoomFormat() throws BadConfigFormatException, FileNotFoundException {
-		Board board = new Board("./CRader/ClueLayout.csv", "./CRader/ClueLegendBadFormat.txt");
+		Board board = new Board("clueFiles/CR_ClueLayout.csv", "clueFiles/CR_ClueLegendBadFormat.txt");
 		board.loadRoomConfig();
 	}
 }
