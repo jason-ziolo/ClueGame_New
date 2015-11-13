@@ -36,13 +36,15 @@ public class BoardCell {
 		pcol = (this.getRow()) *ClueGame.REC_SIZE;  
 		prow = (this.getCol()) *ClueGame.REC_SIZE;
 		if (this.getInitial() == 'W') {		
-			g.setColor(Color.decode("#74828F"));  		//grey-ish	
+			g.setColor(Color.decode("#74828F"));  		//grey-ish
+			//g.setColor(Color.CYAN);
 			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);		//draws and fills the box
 			g.setColor(Color.white);  											//draws the grid over the boxes
 			g.drawRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);
 		}
 		else {
 			g.setColor(Color.decode("#C25B56")); 	//red-ish
+			//g.setColor(Color.BLACK);
 			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);		//draws and fills the box
 		}
 	}

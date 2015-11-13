@@ -23,7 +23,7 @@ public class Board extends JPanel {
 	private static int numRows;
 	private static int numColumns;
 
-	public static final int BOARD_SIZE = 100;
+	public static final int BOARD_SIZE = 50;
 
 	private BoardCell[][] board;
 	static private Map<Character, String> rooms;
@@ -172,7 +172,6 @@ public class Board extends JPanel {
 			return false;
 		return true;
 	}
-
 
 	// Load room using passed in file
 	public void loadRoomConfig() throws FileNotFoundException, BadConfigFormatException {
@@ -479,8 +478,6 @@ public class Board extends JPanel {
 	public BoardCell getCellAt(int row, int column) {
 		return board[row][column];
 	}
-
-
 
 	public static Map<Character, String> getRooms() {
 		return rooms;
