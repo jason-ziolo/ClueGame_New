@@ -93,7 +93,6 @@ public class ClueGame extends JFrame {
 		DisplayPanel display = new DisplayPanel();
 		MyCards cards = new MyCards();
 		board.initialize();
-		board.loadMiscConfigFiles("clueFiles/PeopleCards.txt", "clueFiles/WeaponsCards.txt");
 		ClueGame cgWindow = new ClueGame();
 		cgWindow.add(board, BorderLayout.CENTER);
 		cgWindow.add(display, BorderLayout.SOUTH);
