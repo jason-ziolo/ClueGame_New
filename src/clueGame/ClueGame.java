@@ -21,9 +21,9 @@ public class ClueGame extends JFrame {
 	// NAME is both the name of the window and the title
 	static public final String NAME = "Clue";
 	// Expected dimensions of 700 x 700.
-	static public final int WIDTH = 850;
-	static public final int HEIGHT = 850;
-	static public final int REC_SIZE = 27; 	//size of board tiles.  
+	static public final int SIZE = 700;
+	static public final int WINDOW_PADDING = 180;
+	private static int recSize; // This will be equal to the size divided by the number of rows
 	
 	private JDialog notesDialog;
 	
@@ -31,7 +31,7 @@ public class ClueGame extends JFrame {
 		this.setJMenuBar(mainJMenuBar());
 		this.setName(NAME);
 		this.setTitle(NAME);
-		this.setSize(WIDTH, HEIGHT);
+		this.setSize(SIZE + WINDOW_PADDING, SIZE + WINDOW_PADDING);
 		//this.pack();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -89,12 +89,17 @@ public class ClueGame extends JFrame {
 		return item;
 	}
 	
+	public static int getRecSize() {
+		return recSize;
+	}
+
 	public static void main(String[] args) {
 		Board board = new Board();
 		DisplayPanel display = new DisplayPanel();
 		MyCards cards = new MyCards();
 		board.initialize();
 		board.loadMiscConfigFiles("clueFiles/PeopleCards.txt", "clueFiles/WeaponsCards.txt");
+		recSize = SIZE / Board.getNumRows();
 		ClueGame cgWindow = new ClueGame();
 		cgWindow.add(board, BorderLayout.CENTER);
 		cgWindow.add(display, BorderLayout.SOUTH);

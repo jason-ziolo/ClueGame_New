@@ -28,18 +28,21 @@ public abstract class Player {
 	}
 	
 	public void draw(Graphics g){
-		int pcol = (this.getRow()) * ClueGame.REC_SIZE;  //if getCol is 1, pcolumn is 20.  2 = 40, 3 = 60
-		int prow = (this.getColumn()) * ClueGame.REC_SIZE;
+		int recSize = ClueGame.getRecSize();
+		int pcol = (this.getRow()) * recSize;  //if getCol is 1, pcolumn is 20.  2 = 40, 3 = 60
+		int prow = (this.getColumn()) * recSize;
 		g.setColor(this.getColor());
-		g.fillOval(pcol, prow, ClueGame.REC_SIZE, ClueGame.REC_SIZE);
+		g.fillOval(pcol, prow, recSize, recSize);
 		g.setColor(Color.BLACK);
-		g.drawOval(pcol, prow, ClueGame.REC_SIZE, ClueGame.REC_SIZE);
+		g.drawOval(pcol, prow, recSize, recSize);
 	}
 	
 	public Card disproveSuggestion(Solution suggestion) {
 		ArrayList<Card> match = new ArrayList<Card>();
 		for(Card i : myCards) {
-			if(i.getCardName().equals(suggestion.person) || i.getCardName().equals(suggestion.room) || i.getCardName().equals(suggestion.weapon)) {
+			if(i.getCardName().equals(suggestion.person) ||
+					i.getCardName().equals(suggestion.room) ||
+					i.getCardName().equals(suggestion.weapon)) {
 				match.add(i);
 			}
 		}

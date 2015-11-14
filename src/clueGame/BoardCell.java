@@ -40,23 +40,25 @@ public class BoardCell {
 	}
 
 	public void draw(Graphics g) {
-		pcol = (this.getRow()) *ClueGame.REC_SIZE;  
-		prow = (this.getCol()) *ClueGame.REC_SIZE;
+		int recSize = ClueGame.getRecSize();
+		pcol = this.getRow() * recSize;  
+		prow = this.getCol() * recSize;
 		if (this.getInitial() == 'W') {		
 			g.setColor(C_WALKWAY_FILL);										// walkway fill
-			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);	// draws and fills the box
+			g.fillRect(prow, pcol, recSize, recSize);	// draws and fills the box
 			g.setColor(C_WALKWAY_BORDER);  									// walkway border
-			g.drawRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);	// walkway border
+			g.drawRect(prow, pcol, recSize, recSize);	// walkway border
 		}
 		else {
 			g.setColor(C_ROOM); 									// room color
-			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);	//draws and fills the box
+			g.fillRect(prow, pcol, recSize, recSize);	//draws and fills the box
 		}
 	}
 
 	public void drawOver(Graphics g){
-		pcol = (this.getRow()) *ClueGame.REC_SIZE;
-		prow = (this.getCol()) *ClueGame.REC_SIZE;
+		int recSize = ClueGame.getRecSize();
+		pcol = (this.getRow()) * recSize;
+		prow = (this.getCol()) * recSize;
 		if (nameOutput){
 			g.setFont(F_ROOM);
 			g.setColor(C_ROOM_TEXT);
@@ -65,13 +67,13 @@ public class BoardCell {
 		if(this.isDoorway()){
 			g.setColor(C_DOOR);
 			if(this.getDoorDirection() == DoorDirection.DOWN)
-				g.fillRect(prow, pcol + ClueGame.REC_SIZE * 3 / 4 + DOOR_PADDING, ClueGame.REC_SIZE, ClueGame.REC_SIZE / 4);
+				g.fillRect(prow, pcol + recSize * 3 / 4 + DOOR_PADDING, recSize, recSize / 4);
 			else if (this.getDoorDirection() == DoorDirection.UP)
-				g.fillRect(prow, pcol + DOOR_PADDING, ClueGame.REC_SIZE, ClueGame.REC_SIZE / 4);
+				g.fillRect(prow, pcol + DOOR_PADDING, recSize, recSize / 4);
 			else if (this.getDoorDirection() == DoorDirection.RIGHT)
-				g.fillRect(prow + ClueGame.REC_SIZE * 3 / 4 + DOOR_PADDING, pcol, ClueGame.REC_SIZE / 4, ClueGame.REC_SIZE);
+				g.fillRect(prow + recSize * 3 / 4 + DOOR_PADDING, pcol, recSize / 4, recSize);
 			else
-				g.fillRect(prow + DOOR_PADDING, pcol, ClueGame.REC_SIZE / 4, ClueGame.REC_SIZE);
+				g.fillRect(prow + DOOR_PADDING, pcol, recSize / 4, recSize);
 		}
 	}
 
