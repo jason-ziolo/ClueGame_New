@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public abstract class Player {
+	public static double SHADOW_SCALE = 0.1; // Note that anything greater than 0.15 will look odd, intended to be 0.1
+	
 	private String playerName;
 	private int row;
 	private int column;
@@ -34,8 +36,10 @@ public abstract class Player {
 	public void draw(Graphics g){
 		pcol = (this.getRow()) *ClueGame.REC_SIZE;  //if getCol is 1, pcolumn is 20.  2 = 40, 3 = 60
 		prow = (this.getColumn()) *ClueGame.REC_SIZE;
-		g.setColor(this.getColor());
+		g.setColor(Color.BLACK);
 		g.fillOval(pcol, prow, ClueGame.REC_SIZE, ClueGame.REC_SIZE);
+		g.setColor(this.getColor());
+		g.fillOval(pcol, prow, (int)(ClueGame.REC_SIZE*(1.0 - SHADOW_SCALE)), (int)(ClueGame.REC_SIZE*(1.0 - SHADOW_SCALE)));
 	}
 	
 	public Card disproveSuggestion(Solution suggestion) {
