@@ -33,8 +33,8 @@ public class BoardCell {
 
 	public void draw(Graphics g){
 		
-		pcol = (this.getRow()) *ClueGame.REC_SIZE;  
-		prow = (this.getCol()) *ClueGame.REC_SIZE;
+		pcol = (this.getRow()) * ClueGame.REC_SIZE;  
+		prow = (this.getCol()) * ClueGame.REC_SIZE;
 		if (this.getInitial() == 'W') {		
 			g.setColor(Color.decode("#74828F"));  		//grey-ish
 			//g.setColor(Color.CYAN);
