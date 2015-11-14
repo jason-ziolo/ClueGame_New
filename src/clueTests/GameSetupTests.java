@@ -43,7 +43,7 @@ public class GameSetupTests {
 		assertEquals(6, potentialPlayers.size()); //6 potential players, 5 computer and 1 human
 		
 		//create correct local player objects to test against ones read in from file
-		ComputerPlayer colonel = new ComputerPlayer("Colonel Mustard", 14, 21, "#FCDD14");
+		ComputerPlayer colonel = new ComputerPlayer("Colonel Mustard", 14, 21, "#FF9900");
 		ComputerPlayer professor = new ComputerPlayer("Professor Plum", 0, 12, "#BF1D73");
 		HumanPlayer scarlet = new HumanPlayer("Miss Scarlet", 5, 1, "#EB0505");
 		

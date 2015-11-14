@@ -59,6 +59,7 @@ public class Board extends JPanel {
 		rooms = new HashMap<Character, String>();
 		adjMatrix = new HashMap<BoardCell, LinkedList<BoardCell>>();
 		targets = new HashSet<BoardCell>();
+		seenCards = new HashSet<Card>();
 	}
 
 	// Constructor using default files
@@ -544,5 +545,18 @@ public class Board extends JPanel {
 
 	public Set<Card> getSeenCards() {
 		return seenCards;
+	}
+	
+	public void addSeenCard(Card card) {
+		seenCards.add(card);
+	}
+	
+	// For testing only
+	public void removeSeenCard(Card card){
+		seenCards.remove(card);
+	}
+	// For testing only
+	public void clearSeenCards(){
+		seenCards.clear();
 	}
 }
