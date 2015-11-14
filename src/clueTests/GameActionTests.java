@@ -151,7 +151,7 @@ public class GameActionTests {
 		player.addDealtCard(scarlet);
 		player.addDealtCard(knife);
 		player.addDealtCard(lib);
-
+		
 		Card out = player.disproveSuggestion(suggestion);
 		assertNotNull(scarlet);
 		assertEquals(scarlet, out);

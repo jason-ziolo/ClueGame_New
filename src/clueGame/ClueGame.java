@@ -13,11 +13,14 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import clueGUI.DisplayPanel;
+import clueGUI.MyCards;
+
 public class ClueGame extends JFrame {
 	// NAME is both the name of the window and the title
 	static public final String NAME = "Clue";
 	// Expected dimensions of 700 x 700.
-	static public final int WIDTH = 800;
+	static public final int WIDTH = 850;
 	static public final int HEIGHT = 850;
 	static public final int REC_SIZE = 27; 	//size of board tiles.  
 	
@@ -28,6 +31,7 @@ public class ClueGame extends JFrame {
 		this.setName(NAME);
 		this.setTitle(NAME);
 		this.setSize(WIDTH, HEIGHT);
+		//this.pack();
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
@@ -86,10 +90,14 @@ public class ClueGame extends JFrame {
 	
 	public static void main(String[] args) {
 		Board board = new Board();
+		DisplayPanel display = new DisplayPanel();
+		MyCards cards = new MyCards();
 		board.initialize();
 		board.loadMiscConfigFiles("clueFiles/PeopleCards.txt", "clueFiles/WeaponsCards.txt");
 		ClueGame cgWindow = new ClueGame();
 		cgWindow.add(board, BorderLayout.CENTER);
+		cgWindow.add(display, BorderLayout.SOUTH);
+		cgWindow.add(cards, BorderLayout.EAST);
 		cgWindow.setVisible(true);  //setting visible after makes it populate much quicker
 		cgWindow.initializeNotesDialog(board);
 	}

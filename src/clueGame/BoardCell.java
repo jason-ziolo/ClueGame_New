@@ -35,8 +35,7 @@ public class BoardCell {
 		this.nameOutput = nameOutput;
 	}
 
-	public void draw(Graphics g){
-
+	public void draw(Graphics g) {
 		pcol = (this.getRow()) *ClueGame.REC_SIZE;  
 		prow = (this.getCol()) *ClueGame.REC_SIZE;
 		if (this.getInitial() == 'W') {		

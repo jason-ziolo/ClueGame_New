@@ -31,6 +31,13 @@ public abstract class Player {
 		seenCards = new HashSet<Card>();
 	}
 	
+	public void draw(Graphics g){
+		pcol = (this.getRow()) *ClueGame.REC_SIZE;  //if getCol is 1, pcolumn is 20.  2 = 40, 3 = 60
+		prow = (this.getColumn()) *ClueGame.REC_SIZE;
+		g.setColor(this.getColor());
+		g.fillOval(pcol, prow, ClueGame.REC_SIZE, ClueGame.REC_SIZE);
+	}
+	
 	public Card disproveSuggestion(Solution suggestion) {
 		ArrayList<Card> match = new ArrayList<Card>();
 		for(Card i : myCards) {
@@ -44,10 +51,6 @@ public abstract class Player {
 			return match.get(rand.nextInt(match.size()));
 		}
 		return null;
-	}
-	
-	public void draw(Graphics g){ 
-		//make the children do it
 	}
 	
 	public ArrayList<Player> queryPlayersForDisproveSuggestion(){
