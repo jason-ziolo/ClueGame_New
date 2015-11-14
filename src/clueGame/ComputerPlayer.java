@@ -171,7 +171,12 @@ public class ComputerPlayer extends Player {
 		// Splitting up all possible cards into the person and weapon card lists
 		ArrayList<Card> personCards = new ArrayList<Card>();
 		ArrayList<Card> weaponCards = new ArrayList<Card>();
-		for(Card i : board.getCards()) {
+		
+		// Make an ArrayList of all cards the computer has seen
+		ArrayList<Card> computerSeenCards = board.getCards();
+		computerSeenCards.addAll(myCards);
+		
+		for(Card i : computerSeenCards) {
 			if(board.getSeenCards().contains(i)) {
 				continue; // We are only interested in guessing cards that we have not seen
 			}

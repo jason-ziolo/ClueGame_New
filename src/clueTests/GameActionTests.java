@@ -311,10 +311,10 @@ public class GameActionTests {
 		ComputerPlayer computer = (ComputerPlayer) players.get(1); // The second player is a ComputerPlayer
 		computer.initializeCards();
 		for(Card i : board.getCards()) {
-			computer.addSeenCard(i);
+			board.addSeenCard(i);
 		}
-		computer.removeSeenCard(board.getCards().get(10));
-		computer.removeSeenCard(board.getCards().get(18));
+		board.removeSeenCard(board.getCards().get(10));
+		board.removeSeenCard(board.getCards().get(18));
 		BoardCell location = board.getCellAt(0, 22); // in the office, so the player must suggest the office
 		assertEquals('O', location.getInitial());	// Make sure that the location is indeed the office
 		Solution suggestion = computer.makeSuggestion(board, location);
@@ -323,9 +323,7 @@ public class GameActionTests {
 		assertEquals("Revolver", suggestion.weapon);
 		
 		// Test case 2: Random possibilities, testing multiple times to see that all are covered
-		for(Card i : board.getCards()) {
-			computer.removeSeenCard(i);	// The computer has no seen cards, so they will guess
-		}								// all possible weapon/person combinations
+		board.clearSeenCards();
 		HashMap<String, Boolean> possibilities = new HashMap<String, Boolean>();
 		for(int i = 0; i < 4000; i++) {	// 36 iterations would be enough if the randomness was perfect
 			Solution next = computer.makeSuggestion(board, location);
