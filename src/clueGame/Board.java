@@ -5,7 +5,6 @@ import java.awt.Graphics;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -19,6 +18,7 @@ import javax.swing.JPanel;
 import clueGame.BoardCell;
 
 
+@SuppressWarnings("serial")
 public class Board extends JPanel {
 	private static int numRows;
 	private static int numColumns;
@@ -33,8 +33,8 @@ public class Board extends JPanel {
 
 	private String boardConfigFile;
 	private String roomConfigFile;
-	private String peopleConfigFile; 
-	private String weaponsConfigFile;
+	private String peopleConfigFile = "clueFiles/PeopleCards.txt"; 
+	private String weaponsConfigFile = "clueFiles/WeaponsCards.txt";
 
 	private Solution theAnswer;
 	private Set<Card> seenCards;
@@ -72,6 +72,7 @@ public class Board extends JPanel {
 		try {
 			loadRoomConfig();
 			loadBoardConfig();
+			loadMiscConfigFiles();	//NOTE* - this will currently only call default file names, to change that, use a setter and call the setter
 		} catch (FileNotFoundException e) {
 			System.out.println(e.getMessage());
 		} catch (BadConfigFormatException e) {
@@ -79,10 +80,8 @@ public class Board extends JPanel {
 		}
 		calcAdjacencies();
 	}
-
-	public void loadMiscConfigFiles(String playersConfigFile, String weaponsConfigFile) {
-		this.peopleConfigFile = playersConfigFile;
-		this.weaponsConfigFile = weaponsConfigFile;
+	
+	public void loadMiscConfigFiles() {
 		try {
 			loadPlayers();
 			loadWeapons();

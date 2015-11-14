@@ -1,8 +1,6 @@
 package clueGame;
 
 import java.awt.BorderLayout;
-import java.awt.MenuItem;
-import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -17,6 +15,7 @@ import clueGUI.DetectiveNotesDialog;
 import clueGUI.DisplayPanel;
 import clueGUI.MyCards;
 
+@SuppressWarnings("serial")
 public class ClueGame extends JFrame {
 	// NAME is both the name of the window and the title
 	static public final String NAME = "Clue";
@@ -98,7 +97,6 @@ public class ClueGame extends JFrame {
 		DisplayPanel display = new DisplayPanel();
 		MyCards cards = new MyCards();
 		board.initialize();
-		board.loadMiscConfigFiles("clueFiles/PeopleCards.txt", "clueFiles/WeaponsCards.txt");
 		recSize = SIZE / Board.getNumRows();
 		ClueGame cgWindow = new ClueGame();
 		cgWindow.add(board, BorderLayout.CENTER);

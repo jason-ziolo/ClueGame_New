@@ -13,15 +13,13 @@ import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
+@SuppressWarnings("serial")
 public class DisplayPanel extends JPanel {
 	public JButton nextPlayerButton;
 	public JButton accusationButton;
 	
 	public DisplayPanel() {
-		//setTitle("ClueGUI");
-		//setSize(500, 200);
 		setLayout(new GridLayout(0,1));
-		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		TopPanel top = new TopPanel();
 		BottomPanel bottom = new BottomPanel();
 		add(top);

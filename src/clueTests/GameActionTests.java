@@ -34,7 +34,6 @@ public class GameActionTests {
 	public static void setUp() throws FileNotFoundException {
 		board = new Board("clueFiles/clueLayout.csv", "clueFiles/clueLayoutLegend.txt");
 		board.initialize();
-		board.loadMiscConfigFiles("clueFiles/PeopleCards.txt", "clueFiles/WeaponsCards.txt");
 	}
 	
 	
