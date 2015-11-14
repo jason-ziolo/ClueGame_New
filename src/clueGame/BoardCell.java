@@ -20,7 +20,7 @@ public class BoardCell {
 	private int pcol;
 
 	DoorDirection doorDirection;
-
+	
 	public BoardCell(int row, int column) {
 		super();
 		this.row = row;

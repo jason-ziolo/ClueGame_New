@@ -47,15 +47,15 @@ public class Board extends JPanel {
 		this.boardConfigFile = boardConfigFile;
 		this.roomConfigFile = roomConfigFile;
 		visited = new HashSet<BoardCell>();
-
+		
 		board = new BoardCell[BOARD_SIZE][BOARD_SIZE];
-
+		
 		for (int i=0; i<BOARD_SIZE; i++) {
 			for (int j=0; j<BOARD_SIZE; j++) {
 				board[i][j] = new BoardCell(i,j);
 			}
 		}
-
+		
 		rooms = new HashMap<Character, String>();
 		adjMatrix = new HashMap<BoardCell, LinkedList<BoardCell>>();
 		targets = new HashSet<BoardCell>();
@@ -208,7 +208,7 @@ public class Board extends JPanel {
 		}
 		scanner.close();
 	}
-
+	
 	// Load board using passed in file
 	public void loadBoardConfig() throws FileNotFoundException, BadConfigFormatException {
 		FileReader reader = new FileReader(boardConfigFile);
