@@ -24,11 +24,9 @@ public abstract class Player {
 	}
 
 	protected Set<Card> myCards;
-	protected Set<Card> seenCards;
 	
 	public void initializeCards() {
 		myCards = new HashSet<Card>();
-		seenCards = new HashSet<Card>();
 	}
 	
 	public void draw(Graphics g){
@@ -59,11 +57,6 @@ public abstract class Player {
 	
 	public void addDealtCard(Card in) {
 		myCards.add(in);
-		seenCards.add(in);
-	}
-	
-	public void addSeenCard(Card in) {
-		seenCards.add(in);
 	}
 	
 	//all getters for testing purposes only
@@ -85,11 +78,6 @@ public abstract class Player {
 
 	public Color getColor() {
 		return color;
-	}
-	
-	//testing purposes only
-	public void removeSeenCard(Card out) {
-		seenCards.remove(out);
 	}
 	
 	@Override

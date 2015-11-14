@@ -3,6 +3,7 @@ package clueGame;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
@@ -70,8 +71,94 @@ public class ComputerPlayer extends Player {
 		return null;
 	}
 	
-	public void makeAccusation() {
-		// TODO
+	public Solution makeAccusation(Set<Card> seenCards, ArrayList<Card> allCards){
+		String person = " ";
+		String room = " ";
+		String weapon = " ";
+		Set<Card> computerSeenCards = new HashSet<Card>();
+		computerSeenCards.equals(seenCards);
+
+		//Add the computers held cards to their seen cards
+		computerSeenCards.addAll(myCards);
+		
+		/* A check to see how many of each type of card has been seen. Not needed here, should be needed to get into the makeAccusation function
+		int roomNum = 0;
+		int personNum = 0;
+		int weaponNum = 0;
+		for (Card knownCards : computerSeenCards){
+			if (knownCards.getCardType() == CardType.ROOM){
+				roomNum++;
+			} else if (knownCards.getCardType() == CardType.PERSON){
+				personNum++;
+			} else if (knownCards.getCardType() == CardType.WEAPON){
+				weaponNum++;
+			}
+		}
+		// If there is only 1 unknown person, weapon, and room; make an accusation
+		//if (roomNum == rooms.size() - 1 && personNum == people.size() - 1 && weaponNum == weapons.size() - 1){
+		*/
+
+		Set<String> possibilitiesRoom = new HashSet<String>();
+		Set<String> possibilitiesWeapon = new HashSet<String>();
+		Set<String> possibilitiesPerson = new HashSet<String>();
+
+		for (Card cards : allCards){
+			if (cards.getCardType().equals(CardType.ROOM))
+				possibilitiesRoom.add(cards.getCardName());
+			else if (cards.getCardType().equals(CardType.WEAPON))
+				possibilitiesWeapon.add(cards.getCardName());
+			else if (cards.getCardType().equals(CardType.PERSON))
+				possibilitiesPerson.add(cards.getCardName());
+		}
+
+		boolean remove = false;	//Boolean set to true if the computer knows the card has been seen
+		for (Card knownCards : computerSeenCards){
+			if (knownCards.getCardType() == CardType.ROOM){			//If the card type is a room
+				for (String roomsH : possibilitiesRoom){			//Check all possible rooms
+					if (roomsH.equals(knownCards.getCardName())){	//If the card checked is a possible room...
+						remove = true;								//Set this true so the room is removed as a possibility
+					}
+				}
+				if (remove){
+					remove = false;
+					possibilitiesRoom.remove(knownCards.getCardName());	//Remove the room as a possible accusation room
+				}
+			} else if (knownCards.getCardType() == CardType.PERSON){	//Same thing as the room check, but for people
+				for (String peopleH : possibilitiesPerson){
+					if (peopleH.equals(knownCards.getCardName())){
+						remove = true;
+					}
+				}
+				if (remove){
+					remove = false;
+					possibilitiesPerson.remove(knownCards.getCardName());
+				}
+			} else if (knownCards.getCardType() == CardType.WEAPON){	// Same thing as the two checks above
+				for (String weaponsH : possibilitiesWeapon){
+					if (weaponsH.equals(knownCards.getCardName())){
+						remove = true;
+					}
+				}
+				if (remove){
+					remove = false;
+					possibilitiesWeapon.remove(knownCards.getCardName());
+				}
+			}
+		}
+		
+		for (String Person : possibilitiesPerson){
+			person = Person;
+		}
+		for (String Room : possibilitiesRoom){
+			room = Room;
+		}
+		for (String weaponsH : possibilitiesWeapon){
+			weapon = weaponsH;
+		}
+		
+		Solution accusation = new Solution(person, room, weapon);
+		return accusation;
+		
 	}
 	
 	public Solution makeSuggestion(Board board, BoardCell location) {
@@ -85,7 +172,7 @@ public class ComputerPlayer extends Player {
 		ArrayList<Card> personCards = new ArrayList<Card>();
 		ArrayList<Card> weaponCards = new ArrayList<Card>();
 		for(Card i : board.getCards()) {
-			if(seenCards.contains(i)) {
+			if(board.getSeenCards().contains(i)) {
 				continue; // We are only interested in guessing cards that we have not seen
 			}
 			
