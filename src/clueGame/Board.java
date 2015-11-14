@@ -36,7 +36,8 @@ public class Board extends JPanel {
 	private String peopleConfigFile; 
 	private String weaponsConfigFile;
 
-	private Solution theAnswer; 
+	private Solution theAnswer;
+	private Set<Card> seenCards;
 
 	private ArrayList<Player> potentialPlayers;
 	private ArrayList<Card> allCards = new ArrayList<Card>();
@@ -160,7 +161,9 @@ public class Board extends JPanel {
 			if(foundCards.size() != 0) {
 				Random rand = new Random();
 				rand.setSeed(System.nanoTime());
-				return foundCards.get(rand.nextInt(foundCards.size()));
+				int randomInt = rand.nextInt(foundCards.size());
+				seenCards.add(foundCards.get(randomInt));
+				return foundCards.get(randomInt);
 			}
 		}
 		// Return null if no player has any of the suggested cards
@@ -537,5 +540,9 @@ public class Board extends JPanel {
 
 	public ArrayList<Player> getPotentialPlayers() { // For testing purposes
 		return potentialPlayers;
+	}
+
+	public Set<Card> getSeenCards() {
+		return seenCards;
 	}
 }
