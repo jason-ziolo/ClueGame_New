@@ -72,14 +72,6 @@ public class ComputerPlayer extends Player {
 	}
 	
 	public Solution makeAccusation(Set<Card> seenCards, ArrayList<Card> allCards){
-		String person = " ";
-		String room = " ";
-		String weapon = " ";
-		Set<Card> computerSeenCards = new HashSet<Card>();
-		computerSeenCards.equals(seenCards);
-
-		//Add the computers held cards to their seen cards
-		computerSeenCards.addAll(myCards);
 		
 		/* A check to see how many of each type of card has been seen. Not needed here, should be needed to get into the makeAccusation function
 		int roomNum = 0;
@@ -97,11 +89,21 @@ public class ComputerPlayer extends Player {
 		// If there is only 1 unknown person, weapon, and room; make an accusation
 		//if (roomNum == rooms.size() - 1 && personNum == people.size() - 1 && weaponNum == weapons.size() - 1){
 		*/
+	
+		String person = " ";
+		String room = " ";
+		String weapon = " ";
+		Set<Card> computerSeenCards = seenCards;	// Makes a new set of card representing what this computer has seen
 
+		// Add the computers held cards to their seen cards
+		computerSeenCards.addAll(myCards);
+		
+		// Sets for all possible Rooms, Weapons, and People 
 		Set<String> possibilitiesRoom = new HashSet<String>();
 		Set<String> possibilitiesWeapon = new HashSet<String>();
 		Set<String> possibilitiesPerson = new HashSet<String>();
 
+		// Populates the Sets that were just made with cards from the main deck
 		for (Card cards : allCards){
 			if (cards.getCardType().equals(CardType.ROOM))
 				possibilitiesRoom.add(cards.getCardName());
@@ -111,41 +113,17 @@ public class ComputerPlayer extends Player {
 				possibilitiesPerson.add(cards.getCardName());
 		}
 
-		boolean remove = false;	//Boolean set to true if the computer knows the card has been seen
 		for (Card knownCards : computerSeenCards){
 			if (knownCards.getCardType() == CardType.ROOM){			//If the card type is a room
-				for (String roomsH : possibilitiesRoom){			//Check all possible rooms
-					if (roomsH.equals(knownCards.getCardName())){	//If the card checked is a possible room...
-						remove = true;								//Set this true so the room is removed as a possibility
-					}
-				}
-				if (remove){
-					remove = false;
-					possibilitiesRoom.remove(knownCards.getCardName());	//Remove the room as a possible accusation room
-				}
+				checkPossibility(possibilitiesWeapon, knownCards);
 			} else if (knownCards.getCardType() == CardType.PERSON){	//Same thing as the room check, but for people
-				for (String peopleH : possibilitiesPerson){
-					if (peopleH.equals(knownCards.getCardName())){
-						remove = true;
-					}
-				}
-				if (remove){
-					remove = false;
-					possibilitiesPerson.remove(knownCards.getCardName());
-				}
+				checkPossibility(possibilitiesWeapon, knownCards);
 			} else if (knownCards.getCardType() == CardType.WEAPON){	// Same thing as the two checks above
-				for (String weaponsH : possibilitiesWeapon){
-					if (weaponsH.equals(knownCards.getCardName())){
-						remove = true;
-					}
-				}
-				if (remove){
-					remove = false;
-					possibilitiesWeapon.remove(knownCards.getCardName());
-				}
+				checkPossibility(possibilitiesWeapon, knownCards);
 			}
 		}
 		
+		// At this point, there should only be one person, room, and weapon in each respective set.
 		for (String Person : possibilitiesPerson){
 			person = Person;
 		}
@@ -155,10 +133,25 @@ public class ComputerPlayer extends Player {
 		for (String weaponsH : possibilitiesWeapon){
 			weapon = weaponsH;
 		}
-		
+		// Make a new accusation with the only possible people, room, and weapon
 		Solution accusation = new Solution(person, room, weapon);
 		return accusation;
 		
+	}
+	
+	//Private function only called by makeAccusation
+	private void checkPossibility(Set<String> possibilities, Card card){
+		boolean remove = false;		//Boolean set to true if the computer knows the card has been seen
+		
+		for (String name : possibilities){			//Check all possibilities
+			if (name.equals(card.getCardName())){		//If the card checked is a possible room...
+				remove = true;							//Set this true so the room is removed as a possibility
+			}
+		}
+		if (remove){
+			remove = false;
+			possibilities.remove(card.getCardName());	//Remove the room as a possible accusation room
+		}
 	}
 	
 	public Solution makeSuggestion(Board board, BoardCell location) {
