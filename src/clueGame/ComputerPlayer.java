@@ -70,14 +70,6 @@ public class ComputerPlayer extends Player {
 		return null;
 	}
 	
-	@Override
-	public void draw(Graphics g){
-		pcol = (this.getRow()) * ClueGame.REC_SIZE;  //if getCol is 1, pcolumn is 20.  2 = 40, 3 = 60
-		prow = (this.getColumn()) * ClueGame.REC_SIZE;
-		g.setColor(this.getColor());
-		g.fillOval(pcol, prow, ClueGame.REC_SIZE - 1, ClueGame.REC_SIZE-1);
-	}
-	
 	public void makeAccusation() {
 		// TODO
 	}
