@@ -12,11 +12,11 @@ setTitleJustification from javadocexamples.com
 
 
 Jason Ziolo
-Henry Dau
-(Hayden Scott: Before swap)
+Hayden Scott
 
 Project on Jason's github account 
 username: jason-ziolo
-project name: ClueGame_NEW
+project name: ClueGame
 
-Link to github: https://github.com/jason-ziolo/ClueGame_New
+Link to github: https://github.com/jason-ziolo/ClueGame
+(note: private repo)
