@@ -69,7 +69,6 @@ public class Board extends JPanel {
 	}
 
 	public void initialize() {
-
 		try {
 			loadRoomConfig();
 			loadBoardConfig();
@@ -91,13 +90,13 @@ public class Board extends JPanel {
 		}
 	}
 
-	public void loadPlayers() throws FileNotFoundException {
-
+	public void loadPlayers() throws FileNotFoundException {		
 		FileReader reader = new FileReader(peopleConfigFile);
-		int count = 0;
-
 		Scanner in = new Scanner(reader);
+
 		potentialPlayers = new ArrayList<Player>();
+		
+		int count = 0;
 		while (in.hasNextLine()){
 			String line = in.nextLine();
 			Scanner lineScanner = new Scanner(line);
@@ -167,20 +166,17 @@ public class Board extends JPanel {
 		String tempCardType = "";
 
 		while (scanner.hasNext()) {
-
 			// Read line from file, throw exception if not enough entries on the line
 			tempInitial = scanner.next();
 			if (!scanner.hasNext()) {
 				scanner.close();
 				throw new BadConfigFormatException();
 			}
-
 			tempName = scanner.next();
 			if (!scanner.hasNext()) {
 				scanner.close();
 				throw new BadConfigFormatException();
 			}
-
 			while (tempName.charAt(tempName.length() - 1) != ',') {
 				tempName += " ";
 				tempName += scanner.next();
@@ -200,6 +196,7 @@ public class Board extends JPanel {
 			}
 			tempName = tempName.substring(0, tempName.length() - 1);
 			rooms.put(tempInitial.charAt(0), tempName);
+			
 			// Generating cards
 			if(tempCardType.equals("Card")) {
 				allCards.add(new Card(tempName, CardType.ROOM));
@@ -275,76 +272,54 @@ public class Board extends JPanel {
 	}
 
 	public void calcAdjacencies() {
-		Set<BoardCell> tempSet;
-
 		for (int i=0; i < board.length; i++) {
 			for (int j=0; j < board[i].length; j++) {
-				tempSet = new HashSet<BoardCell>();
-
+				LinkedList<BoardCell> tempList = new LinkedList<BoardCell>();
 				// If we are on a doorway, the only adjacency is the room's exit
 				if (!board[i][j].isWalkway()) {
-
-					if (board[i][j].getDoorDirection() == DoorDirection.UP) {
-						tempSet.add(board[i-1][j]);
-					}
-
-					if (board[i][j].getDoorDirection() == DoorDirection.DOWN) {
-						tempSet.add(board[i+1][j]);
-					}
-
-					if (board[i][j].getDoorDirection() == DoorDirection.LEFT) {
-						tempSet.add(board[i][j-1]);
-					}
-
-					if (board[i][j].getDoorDirection() == DoorDirection.RIGHT) {
-						tempSet.add(board[i][j+1]);
-					}
-
-					adjMatrix.put(board[i][j], new LinkedList<BoardCell>(tempSet));
+					DoorDirection doorDir = board[i][j].getDoorDirection();
+					if (doorDir == DoorDirection.UP)
+						tempList.add(board[i - 1][j]);
+					else if (doorDir == DoorDirection.DOWN)
+						tempList.add(board[i + 1][j]);
+					else if (doorDir == DoorDirection.LEFT)
+						tempList.add(board[i][j - 1]);
+					else if (doorDir == DoorDirection.RIGHT)
+						tempList.add(board[i][j + 1]);
+					adjMatrix.put(board[i][j], tempList);
 					continue;
 				}
-
-				// Add four potential adjacencies, only if they are walkways or
-				// if they are valid doors.
+				// Otherwise there are four potential adjacencies
+				// The cells must be walkways or doors in this case
 				if (i > 0) {
-
-					if (board[i-1][j].isWalkway() || (board[i-1][j].isDoorway() && 
-							board[i-1][j].doorDirection == DoorDirection.DOWN))
-						tempSet.add(board[i-1][j]);
+					if (board[i - 1][j].isWalkway() || (board[i - 1][j].isDoorway() && 
+							board[i - 1][j].doorDirection == DoorDirection.DOWN))
+						tempList.add(board[i - 1][j]);
 				}
-
 				if (j > 0) {
-
-					if (board[i][j-1].isWalkway() || (board[i][j-1].isDoorway() &&
-							board[i][j-1].doorDirection == DoorDirection.RIGHT))
-						tempSet.add(board[i][j-1]);
+					if (board[i][j - 1].isWalkway() || (board[i][j - 1].isDoorway() &&
+							board[i][j - 1].doorDirection == DoorDirection.RIGHT))
+						tempList.add(board[i][j - 1]);
 				}
-
 				if (i < board.length - 1) {
-
-					if (board[i+1][j].isWalkway() || (board[i+1][j].isDoorway() &&
-							board[i+1][j].doorDirection == DoorDirection.UP))
-						tempSet.add(board[i+1][j]);
+					if (board[i + 1][j].isWalkway() || (board[i + 1][j].isDoorway() &&
+							board[i + 1][j].doorDirection == DoorDirection.UP))
+						tempList.add(board[i + 1][j]);
 				}
-
 				if (j < board[i].length - 1) {
-
-					if (board[i][j+1].isWalkway() || (board[i][j+1].isDoorway() &&
-							board[i][j+1].doorDirection == DoorDirection.LEFT))
-						tempSet.add(board[i][j+1]);
+					if (board[i][j + 1].isWalkway() || (board[i][j + 1].isDoorway() &&
+							board[i][j + 1].doorDirection == DoorDirection.LEFT))
+						tempList.add(board[i][j + 1]);
 				}
-				adjMatrix.put(board[i][j], new LinkedList<BoardCell>(tempSet));
-
+				adjMatrix.put(board[i][j], tempList);
 			}
 		}
 	}
 
 	public void calcTargets(int row, int column, int pathLength) {
-
 		// Clear values from last targets calculation
 		targets.clear();
 		visited.clear();
-
 		visited.add(board[row][column]); // Ensure the starting point is not a target
 		doCalcTargets(row, column, pathLength);
 	}
@@ -356,12 +331,10 @@ public class Board extends JPanel {
 
 		for (BoardCell tempCell : tempCells) {
 			if (!visited.contains(tempCell)) {
-
 				// Add the cell if it is a walkway
 				if (tempCell.isWalkway()) {
 					adjacentCells.push(tempCell);
 				}
-
 				// Add the cell to targets if it is a doorway that we can use.
 				// The path should stop here (since we can't move within a room), so
 				// this cell is not added to visited.
@@ -447,7 +420,7 @@ public class Board extends JPanel {
 			}
 		}
 
-		Random rand = new Random(System.currentTimeMillis());
+		Random rand = new Random();
 		int personIndex = rand.nextInt(personCards.size() - 1);
 		int weaponIndex = rand.nextInt(weaponCards.size() - 1);
 		int roomIndex = rand.nextInt(roomCards.size() - 1);
