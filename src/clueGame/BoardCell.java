@@ -10,7 +10,10 @@ public class BoardCell {
 	public static Color C_WALKWAY_FILL = Color.decode("#FFF2E5");
 	public static Color C_WALKWAY_BORDER = Color.BLACK;
 	public static Color C_ROOM = Color.DARK_GRAY;
-
+	public static Color C_ROOM_TEXT = Color.WHITE;
+	public static Color C_DOOR = Color.GRAY;
+	public static Font F_ROOM = new Font("Times New Roman", Font.BOLD, 15);
+	
 	private int row;
 	private int column;
 	private char initial;
@@ -54,16 +57,16 @@ public class BoardCell {
 		pcol = (this.getRow()) *ClueGame.REC_SIZE;
 		prow = (this.getCol()) *ClueGame.REC_SIZE;
 		if (nameOutput){
-			g.setFont(new Font("Times New Roman", Font.BOLD, 15));
-			g.setColor(Color.white);
+			g.setFont(F_ROOM);
+			g.setColor(C_ROOM_TEXT);
 			g.drawString(Board.getRoom(this.getInitial()), prow, pcol);
 		}
 		if(this.isDoorway()){
-			g.setColor(Color.black);
+			g.setColor(C_DOOR);
 			if(this.getDoorDirection() == DoorDirection.DOWN)
-				g.fillRect(prow, pcol + ClueGame.REC_SIZE *3/4 + 1, ClueGame.REC_SIZE, ClueGame.REC_SIZE/4);
+				g.fillRect(prow, pcol + ClueGame.REC_SIZE * 3/4 + 1, ClueGame.REC_SIZE, ClueGame.REC_SIZE/4);
 			else if (this.getDoorDirection() == DoorDirection.UP)
-				g.fillRect(prow, pcol - ClueGame.REC_SIZE * (3/4) + 1, ClueGame.REC_SIZE, ClueGame.REC_SIZE/4);
+				g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE/4);
 			else if (this.getDoorDirection() == DoorDirection.RIGHT){
 				prow = prow+ClueGame.REC_SIZE*3/4+1; //java was being rude about me putting it in the next line for some reason
 				g.fillRect(prow, pcol, ClueGame.REC_SIZE/4, ClueGame.REC_SIZE);
@@ -121,7 +124,7 @@ public class BoardCell {
 		else doorDirection = DoorDirection.DOWN;
 	}
 
-	//for texting purposes only
+	//for testing purposes only
 	@Override
 	public String toString() {
 		return "BoardCell [row=" + row + ", column=" + column + ", initial=" + initial + ", doorDirection="

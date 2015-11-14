@@ -13,8 +13,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-//import clueGUI.DisplayPanel;
-//import clueGUI.MyCards;
+import clueGUI.DisplayPanel;
+import clueGUI.MyCards;
 
 public class ClueGame extends JFrame {
 	// NAME is both the name of the window and the title
@@ -90,14 +90,14 @@ public class ClueGame extends JFrame {
 	
 	public static void main(String[] args) {
 		Board board = new Board();
-		//DisplayPanel display = new DisplayPanel();
-		//MyCards cards = new MyCards();
+		DisplayPanel display = new DisplayPanel();
+		MyCards cards = new MyCards();
 		board.initialize();
 		board.loadMiscConfigFiles("clueFiles/PeopleCards.txt", "clueFiles/WeaponsCards.txt");
 		ClueGame cgWindow = new ClueGame();
 		cgWindow.add(board, BorderLayout.CENTER);
-		//cgWindow.add(display, BorderLayout.SOUTH);
-		//cgWindow.add(cards, BorderLayout.EAST);
+		cgWindow.add(display, BorderLayout.SOUTH);
+		cgWindow.add(cards, BorderLayout.EAST);
 		cgWindow.setVisible(true);  //setting visible after makes it populate much quicker
 		cgWindow.initializeNotesDialog(board);
 	}

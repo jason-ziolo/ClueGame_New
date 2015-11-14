@@ -8,7 +8,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 
 public abstract class Player {
-	public static double SHADOW_SCALE = 0.1; // Note that anything greater than 0.15 will look odd, intended to be 0.1
+	public static double SHADOW_SCALE = 0.1; // Higher for greater shadow. default: 0.08
 	
 	private String playerName;
 	private int row;
