@@ -12,8 +12,6 @@ public abstract class Player {
 	private int row;
 	private int column;
 	private Color color;
-	private int pcol;
-	private int prow;
 
 	public Player(String playerName, int row, int column, String stringColor) {
 		super();
@@ -30,8 +28,8 @@ public abstract class Player {
 	}
 	
 	public void draw(Graphics g){
-		pcol = (this.getRow()) * ClueGame.REC_SIZE;  //if getCol is 1, pcolumn is 20.  2 = 40, 3 = 60
-		prow = (this.getColumn()) * ClueGame.REC_SIZE;
+		int pcol = (this.getRow()) * ClueGame.REC_SIZE;  //if getCol is 1, pcolumn is 20.  2 = 40, 3 = 60
+		int prow = (this.getColumn()) * ClueGame.REC_SIZE;
 		g.setColor(this.getColor());
 		g.fillOval(pcol, prow, ClueGame.REC_SIZE, ClueGame.REC_SIZE);
 		g.setColor(Color.BLACK);

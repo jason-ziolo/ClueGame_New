@@ -1,4 +1,4 @@
-package clueGame;
+package clueGUI;
 
 import java.awt.GridLayout;
 import java.util.ArrayList;
