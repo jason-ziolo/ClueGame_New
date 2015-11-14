@@ -7,7 +7,7 @@ import java.awt.Graphics;
 import javax.swing.JTextArea;
 
 public class BoardCell {
-	public static Color C_WALKWAY_FILL = Color.YELLOW;
+	public static Color C_WALKWAY_FILL = Color.decode("#FFF2E5");
 	public static Color C_WALKWAY_BORDER = Color.BLACK;
 	public static Color C_ROOM = Color.DARK_GRAY;
 
