@@ -1,8 +1,6 @@
 package clueGame;
 
 import java.awt.BorderLayout;
-import java.awt.MenuItem;
-import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -16,6 +14,7 @@ import javax.swing.JMenuItem;
 import clueGUI.DisplayPanel;
 import clueGUI.MyCards;
 
+@SuppressWarnings("serial")
 public class ClueGame extends JFrame {
 	// NAME is both the name of the window and the title
 	static public final String NAME = "Clue";

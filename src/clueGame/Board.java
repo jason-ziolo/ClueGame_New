@@ -5,7 +5,6 @@ import java.awt.Graphics;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -19,6 +18,7 @@ import javax.swing.JPanel;
 import clueGame.BoardCell;
 
 
+@SuppressWarnings("serial")
 public class Board extends JPanel {
 	private static int numRows;
 	private static int numColumns;

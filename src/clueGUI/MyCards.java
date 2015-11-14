@@ -3,13 +3,12 @@ package clueGUI;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
+@SuppressWarnings("serial")
 public class MyCards extends JPanel{
 	public MyCards(){
 		setBorder(new TitledBorder (new EtchedBorder(), "My Cards"));

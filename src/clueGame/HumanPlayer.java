@@ -1,8 +1,5 @@
 package clueGame;
 
-import java.awt.Color;
-import java.awt.Graphics;
-
 public class HumanPlayer extends Player {
 	private int pcol;
 	private int prow;
