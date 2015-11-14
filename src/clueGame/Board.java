@@ -134,39 +134,20 @@ public class Board extends JPanel {
 	}
 
 	public Card handleSuggestion(ArrayList<Player> players, Solution suggestion, String sPlayer, BoardCell clicked){
-		@SuppressWarnings("unchecked")
-		ArrayList<Player> playersCopy = (ArrayList<Player>) players.clone();
-		// We must rearrange the playersCopy so that the sPlayer is last, then remove them
-		boolean doneRotating = (playersCopy.get(playersCopy.size() - 1).getPlayerName() == sPlayer);
-		while(!doneRotating) {
-			Collections.rotate(playersCopy, -1);
-			doneRotating = (playersCopy.get(playersCopy.size() - 1).getPlayerName() == sPlayer);
+		int playerNum = 0;
+		for (int i = 0; i < players.size(); i++){
+			if (players.get(i).getPlayerName().equals(sPlayer))
+				playerNum = i;
 		}
-		playersCopy.remove(playersCopy.size() - 1);
-		ArrayList<Card> suggCards = new ArrayList<Card>();
-		for(Card i : allCards) {
-			if(i.getCardName().equals(suggestion.person) ||
-					i.getCardName().equals(suggestion.room) ||
-					i.getCardName().equals(suggestion.weapon)) {
-				suggCards.add(i);
+		
+		Card returnedCard = null;
+		for (int i = 1; i < players.size(); i++){
+			returnedCard = players.get((i + playerNum) % players.size()).disproveSuggestion(suggestion);
+			if (returnedCard != null){
+				seenCards.add(returnedCard);
+				return returnedCard;
 			}
 		}
-		ArrayList<Card> foundCards = new ArrayList<Card>();
-		for(Player i : playersCopy) {
-			for(Card j : i.myCards) {
-				if(suggCards.contains(j)) {
-					foundCards.add(j);
-				}
-			}
-			if(foundCards.size() != 0) {
-				Random rand = new Random();
-				rand.setSeed(System.nanoTime());
-				int randomInt = rand.nextInt(foundCards.size());
-				seenCards.add(foundCards.get(randomInt));
-				return foundCards.get(randomInt);
-			}
-		}
-		// Return null if no player has any of the suggested cards
 		return null;
 	}
 

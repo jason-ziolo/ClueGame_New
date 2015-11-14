@@ -243,14 +243,14 @@ public class GameActionTests {
 		
 		Card scarlet = board.getCardByName("Miss Scarlet");
 		Card knife = board.getCardByName("Knife");
-		Card lib = board.getCardByName("Bathroom");
+		Card bathroom = board.getCardByName("Bathroom");
 		
 		for(Player i : players) {
 			i.initializeCards();
 		}
 		
 		pA.addDealtCard(scarlet);
-		pC.addDealtCard(lib);
+		pC.addDealtCard(bathroom);
 		
 		for(Player i : players) {
 			if(i == pA || i == pC) {

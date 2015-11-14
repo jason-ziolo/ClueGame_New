@@ -41,7 +41,7 @@ public abstract class Player {
 	public Card disproveSuggestion(Solution suggestion) {
 		ArrayList<Card> match = new ArrayList<Card>();
 		for(Card i : myCards) {
-			if(i.getCardName() == suggestion.person || i.getCardName() == suggestion.room || i.getCardName() == suggestion.weapon) {
+			if(i.getCardName().equals(suggestion.person) || i.getCardName().equals(suggestion.room) || i.getCardName().equals(suggestion.weapon)) {
 				match.add(i);
 			}
 		}
