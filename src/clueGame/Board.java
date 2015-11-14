@@ -69,7 +69,6 @@ public class Board extends JPanel {
 	}
 
 	public void initialize() {
-
 		try {
 			loadRoomConfig();
 			loadBoardConfig();
@@ -92,13 +91,13 @@ public class Board extends JPanel {
 		}
 	}
 
-	public void loadPlayers() throws FileNotFoundException {
-
+	public void loadPlayers() throws FileNotFoundException {		
 		FileReader reader = new FileReader(peopleConfigFile);
-		int count = 0;
-
 		Scanner in = new Scanner(reader);
+
 		potentialPlayers = new ArrayList<Player>();
+		
+		int count = 0;
 		while (in.hasNextLine()){
 			String line = in.nextLine();
 			Scanner lineScanner = new Scanner(line);
