@@ -7,16 +7,20 @@ import java.awt.Graphics;
 import javax.swing.JTextArea;
 
 public class BoardCell {
+	public static Color C_WALKWAY_FILL = Color.decode("#FFF2E5");
+	public static Color C_WALKWAY_BORDER = Color.BLACK;
+	public static Color C_ROOM = Color.DARK_GRAY;
+
 	private int row;
 	private int column;
 	private char initial;
 	private boolean nameOutput = false;
-	
+
 	private int prow;
 	private int pcol;
-	
+
 	DoorDirection doorDirection;
-	
+
 	public BoardCell(int row, int column) {
 		super();
 		this.row = row;
@@ -31,24 +35,21 @@ public class BoardCell {
 		this.nameOutput = nameOutput;
 	}
 
-	public void draw(Graphics g){
-		
-		pcol = (this.getRow()) * ClueGame.REC_SIZE;  
-		prow = (this.getCol()) * ClueGame.REC_SIZE;
+	public void draw(Graphics g) {
+		pcol = (this.getRow()) *ClueGame.REC_SIZE;  
+		prow = (this.getCol()) *ClueGame.REC_SIZE;
 		if (this.getInitial() == 'W') {		
-			g.setColor(Color.decode("#74828F"));  		//grey-ish
-			//g.setColor(Color.CYAN);
-			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);		//draws and fills the box
-			g.setColor(Color.white);  											//draws the grid over the boxes
-			g.drawRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);
+			g.setColor(C_WALKWAY_FILL);										// walkway fill
+			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);	// draws and fills the box
+			g.setColor(C_WALKWAY_BORDER);  									// walkway border
+			g.drawRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);	// walkway border
 		}
 		else {
-			g.setColor(Color.decode("#C25B56")); 	//red-ish
-			//g.setColor(Color.BLACK);
-			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);		//draws and fills the box
+			g.setColor(C_ROOM); 									// room color
+			g.fillRect(prow, pcol, ClueGame.REC_SIZE, ClueGame.REC_SIZE);	//draws and fills the box
 		}
 	}
-	
+
 	public void drawOver(Graphics g){
 		pcol = (this.getRow()) *ClueGame.REC_SIZE;
 		prow = (this.getCol()) *ClueGame.REC_SIZE;
@@ -71,27 +72,27 @@ public class BoardCell {
 				g.fillRect(prow, pcol + ClueGame.REC_SIZE * (3/4) + 1, ClueGame.REC_SIZE/4, ClueGame.REC_SIZE);
 		}
 	}
-	
+
 	public int getRow() {
 		return row;
 	}
-	
+
 	public int getCol() {
 		return column;
 	}
-	
+
 	public boolean isWalkway() {
 		return (initial == 'W');
 	}
-	
+
 	public boolean isRoom() {
 		return (initial != 'W' && initial != 'X');
 	}
-	
+
 	public boolean isDoorway() {
 		return (doorDirection != DoorDirection.NONE);
 	}
-	
+
 	public char getInitial() {
 		return initial;
 	}
@@ -99,19 +100,19 @@ public class BoardCell {
 	public DoorDirection getDoorDirection() {
 		return doorDirection;
 	}
-	
+
 	public void setInitial(char initial) {
 		this.initial = initial;
 	}
-	
+
 	public void setRow(int row) {
 		this.row = row;
 	}
-	
+
 	public void setColumn(int col) {
 		column = col;
 	}
-	
+
 	public void setDoorDirection(char direction) {
 		if (direction == 'L') doorDirection = DoorDirection.LEFT;
 		else if (direction == 'R') doorDirection = DoorDirection.RIGHT;
@@ -119,7 +120,7 @@ public class BoardCell {
 		else if (direction == 'N') doorDirection = DoorDirection.NONE;
 		else doorDirection = DoorDirection.DOWN;
 	}
-	
+
 	//for texting purposes only
 	@Override
 	public String toString() {
