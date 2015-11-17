@@ -1,5 +1,6 @@
 package clueGame;
 
+@SuppressWarnings("serial")
 public class BadConfigFormatException extends Exception  {
 	// Constructor with message passed in
 	public BadConfigFormatException(String message) {
