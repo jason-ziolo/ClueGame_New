@@ -62,6 +62,7 @@ public class DetectiveNotesDialog extends JDialog {
 		TitledBorder panelTitle = new TitledBorder(new EtchedBorder(), title);
 		panel.setBorder(panelTitle);
 		JComboBox<String> popup = new JComboBox<String>();
+		popup.addItem("?");
 		for(int i = 0; i < options.size(); i++) {
 			popup.addItem(options.get(i));
 		}

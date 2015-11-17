@@ -21,8 +21,8 @@ public class ClueGame extends JFrame {
 	// NAME is both the name of the window and the title
 	static public final String NAME = "Clue";
 	// Expected dimensions of 700 x 700.
-	static public final int SIZE = 700;
-	static public final int WINDOW_PADDING = 180;
+	static public final int SIZE = 600;
+	static public final int WINDOW_PADDING = 200;
 	private static int recSize; // This will be equal to the size divided by the number of rows
 	
 	private JDialog notesDialog;
