@@ -7,8 +7,6 @@ import java.util.Set;
 
 public class ComputerPlayer extends Player {
 	private char lastRoom;
-	private int pcol;
-	private int prow;
 	
 	public ComputerPlayer(String playerName, int row, int column, String color) {
 		super(playerName, row, column, color);
@@ -131,21 +129,6 @@ public class ComputerPlayer extends Player {
 		
 	}
 	
-	//Private function only called by makeAccusation
-	private void checkPossibility(Set<String> possibilities, Card card){
-		boolean remove = false;		//Boolean set to true if the computer knows the card has been seen
-		
-		for (String name : possibilities){			//Check all possibilities
-			if (name.equals(card.getCardName())){		//If the card checked is a possible room...
-				remove = true;							//Set this true so the room is removed as a possibility
-			}
-		}
-		if (remove){
-			remove = false;
-			possibilities.remove(card.getCardName());	//Remove the room as a possible accusation room
-		}
-	}
-	
 	public Solution makeSuggestion(Board board, BoardCell location) {
 		// Every suggestion is made up of a room, a person, and a weapon
 		String room, person, weapon = "";
@@ -193,6 +176,17 @@ public class ComputerPlayer extends Player {
 		return new Solution(person, room, weapon);
 	}
 
+	public void doTurn(int roll, Board board) {
+		Set<Card> seenCards = board.getSeenCards();
+		ArrayList<Card> allCards = board.getCards();
+		if(this.willAccuse(seenCards, allCards)) {
+			Solution accuse = this.makeAccusation(seenCards, allCards);
+			boolean correct = board.checkAccusation(accuse);
+			// in progress
+		}
+		
+	}
+	
 	public char getLastRoom() {
 		return lastRoom;
 	}
