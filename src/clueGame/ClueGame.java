@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import clueGUI.DetectiveNotesDialog;
 import clueGUI.DisplayPanel;
@@ -94,15 +95,23 @@ public class ClueGame extends JFrame {
 
 	public static void main(String[] args) {
 		Board board = new Board();
-		DisplayPanel display = new DisplayPanel();
-		MyCards cards = new MyCards();
+		DisplayPanel display = new DisplayPanel();		
 		board.initialize();
+		board.selectAnswer();
+		board.dealCards(board.getPotentialPlayers());
+		MyCards cards = new MyCards(board.getPotentialPlayers().get(0));
 		recSize = SIZE / Board.getNumRows();
 		ClueGame cgWindow = new ClueGame();
 		cgWindow.add(board, BorderLayout.CENTER);
 		cgWindow.add(display, BorderLayout.SOUTH);
 		cgWindow.add(cards, BorderLayout.EAST);
+		
+		JOptionPane firstDisplay = new JOptionPane("You are " + board.getPotentialPlayers().get(0).getPlayerName() + ". Press OK to continue.");
+		JDialog information = firstDisplay.createDialog(cgWindow, "Welcome to Clue");
+		information.show();
 		cgWindow.setVisible(true);  //setting visible after makes it populate much quicker
 		cgWindow.initializeNotesDialog(board);
+		
+		// Main Board Logic
 	}
 }
