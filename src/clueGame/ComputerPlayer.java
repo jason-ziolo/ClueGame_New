@@ -69,69 +69,58 @@ public class ComputerPlayer extends Player {
 		return null;
 	}
 	
-	public Solution makeAccusation(Set<Card> seenCards, ArrayList<Card> allCards){
-		
-		/* A check to see how many of each type of card has been seen. Not needed here, should be needed to get into the makeAccusation function
+	public boolean willAccuse(Set<Card> seenCards, ArrayList<Card> allCards) {
 		int roomNum = 0;
 		int personNum = 0;
 		int weaponNum = 0;
-		for (Card knownCards : computerSeenCards){
-			if (knownCards.getCardType() == CardType.ROOM){
+		Set<Card> allSeenCards = seenCards;	// The actual number of cards seen is the cards seen by all players
+		allSeenCards.addAll(myCards);	// added to the cards held by the computer player
+		for(Card i : allCards) {
+			if (i.getCardType() == CardType.ROOM)
 				roomNum++;
-			} else if (knownCards.getCardType() == CardType.PERSON){
+			else if (i.getCardType() == CardType.PERSON)
 				personNum++;
-			} else if (knownCards.getCardType() == CardType.WEAPON){
+			else if (i.getCardType() == CardType.WEAPON)
 				weaponNum++;
-			}
+		}
+		for (Card i : allSeenCards) {
+			if (i.getCardType() == CardType.ROOM)
+				roomNum--;
+			else if (i.getCardType() == CardType.PERSON)
+				personNum--;
+			else if (i.getCardType() == CardType.WEAPON)
+				weaponNum--;
 		}
 		// If there is only 1 unknown person, weapon, and room; make an accusation
-		//if (roomNum == rooms.size() - 1 && personNum == people.size() - 1 && weaponNum == weapons.size() - 1){
-		*/
+		if (roomNum == 1 && personNum == 1 && weaponNum == 1) {
+			return true;
+		}
+		return false;
+	}
 	
+	// This function is only called when we are sure that we can make an accusation
+	public Solution makeAccusation(Set<Card> seenCards, ArrayList<Card> allCards) {
 		String person = " ";
 		String room = " ";
 		String weapon = " ";
-		Set<Card> computerSeenCards = seenCards;	// Makes a new set of card representing what this computer has seen
-
-		// Add the computers held cards to their seen cards
-		computerSeenCards.addAll(myCards);
+		Set<Card> allSeenCards = seenCards;	// The actual number of cards seen is the cards seen by all players
+		allSeenCards.addAll(myCards);	// added to the cards held by the computer player
 		
-		// Sets for all possible Rooms, Weapons, and People 
-		Set<String> possibilitiesRoom = new HashSet<String>();
-		Set<String> possibilitiesWeapon = new HashSet<String>();
-		Set<String> possibilitiesPerson = new HashSet<String>();
-
-		// Populates the Sets that were just made with cards from the main deck
-		for (Card cards : allCards){
-			if (cards.getCardType().equals(CardType.ROOM))
-				possibilitiesRoom.add(cards.getCardName());
-			else if (cards.getCardType().equals(CardType.WEAPON))
-				possibilitiesWeapon.add(cards.getCardName());
-			else if (cards.getCardType().equals(CardType.PERSON))
-				possibilitiesPerson.add(cards.getCardName());
-		}
-
-		for (Card knownCards : computerSeenCards){
-			if (knownCards.getCardType() == CardType.ROOM){			//If the card type is a room
-				checkPossibility(possibilitiesWeapon, knownCards);
-			} else if (knownCards.getCardType() == CardType.PERSON){	//Same thing as the room check, but for people
-				checkPossibility(possibilitiesWeapon, knownCards);
-			} else if (knownCards.getCardType() == CardType.WEAPON){	// Same thing as the two checks above
-				checkPossibility(possibilitiesWeapon, knownCards);
-			}
-		}
+		Set<Card> guessCards = new HashSet<Card>(); 
+		guessCards.addAll(allCards);
 		
-		// At this point, there should only be one person, room, and weapon in each respective set.
-		for (String Person : possibilitiesPerson){
-			person = Person;
+		// We know by calling this function that we can eliminate all possibilities except one for
+		// each category of person, weapon, room.
+		guessCards.removeAll(seenCards);
+		guessCards.removeAll(myCards);
+		for(Card i : guessCards) {
+			if(i.getCardType() == CardType.PERSON)
+				person = i.getCardName();
+			else if(i.getCardType() == CardType.ROOM)
+				room = i.getCardName();
+			else if(i.getCardType() == CardType.WEAPON)
+				weapon = i.getCardName();
 		}
-		for (String Room : possibilitiesRoom){
-			room = Room;
-		}
-		for (String weaponsH : possibilitiesWeapon){
-			weapon = weaponsH;
-		}
-		// Make a new accusation with the only possible people, room, and weapon
 		Solution accusation = new Solution(person, room, weapon);
 		return accusation;
 		
