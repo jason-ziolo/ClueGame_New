@@ -11,10 +11,12 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import java.awt.Graphics;
 
 import clueGUI.DetectiveNotesDialog;
 import clueGUI.DisplayPanel;
 import clueGUI.MyCards;
+import clueGame.Player;
 
 @SuppressWarnings("serial")
 public class ClueGame extends JFrame {
@@ -24,6 +26,9 @@ public class ClueGame extends JFrame {
 	static public final int SIZE = 600;
 	static public final int WINDOW_PADDING = 200;
 	private static int recSize; // This will be equal to the size divided by the number of rows
+	static boolean gameDone = false;
+	private static boolean humanMustFinish = true;
+	private static Player currentPlayer = null;
 	
 	private JDialog notesDialog;
 	
@@ -108,10 +113,32 @@ public class ClueGame extends JFrame {
 		
 		JOptionPane firstDisplay = new JOptionPane("You are " + board.getPotentialPlayers().get(0).getPlayerName() + ". Press OK to continue.");
 		JDialog information = firstDisplay.createDialog(cgWindow, "Welcome to Clue");
-		information.show();
+		//information.show();
 		cgWindow.setVisible(true);  //setting visible after makes it populate much quicker
 		cgWindow.initializeNotesDialog(board);
 		
 		// Main Board Logic
+		int roll = board.rollDie();
+		while (!gameDone){
+			roll = board.rollDie();
+			humanMustFinish = true;
+			for (Player players: board.getPotentialPlayers()){
+				currentPlayer = players;
+				display.updateDisplay(players.getPlayerName(), roll);
+				players.doTurn(board, roll);
+				while (humanMustFinish){}
+				board.setHighlight(false);	//This is here so when the board is resized, the valid squares still come up cyan
+				//DisplayPanel.nextTurnPressed = false;
+				//while (!DisplayPanel.nextTurnPressed){}
+			}
+		}
+	}
+
+	public static void setHumanMustFinish(boolean setter) {
+		humanMustFinish = setter;
+	}
+	
+	public static Player getCurrentPlayer(){
+		return currentPlayer;
 	}
 }

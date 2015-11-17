@@ -14,6 +14,11 @@ public class ComputerPlayer extends Player {
 		super(playerName, row, column, color);
 	}
 	
+	/*public void doTurn(Board board, int roll){
+		board.calcTargets(row, column, roll);
+		move(pickLocation(board.getTargets()));
+	}*/
+	
 	public BoardCell pickLocation(Set<BoardCell> targets) {
 		//check against recently visited.  
 		//if room matches recently visited, run random choice instead of automatic room choice

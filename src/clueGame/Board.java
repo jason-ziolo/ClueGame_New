@@ -1,7 +1,10 @@
 package clueGame;
 
 
+import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -13,15 +16,18 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import clueGUI.DisplayPanel;
 import clueGame.BoardCell;
 
 
 @SuppressWarnings("serial")
-public class Board extends JPanel {
+public class Board extends JPanel implements MouseListener {
 	private static int numRows;
 	private static int numColumns;
+	private boolean highlight = false; // Made so the board knows weather or not to highlight squares
 
 	public static final int BOARD_SIZE = 50;
 
@@ -30,6 +36,7 @@ public class Board extends JPanel {
 	private Map<BoardCell, LinkedList<BoardCell>> adjMatrix;
 	private Set<BoardCell> targets;
 	private Set<BoardCell> visited;
+	private BoardCell clickedCell;
 
 	private String boardConfigFile;
 	private String roomConfigFile;
@@ -66,6 +73,7 @@ public class Board extends JPanel {
 	public Board() {
 		// Use default filenames
 		this("clueFiles/clueLayout.csv", "clueFiles/clueLayoutLegend.txt");
+		addMouseListener(this);
 	}
 
 	public void initialize() {
@@ -367,6 +375,10 @@ public class Board extends JPanel {
 		}
 	}
 
+	public int rollDie(){
+		Random rand = new Random();
+		return rand.nextInt(6) + 1;
+	}
 	public void dealCards(ArrayList<Player> players) {
 		// Note: There are no requirements for dealing, other than that each player
 		// gets a similar number of cards.
@@ -464,6 +476,11 @@ public class Board extends JPanel {
 				board[i][j].draw(g);	// Will draw the square itself
 			}
 		}
+		if (highlight){
+			for (BoardCell cells : targets){
+				cells.draw(g, Color.cyan);
+			}
+		}
 		for (int i=0; i< numRows; i++) {
 			for (int j=0; j< numColumns; j++) {
 				board[i][j].drawOver(g);	// Will draw labels or doorways
@@ -472,6 +489,15 @@ public class Board extends JPanel {
 		for (Player i: potentialPlayers){
 			i.draw(g);						// Will draw the players on the grid
 		}
+	}
+	
+	public void highLightTargets(){
+		highlight = true;
+		repaint();
+	}
+	
+	public void setHighlight(boolean highlight){
+		this.highlight = highlight;
 	}
 
 	//all methods below intended for testing purposes only	
@@ -502,6 +528,38 @@ public class Board extends JPanel {
 	
 	public void addSeenCard(Card card) {
 		seenCards.add(card);
+	}
+	
+	public void mouseClicked(MouseEvent e){}
+	public void mouseEntered(MouseEvent e){}
+	public void mouseExited(MouseEvent e){}
+	public void mouseReleased(MouseEvent e){}
+	public void mousePressed(MouseEvent e){
+		BoardCell clickedCell = null;
+		for (int i = 0; i < numRows; i++){
+			for (int j = 0; j < numColumns; j++){
+				if (board[i][j].containsClick(e.getX(), e.getY())){
+					clickedCell = board[i][j];
+					break;
+				}
+			}
+		}
+		if (clickedCell != null){
+			if (targets.contains(clickedCell)){
+				this.clickedCell = clickedCell;
+				ClueGame.getCurrentPlayer().move(clickedCell);
+				ClueGame.setHumanMustFinish(false);
+			} else {
+				String message = "Invalid move! Please select a cyan box";
+				JOptionPane.showMessageDialog(null, message);
+			}
+		} else { 
+			System.out.println("How did you break the game?");
+		}
+	}
+	
+	public BoardCell getClickedCell(){
+		return clickedCell;
 	}
 	
 	// For testing only

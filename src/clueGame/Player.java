@@ -9,8 +9,8 @@ import java.awt.Graphics;
 
 public abstract class Player {
 	private String playerName;
-	private int row;
-	private int column;
+	protected int row;
+	protected int column;
 	private Color color;
 
 	public Player(String playerName, int row, int column, String stringColor) {
@@ -54,8 +54,9 @@ public abstract class Player {
 		return null;
 	}
 	
-	public ArrayList<Player> queryPlayersForDisproveSuggestion(){
-		return null;
+	public void move(BoardCell cell){
+		row = cell.getCol();
+		column = cell.getRow();
 	}
 	
 	public void addDealtCard(Card in) {
@@ -86,5 +87,10 @@ public abstract class Player {
 	@Override
 	public String toString() {
 		return "Player [playerName=" + playerName + ", row=" + row + ", column=" + column + ", color=" + color + "]";
+	}
+
+	public void doTurn(Board board, int roll) {
+		// TODO Auto-generated method stub
+		
 	}
 }

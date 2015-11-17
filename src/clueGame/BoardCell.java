@@ -3,6 +3,8 @@ package clueGame;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Rectangle;
 
 public class BoardCell {
 	public static Color C_WALKWAY_FILL = Color.decode("#FFF2E5");
@@ -52,6 +54,22 @@ public class BoardCell {
 			g.fillRect(prow, pcol, recSize, recSize);	//draws and fills the box
 		}
 	}
+	
+	public void draw(Graphics g, Color color) {
+		int recSize = ClueGame.getRecSize();
+		pcol = this.getRow() * recSize;  
+		prow = this.getCol() * recSize;
+		if (this.getInitial() == 'W') {		
+			g.setColor(color);										// walkway fill
+			g.fillRect(prow, pcol, recSize, recSize);	// draws and fills the box
+			g.setColor(C_WALKWAY_BORDER);  									// walkway border
+			g.drawRect(prow, pcol, recSize, recSize);	// walkway border
+		}
+		else {
+			g.setColor(color); 									// room color
+			g.fillRect(prow, pcol, recSize, recSize);	//draws and fills the box
+		}
+	}
 
 	public void drawOver(Graphics g){
 		int recSize = ClueGame.getRecSize();
@@ -77,6 +95,13 @@ public class BoardCell {
 
 	public int getRow() {
 		return row;
+	}
+	
+	public boolean containsClick(int x, int y){
+		Rectangle rect = new Rectangle(column * ClueGame.getRecSize(), row * ClueGame.getRecSize(), ClueGame.getRecSize(), ClueGame.getRecSize());
+		if (rect.contains(new Point(x, y)))
+			return true;
+		return false;
 	}
 
 	public int getCol() {
