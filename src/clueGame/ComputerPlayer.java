@@ -171,6 +171,17 @@ public class ComputerPlayer extends Player {
 		return new Solution(person, room, weapon);
 	}
 
+	public void doTurn(int roll, Board board) {
+		Set<Card> seenCards = board.getSeenCards();
+		ArrayList<Card> allCards = board.getCards();
+		if(this.willAccuse(seenCards, allCards)) {
+			Solution accuse = this.makeAccusation(seenCards, allCards);
+			boolean correct = board.checkAccusation(accuse);
+			// in progress
+		}
+		
+	}
+	
 	public char getLastRoom() {
 		return lastRoom;
 	}
