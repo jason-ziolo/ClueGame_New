@@ -324,7 +324,7 @@ public class Board extends JPanel implements MouseListener {
 		}
 	}
 
-	public void calcTargets(int row, int column, int pathLength) {
+	public void calcTargets(int column, int row, int pathLength) {
 		// Clear values from last targets calculation
 		targets.clear();
 		visited.clear();

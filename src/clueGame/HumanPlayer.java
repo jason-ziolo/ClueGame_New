@@ -9,7 +9,7 @@ public class HumanPlayer extends Player {
 	
 	@Override
 	public void doTurn(Board board, int roll){
-		board.calcTargets(row, column, roll);
+		board.calcTargets(column, row, roll);
 		board.highLightTargets();
 	}
 
