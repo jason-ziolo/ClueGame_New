@@ -488,12 +488,12 @@ public class Board extends JPanel implements MouseListener {
 	}
 	
 	public void highLightTargets(){
-		highlight = true;
-		repaint();
+		setHighlight(true);
 	}
 	
 	public void setHighlight(boolean highlight){
 		this.highlight = highlight;
+		repaint();
 	}
 
 	//all methods below intended for testing purposes only	
@@ -531,6 +531,9 @@ public class Board extends JPanel implements MouseListener {
 	public void mouseExited(MouseEvent e){}
 	public void mouseReleased(MouseEvent e){}
 	public void mousePressed(MouseEvent e){
+		if(!ClueGame.currPlayerIsHuman() || !ClueGame.playerMayMove()) {
+			return;
+		}
 		BoardCell clickedCell = null;
 		for (int i = 0; i < numRows; i++){
 			for (int j = 0; j < numColumns; j++){
@@ -544,23 +547,22 @@ public class Board extends JPanel implements MouseListener {
 			if (targets.contains(clickedCell)) {
 				this.clickedCell = clickedCell;
 				ClueGame.getCurrentPlayer().move(clickedCell);
+				this.setHighlight(false);
+				repaint(); // After moving, update the board
+				ClueGame.endPlayerTurn(); // Besides showing the suggestion prompt, the
+				// player's turn is over
 			} else {
 				String message = "Invalid move! Please select a cyan box";
 				JOptionPane.showMessageDialog(null, message);
 			}
-		} else { 
-			System.out.println("How did you break the game?");
 		}
-	}
-	
-	public BoardCell getClickedCell(){
-		return clickedCell;
 	}
 	
 	// For testing only
 	public void removeSeenCard(Card card){
 		seenCards.remove(card);
 	}
+	
 	// For testing only
 	public void clearSeenCards(){
 		seenCards.clear();

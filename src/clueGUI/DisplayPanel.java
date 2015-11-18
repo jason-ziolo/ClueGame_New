@@ -38,7 +38,6 @@ public class DisplayPanel extends JPanel {
 	public void updateDisplay(String player, int roll) {
 		die.setDie(roll);
 		playerDisplay.setPlayer(player);
-		
 	}
 	
 	public void updateGuess(String theGuess, String theResult) {

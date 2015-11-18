@@ -13,17 +13,22 @@ public class ComputerPlayer extends Player {
 	}
 	
 	public void doTurn(Board board, int roll) {
+		/* For part II, WIP
 		if(willAccuse(board.getSeenCards(), board.getCards())) {
 			Solution acc = makeAccusation(board.getSeenCards(), board.getCards());
 			ClueGame.playerAccusation(this.getPlayerName(), acc);
-		}
+			ClueGame.computerPlayerFinished();
+		} */
 		board.calcTargets(row, column, roll);
 		BoardCell location = pickLocation(board.getTargets());
 		move(location);
+		/* Coming soon!
 		if(location.isRoom()) {
 			Solution sugg = makeSuggestion(board, location);
 			ClueGame.playerSuggestion(this.getPlayerName(), sugg, location);
 		}
+		*/
+		ClueGame.endPlayerTurn();
 	}
 	
 	public BoardCell pickLocation(Set<BoardCell> targets) {

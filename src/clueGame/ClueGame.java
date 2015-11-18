@@ -31,6 +31,7 @@ public class ClueGame extends JFrame {
 	private static int recSize; // This will be equal to the size divided by the number of rows
 	private static Board board;
 	private static boolean waitingForTurn = true;
+	private static boolean playerMayMove = false;
 	private static ArrayList<Player> players = null;
 	private static Player currPlayer = null;
 	private static int currPlayerIndex = 0;
@@ -148,6 +149,7 @@ public class ClueGame extends JFrame {
 		}
 		else {
 			waitingForTurn = true;
+			playerMayMove = true; // important for human player only
 			int nextPlayerIndex = (currPlayerIndex + 1) % players.size();
 			currPlayer = players.get(nextPlayerIndex);
 			currDiceRoll = rollDie();
@@ -156,23 +158,33 @@ public class ClueGame extends JFrame {
 		}
 	}
 	
+	/* Part II WIP
 	public static void playerAccusation(String playerName, Solution accusation) {
 		boolean gameWon = board.checkAccusation(accusation);
 		if(gameWon) {
 			String message = playerName + " has found the solution! The game is over.";
 			JOptionPane.showMessageDialog(null, message);
 		}
-		else {
-			waitingForTurn = false;
-		}
 	}
 
 	public static void playerSuggestion(String sPlayer, Solution suggestion, BoardCell clicked) {
 		Card result = board.handleSuggestion(players, suggestion, sPlayer, clicked);
 		display.updateGuess(suggestion.toString(), result.getCardName());
+	} */
+	
+	public static void endPlayerTurn() {
+		playerMayMove = false;
 		waitingForTurn = false;
 	}
 	
+	public static boolean playerMayMove() {
+		return playerMayMove;
+	}
+	
+	public static boolean currPlayerIsHuman() {
+		return(currPlayer.equals(players.get(0)));
+	}
+
 	public static Player getCurrentPlayer() {
 		return currPlayer;	// For when the human player clicks the board
 	}
