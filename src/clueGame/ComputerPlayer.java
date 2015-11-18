@@ -12,10 +12,14 @@ public class ComputerPlayer extends Player {
 		super(playerName, row, column, color);
 	}
 	
-	/*public void doTurn(Board board, int roll){
+	public void doTurn(Board board, int roll) {
+		if(willAccuse(board.getSeenCards(), board.getCards())) {
+			Solution acc = makeAccusation(board.getSeenCards(), board.getCards());
+			ClueGame.playerAccusation(this.getPlayerName(), acc);
+		}
 		board.calcTargets(row, column, roll);
 		move(pickLocation(board.getTargets()));
-	}*/
+	}
 	
 	public BoardCell pickLocation(Set<BoardCell> targets) {
 		//check against recently visited.  
@@ -174,17 +178,6 @@ public class ComputerPlayer extends Player {
 		person = randomPersonCard.getCardName();
 		weapon = randomWeaponCard.getCardName();
 		return new Solution(person, room, weapon);
-	}
-
-	public void doTurn(int roll, Board board) {
-		Set<Card> seenCards = board.getSeenCards();
-		ArrayList<Card> allCards = board.getCards();
-		if(this.willAccuse(seenCards, allCards)) {
-			Solution accuse = this.makeAccusation(seenCards, allCards);
-			boolean correct = board.checkAccusation(accuse);
-			// in progress
-		}
-		
 	}
 	
 	public char getLastRoom() {

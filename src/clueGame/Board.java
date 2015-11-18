@@ -375,10 +375,6 @@ public class Board extends JPanel implements MouseListener {
 		}
 	}
 
-	public int rollDie(){
-		Random rand = new Random();
-		return rand.nextInt(6) + 1;
-	}
 	public void dealCards(ArrayList<Player> players) {
 		// Note: There are no requirements for dealing, other than that each player
 		// gets a similar number of cards.
@@ -548,7 +544,6 @@ public class Board extends JPanel implements MouseListener {
 			if (targets.contains(clickedCell)){
 				this.clickedCell = clickedCell;
 				ClueGame.getCurrentPlayer().move(clickedCell);
-				ClueGame.setHumanMustFinish(false);
 			} else {
 				String message = "Invalid move! Please select a cyan box";
 				JOptionPane.showMessageDialog(null, message);

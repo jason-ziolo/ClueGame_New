@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -11,6 +12,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import java.awt.Graphics;
 
 import clueGUI.DetectiveNotesDialog;
@@ -26,9 +29,13 @@ public class ClueGame extends JFrame {
 	static public final int SIZE = 600;
 	static public final int WINDOW_PADDING = 200;
 	private static int recSize; // This will be equal to the size divided by the number of rows
-	static boolean gameDone = false;
-	private static boolean humanMustFinish = true;
-	private static Player currentPlayer = null;
+	private static Board board;
+	private static boolean waitingForTurn = true;
+	private static ArrayList<Player> players = null;
+	private static Player currPlayer = null;
+	private static int currPlayerIndex = 0;
+	private static int currDiceRoll = 0;
+	private static DisplayPanel display;
 	
 	private JDialog notesDialog;
 	
@@ -99,46 +106,63 @@ public class ClueGame extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		Board board = new Board();
-		DisplayPanel display = new DisplayPanel();		
+		board = new Board();
+		display = new DisplayPanel();		
 		board.initialize();
 		board.selectAnswer();
-		board.dealCards(board.getPotentialPlayers());
-		MyCards cards = new MyCards(board.getPotentialPlayers().get(0));
+		players = board.getPotentialPlayers(); // for now
+		board.dealCards(players);
+		Player humanPlayer = players.get(0);
+		MyCards cards = new MyCards(humanPlayer);
 		recSize = SIZE / Board.getNumRows();
 		ClueGame cgWindow = new ClueGame();
 		cgWindow.add(board, BorderLayout.CENTER);
 		cgWindow.add(display, BorderLayout.SOUTH);
 		cgWindow.add(cards, BorderLayout.EAST);
 		
-		JOptionPane firstDisplay = new JOptionPane("You are " + board.getPotentialPlayers().get(0).getPlayerName() + ". Press OK to continue.");
+		// Splash screen
+		JOptionPane firstDisplay = new JOptionPane("You are " + humanPlayer.getPlayerName() + ". Press OK to continue.");
 		JDialog information = firstDisplay.createDialog(cgWindow, "Welcome to Clue");
-		//information.show();
+		information.setVisible(true);
 		cgWindow.setVisible(true);  //setting visible after makes it populate much quicker
 		cgWindow.initializeNotesDialog(board);
 		
 		// Main Board Logic
-		int roll = board.rollDie();
-		while (!gameDone){
-			roll = board.rollDie();
-			humanMustFinish = true;
-			for (Player players: board.getPotentialPlayers()){
-				currentPlayer = players;
-				display.updateDisplay(players.getPlayerName(), roll);
-				players.doTurn(board, roll);
-				while (humanMustFinish){}
-				board.setHighlight(false);	//This is here so when the board is resized, the valid squares still come up cyan
-				//DisplayPanel.nextTurnPressed = false;
-				//while (!DisplayPanel.nextTurnPressed){}
-			}
+		currPlayerIndex = players.size() - 1;
+		currPlayer = players.get(currPlayerIndex);
+	}
+	
+	public static int rollDie() {
+		Random rand = new Random();
+		return rand.nextInt(6) + 1;
+	}
+	
+	public static void nextPlayerBtnPress() {
+		if(waitingForTurn) {
+			System.out.println("Finish your turn!"); //TODO
+			return;
+		}
+		else {
+			waitingForTurn = true;
+			int nextPlayerIndex = (currPlayerIndex + 1) % players.size();
+			currPlayer = players.get(nextPlayerIndex);
+			currDiceRoll = rollDie();
+			display.updateDisplay(currPlayer.getPlayerName(), currDiceRoll);
+			currPlayer.doTurn(board, currDiceRoll);
 		}
 	}
-
-	public static void setHumanMustFinish(boolean setter) {
-		humanMustFinish = setter;
+	
+	public static void playerAccusation(String playerName, Solution accusation) {
+		boolean gameWon = board.checkAccusation(accusation);
+		if(gameWon) {
+			System.out.println("Game is won"); // TODO
+		}
+		else {
+			waitingForTurn = false;
+		}
 	}
 	
 	public static Player getCurrentPlayer(){
-		return currentPlayer;
+		return currPlayer;
 	}
 }

@@ -13,6 +13,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
+import clueGame.ClueGame;
+
 @SuppressWarnings("serial")
 public class DisplayPanel extends JPanel {
 	public JButton nextPlayerButton;
@@ -68,9 +70,8 @@ public class DisplayPanel extends JPanel {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == accusationButton)
 				System.out.println("Accused!");
-			else{
-				nextTurnPressed = true;
-				System.out.println("Next Player");
+			else {
+				ClueGame.nextPlayerBtnPress();
 			}
 		}
 	}
