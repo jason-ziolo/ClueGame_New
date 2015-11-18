@@ -1,933 +1,829 @@
-commit 04fd0b3af00eecdf27ff9a64e690dcdbbdc12641
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Fri Nov 6 17:03:51 2015 -0700
-
-    moved all clue files to separate folder, deleted old logs
-
-commit 83cea20d0753c704b14736015198d8c908446bb0
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Fri Nov 6 16:52:17 2015 -0700
-
-    minor syntax fixing
-
-commit 95a37a4ca5092fa9d0102b8835895bbdb3bfa47e
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Fri Nov 6 09:15:28 2015 -0700
-
-    board layout updated one last time.  Its probably finally ready
-
-commit 3ef2f58a2a74877c46120a4f638fe5625399f596
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Thu Nov 5 23:13:02 2015 -0700
-
-    git logs added
-
-commit 85054fca5f8866b18c595ecfd731f096efbbc33e
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Thu Nov 5 23:11:57 2015 -0700
-
-    board displaying correctly along with players.  Should be good to go for Board GUI assignment
-
-commit 41b21c81b64124ffb545414700e72080d49f2afc
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Thu Nov 5 22:25:42 2015 -0700
-
-    board drawn totes right
-
-commit fb19886a10f660c14b16e446e1b382bcd9f68acf
-Merge: 67fe3fb 9d81fd5
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Nov 5 12:16:59 2015 -0700
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit 67fe3fbcbc88260f3c6e589cb4c036f6f30e40e1
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Nov 5 12:16:49 2015 -0700
-
-    Reverted board constructor to not use initialize(), updated detective notes dialog to read board info, file menu now functional
-
-commit 9d81fd5242d94f790fbbc26955cfc7902b43b48f
-Merge: ca9264f 92a1989
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Nov 5 11:55:05 2015 -0700
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit ca9264f2568baddc6bf7bb110d16125fa1b29ff1
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Nov 5 11:54:47 2015 -0700
-
-    names on the board working, working on door directions
-
-commit 92a1989ce50263a1ea7aac3ec5285530c30cb8eb
-Merge: 03e72ee 64229b0
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Nov 5 11:31:04 2015 -0700
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit 03e72eecda8bdbe142109f491fd37214f5074990
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Nov 5 11:30:52 2015 -0700
-
-    Barebones DetectiveNotesGUI
-
-commit 64229b0b3e4738152efc9f96f8923508c25e2672
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Nov 5 11:25:05 2015 -0700
-
-    board drawn correctly, need to add door directions and names
-
-commit 956a2661b5d1aa1dabffd00c24f9bc3b712549eb
-Merge: 7e33970 1cd0845
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Nov 3 13:58:47 2015 -0700
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit 7e3397062effa75e54d108e8d538e98da1febd59
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Nov 3 13:58:17 2015 -0700
-
-    DetectiveNotesGUI (actually added)
-
-commit 1cd0845242d846cf3b50ac3127655eaa1e8fbb1f
-Merge: 2dcea56 84d73e8
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Nov 3 12:57:16 2015 -0700
-
-    fixed conflicts.  DetectiveNotesGUI class not on github, probably forgot to 'add .'
-
-commit 2dcea566a44590f6835b83dd8064d735319820ee
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Nov 3 12:52:24 2015 -0700
-
-    board drawing.  Not resizing properly or writing room names
-
-commit 84d73e86289cc8aef457e4e7a1c638c69290360d
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Nov 3 12:22:40 2015 -0700
-
-    DetectiveNotesGUI WIP
-
-commit fff749c653e964c233b3e3f07f600002c82b95c7
-Merge: 127cd38 b20721d
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Nov 3 11:57:45 2015 -0700
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit 127cd3854d93220411f26a644871c86c6d8ee7a0
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Nov 3 11:57:32 2015 -0700
-
-    writing board work
-
-commit b20721d36203f428c325d26d030a51cdcac11edc
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Nov 3 11:50:09 2015 -0700
-
-    Board default constructor made a function of explicit constructor
-
-commit c83c17e08d2b20ffc1416b394185aef96be8b90d
-Merge: c0f224a 358016d
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Nov 3 11:42:09 2015 -0700
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit c0f224a840a620c19e48f0671d93e5459dac8260
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Nov 3 11:41:42 2015 -0700
-
-    Finished ClueGame JFrame skeleton w/ menubar
-
-commit 358016d022038bc141871cc708ba8adc5f048474
-Merge: b3e314e 1bd5249
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Nov 3 11:34:02 2015 -0700
-
-    merge conflicts fixed
-
-commit b3e314e1e832396f1cd777a182e4ef13951f49d5
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Nov 3 11:32:41 2015 -0700
-
-    Board extends Jpanel, board has paintComponent method, boardcell has draw method
-
-commit 1bd524935eee10a817c0bf9397b25ca1a26f71e9
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Nov 3 11:27:36 2015 -0700
-
-    same as last commit, but inside directory
-
-commit d04b086dcffa21d3a930d1a8c1518c1a45258d78
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 17:37:27 2015 -0600
-
-    little fixups
-
-commit b129e5342b87915cc2c79f2ac6d27e8651acf084
-Merge: e5abe4b 47977ad
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 17:34:54 2015 -0600
-
-    merge conflicts fixed
-
-commit 47977ad04a17003ed0306dd012ec7fa420d64d82
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 17:31:43 2015 -0600
-
-    Preparing for merge
-
-commit 1b2daf38f6ceb625285477c0604e7da784a06fb4
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 17:05:57 2015 -0600
-
-    fixed references to non-existant library card, all tests pass
-
-commit 4f2a74006f7096263546c69bad5298618c77dfd5
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 15:38:53 2015 -0600
-
-    disproveSuggestion functional, passed first two tests legitimatly
-
-commit 7a166f90656913f910d49229ffb4e7101e955f63
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 15:34:42 2015 -0600
-
-    wrote failing tests for disproveSuggestion
-
-commit ef387ad4d109ac2e18d35160aede053f0fd3c620
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 14:35:15 2015 -0600
-
-    Cut out non-working tests and the disproveSuggestion function. Began rewriting tests
-
-commit e5abe4bfe603bfe03b093cf16f35bf61cd1d6d99
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 14:04:33 2015 -0600
-
-    Finished example gui class
-
-commit ca57bc6f980fdce3658ee303e520fbc648874473
-Merge: f4886a8 8ced138
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 12:27:38 2015 -0600
-
-    fixed a 'merge conflict' in .gitignore (should figure out why it keeps changing)
-
-commit f4886a8f7831f803fe250726916507e581dd591e
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 29 12:26:36 2015 -0600
-
-    Add ControlGUI_Example, merged GITHUB_INFO to README
-
-commit 8ced138f0e862e592fd193c26b18223d8d65936d
-Merge: fccd364 a895d4c
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Thu Oct 29 00:01:46 2015 -0600
-
-    disproveSuggestion kinda working.
-
-commit fccd364857b83b59edc7855b0f27f17c4393ab66
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Wed Oct 28 23:26:47 2015 -0600
-
-    disprove fixes
-
-commit a895d4c96795188b38c1353cc1400b704030f0eb
+commit 85048ee4d6569b2fd0818776e6da726767653dbe
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Wed Oct 28 23:25:43 2015 -0600
+Date:   Tue Nov 17 20:50:02 2015 -0700
 
-    fixed infinite loop
+    calcTargets cleared up to be less confusing, for now. Tests fixed
 
-commit 1c86e11c8cf2626f8edd7252f33159fa0ec66605
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Wed Oct 28 23:20:49 2015 -0600
-
-    disprove suggestion issues
-
-commit c6dae5e3569205096763cdcebbc6c38c41cef4e3
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Wed Oct 28 22:38:40 2015 -0600
-
-    disprove suggestion failing tests written
-
-commit b84f4b16eccb53ed8b254caed4eeccd4b53f7b65
-Merge: eaf25d0 38ff6b2
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Wed Oct 28 22:02:59 2015 -0600
-
-    more disprove suggestion progress.  Weird bug in make suggestion with weapons not being added
-
-commit eaf25d0a83c8b43835ac6ec633ea38525c32433d
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Wed Oct 28 21:55:10 2015 -0600
-
-    progress on disprove suggestion
-
-commit 38ff6b2bcabcc21cb87686b217706783450add3c
-Merge: 3541c8b cfe3444
+commit a4b8732fe50b0bd664288a3d8fbea3f2e6ff71bc
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Wed Oct 28 20:55:45 2015 -0600
+Date:   Tue Nov 17 20:46:29 2015 -0700
 
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+    fixed an important bug with calcTargets (parameters misnamed)
 
-commit 3541c8bc6dd62e6ff4a028caf47c7d0253fe84a8
+commit 9eef7fd3b71706c45bf1484bd9d2bb54d38eda84
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Wed Oct 28 20:55:35 2015 -0600
+Date:   Tue Nov 17 20:12:43 2015 -0700
 
-    working test for makeSuggestion
+    finished player movement, working on player cycling
 
-commit cfe3444c6c002947667202d14ebe2a3237ba6f6b
-Merge: 91f9da6 5d545a7
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Wed Oct 28 20:39:09 2015 -0600
-
-    merge conflicts resolved
-
-commit 91f9da693389061275bb49f1efd63e8527ae4b01
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Wed Oct 28 20:38:24 2015 -0600
-
-    test picking location tests (3 total tests) passing
-
-commit 5d545a777ba816fe0e033a4c95aa3c53495a8430
-Merge: 18671c7 c11a1a8
+commit 27e963253d048736e11b8478e0e4163cec835893
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Wed Oct 28 19:53:43 2015 -0600
+Date:   Tue Nov 17 19:42:35 2015 -0700
 
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+    suggestion handling in ClueGame
 
-commit 18671c75b54efb1afd294733167ddb8989ee52cb
+commit a51766b18d67f5bda438273432cf80750aa7766a
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Wed Oct 28 19:53:32 2015 -0600
+Date:   Tue Nov 17 19:13:51 2015 -0700
 
-    Updated makeSuggestion to return a Solution object type, finished failing test for makeSuggestion
+    changes to main function, and interactions between classes in ClueGame
 
-commit c11a1a8ce1b58ad5db677fa79e7100953ed732b1
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Wed Oct 28 19:35:50 2015 -0600
+commit f722c3e54d6ee55cfd1ee113aca4913e3843fb8e
+Merge: 6a4af76 0afe6c8
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Tue Nov 17 15:31:19 2015 -0700
 
-    testPickLocation failing test complete
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
 
-commit 1cf2c89a95aa2a13df8eb7168aaf3dafe5d6ed89
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Oct 27 12:17:35 2015 -0600
+commit 6a4af76a4bb68fb1c7d5d1712fce67ec5290a3b1
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Tue Nov 17 15:30:55 2015 -0700
 
-    progress on pick location test
+    Finished player movement functionality. Tried to make a dummy computer player movement but it is currecntly commented out. Also the Players turn ends weather or not they hit next turn, so that needs to be implemented. I also tried to get that in but it is currently a comment.
 
-commit bdc0b57b5b218c4e8f72f9da0c2ce55e229583f5
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Oct 27 12:11:11 2015 -0600
-
-    actually fixed all merge errors now.  Also committing halfway done testPickLocation test
-
-commit 745563f0fd9e86bae1dbb9cf687d73bb396ccf4c
-Merge: 17a0b1c 0f6f022
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Oct 27 12:08:55 2015 -0600
-
-    merge conflicts fixed
-
-commit 17a0b1c5f62086b7da7331ac245069bbdc971123
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Oct 27 12:07:35 2015 -0600
-
-    testPickLocation coming along. Still writing the failing test
-
-commit 0f6f022c31837c90fa93adca072895e53449271e
-Merge: d0b4f82 ed12a57
+commit 0afe6c843c86c5940f8caea3417229645d54dcb8
+Merge: bc61c6f 424741d
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Oct 27 12:01:36 2015 -0600
+Date:   Tue Nov 17 12:18:33 2015 -0700
+
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
+
+commit bc61c6f7d12d61fca5955e89dd55681297ab44a8
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Nov 17 12:18:24 2015 -0700
+
+    WIP
+
+commit 424741d66ea6ba50ff3d2e494fffb8cdcd98c85b
+Merge: f1da138 bef7525
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Tue Nov 17 11:55:39 2015 -0700
+
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
+
+commit f1da13891042727ba88c4576e50058310aab3876
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Tue Nov 17 11:55:18 2015 -0700
+
+    Added a dialog box to the start of the game and added the player cards to the side panel
+
+commit ae668b5dc72e7f1ccbb57ef32fdf2495dbcbb703
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Nov 17 11:46:27 2015 -0700
+
+    removed unnecessary variables, and method within ComputerPlayer
+
+commit bef75258e652322242ea1ffbb12660ad2c1e52ce
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Nov 17 11:44:52 2015 -0700
+
+    rewrote makeAccusation to have check, adjusted window variables slightly
+
+commit 2b5368b7e5cccdffa9896d593ecebf3dcc24141c
+Merge: bda499e 205a3cd
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 16:22:37 2015 -0700
 
     fixed merge conflicts
 
-commit d0b4f82c5a5cad9182ae6f945da4ff41f7ecba53
+commit bda499e198641588b2a1469c54db54c77f901c6f
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Oct 27 12:00:17 2015 -0600
+Date:   Sat Nov 14 16:20:38 2015 -0700
 
-    testMakeSuggestion failing test progress
+    REFACTOR: recSize determined by board size and window size
 
-commit a38e8d8bc5473ee5caf265fbae4be410f1f3e04c
+commit 5884251a9ec4c21a576c9644c60a0700233f7912
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Oct 27 11:34:15 2015 -0600
+Date:   Sat Nov 14 15:58:33 2015 -0700
 
-    added dealt cards to seen cards
+    REFACTOR: Moved DetectiveNotesDialog to GUI package
 
-commit d4314dbccfdc895c7e8b654915f0f48d7aab2c6a
+commit 205a3cd2831a0cd0edd2cac13ba93a2f77383316
+Merge: eb03b2a 808f73c
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 15:56:32 2015 -0700
+
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
+
+commit eb03b2a2b8f44c1d227f6245e3c845e9d6327bd6
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 15:56:06 2015 -0700
+
+    Removed a lot of warnings; the code is almost warning free
+
+commit 808f73c55d85e57b7b85e2112a4ecee17aa90684
+Merge: 304aa3a 8b211bb
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Oct 27 11:33:11 2015 -0600
+Date:   Sat Nov 14 15:55:46 2015 -0700
 
-    also initialized seenCards in deal function
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
 
-commit ed12a57b6fb0d1ae16920a9deb89f802120af7f7
-Merge: 6e599c2 8ad00e0
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Oct 27 11:31:37 2015 -0600
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit 6e599c2a25e74c89d41691a2973282b7ae14ad81
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Tue Oct 27 11:31:18 2015 -0600
-
-    testPickLocation started
-
-commit 8ad00e00018ee95e4dacc0e881efcbe129035be6
+commit 304aa3af41fe273a537f87e307a108be472f3a44
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Tue Oct 27 11:29:24 2015 -0600
+Date:   Sat Nov 14 15:55:36 2015 -0700
 
-    added skeleton tests, changed deal function to initialize hashsets
+    REFACTOR: calcAdjacencies readability
 
-commit a4112e0580b6f5d2a93d4d095f8d44fb5d3c7ffd
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Mon Oct 26 19:45:48 2015 -0600
+commit bcd9e5e6808d60bc800aafbb62492cf4bb497f52
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 15:49:16 2015 -0700
 
-    log files up to date and github info txt file added for CluePlayer Part 1 submission
+    REFACTOR - Changed the way loadMiscConfigFiles was called. Before, it was called outside of board.initialize(), so I moved it into initialize (since it is being initialized) and removed all the miscellaneous calls
 
-commit bc3f68b03c6b8214845c1fbe23fe8e8ea010d023
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Mon Oct 26 19:36:11 2015 -0600
+commit 8b211bbd293893e04e6c35ebde63c45c07628de7
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 15:29:10 2015 -0700
 
-    Moved 'testAccusation' to GameActionTests and made minor comment and code cleanup changes.  All tests pass for part 1
+    REFACTOR -  commented the makeAccusation function and refactored some of the code into a function to make in more readable.
 
-commit 78673b1f61cb49b1640fb2b6bb6e7d049d2f3bb1
-Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 21:18:51 2015 -0600
+commit e60a4fc97b26422a9c0cbd5c85ae20f04fcccc85
+Merge: e44b906 8305e17
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 15:19:30 2015 -0700
 
-    card dealing done, card dealing test passes
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
 
-commit 712329e543679c77108f01e9b923a22835239020
-Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 20:45:17 2015 -0600
+commit e44b906801f4a7336843748955c40434b85b9605
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 15:19:20 2015 -0700
 
-    finished card dealing test
+    miscellaneous reformatting
 
-commit 4ea2802c50c22e27e7498fa3188e58124252f5b2
-Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 19:57:00 2015 -0600
+commit dbb9cdca43f98fbba282929619c4e61220ab9844
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 14:48:27 2015 -0700
 
-    implemented Card.equals, wrote more of deal test
+    removed 'shadow' code in Player to use a drawOval/fillOval combo instead
 
-commit 8b9e6c65376390cc982a6aae0636094554dbd115
-Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 19:43:34 2015 -0600
+commit 8305e1739673c6c19938e5c764cb1cf13387e36b
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 14:26:00 2015 -0700
 
-    began writing deal test, implemented SelectAnswer
+    REFACTOR - changed the handleSuggestion function dramtically. It now calls the Player function disproveSuggestion (didn't previously) and made the handleSuggestion function create very few intermidiate variables.
 
-commit bbf37d3ffee55d259182eb65635040ae9046a95e
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 18:20:38 2015 -0600
+commit 15b268748f3338665e0b3139955cf8485d165504
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 14:18:10 2015 -0700
 
-    passing 'testAccusation' test complete
+    REFACTOR: More definition of magic constants in BoardCell, more tinkering w/ colors
 
-commit f441122a2fc89b3c9b3a7e865e67160994bb5c88
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 18:15:49 2015 -0600
+commit 76222ee0fe4d8727201d3358397d8ac184a550ce
+Merge: c4bd367 7229155
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 14:07:25 2015 -0700
 
-    failing test for 'testAccusation' complete
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
 
-commit c4dfdeaa7960f3a366b713aade4e35fa90a83667
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 17:57:12 2015 -0600
+commit 722915597e13d8c6fafe1a734efe1f26876cb1c0
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 14:06:57 2015 -0700
 
-    passing loadPeopleTest complete
+    Changed a test that failed because of the previous commit. There was another test that failed because we changed a computer players color, but that was fixed here as well
 
-commit ed2dfc9c7c26cae2eba940d1acdad22797e3b74b
-Merge: a88981e 1851de8
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 17:24:10 2015 -0600
+commit c4bd3671ee2bca87cb009141f918c0aaceda5fe1
+Merge: 19a291c 6fd795c
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 14:01:58 2015 -0700
 
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
 
-commit a88981e351c3cb69a8dab5338c4fa3a195896d7c
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 17:24:07 2015 -0600
+commit 19a291c1dd3229ba21a32573baf1a91f825250be
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 14:01:48 2015 -0700
 
-    writing people card loading tests
+    added shadow to player characters
 
-commit 1851de8a2cbe1eaa6ddaee624d3102d20c3c96bb
-Merge: 0868ab3 04867ce
-Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 17:13:27 2015 -0600
+commit 6fd795cde567ccf74decd8db78f643e90493d3b8
+Merge: 8ac94f3 c4b2c6f
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 13:58:03 2015 -0700
 
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
 
-commit 0868ab3b82b54984b0a46e96ba4f0d340663864f
-Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 17:13:11 2015 -0600
+commit 8ac94f30a08c9cf823655bdcbc6e09e62ae0e0ac
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 13:57:51 2015 -0700
 
-    Changed loadRoomConfig to generate room cards
+    REFACTOR - Moved the seenCards array into board, rather than having a specific instance of the same array for every Player. Also changed some makeAccusation functionality. If something is wrong with seenCards, go to the commit before this one, it will probably fix the problem
 
-commit 04867ce358be82d44bc9649972b0cdb43c4159c4
-Merge: 28f6179 141412a
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 17:09:41 2015 -0600
+commit c4b2c6f10a36af443394b86909dc90ca93e5a8ab
+Merge: 9598751 fc81ea0
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 13:47:46 2015 -0700
 
     merge conflicts fixed
 
-commit 28f61799e4686b52be68b218959e610a530edb6d
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 17:08:13 2015 -0600
+commit 95987519a7561b4e4a4fceeb27ddae5c6bc49f90
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 13:47:04 2015 -0700
 
-    people loading method halfway done.  committing and pulling to resolve merge conflicts
+    A little bit of color tweaking
 
-commit 141412a3c6b9c40ff6c2485931e57da427b49e7e
-Merge: cbeb3e8 411e263
+commit 32962f638d24c9fd319c1b2d501a83e6f7e1467d
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 13:43:25 2015 -0700
+
+    REFACTOR removed some magic colors from BoardCell
+
+commit 9133006296b5befe4582be8d2747a9bdc643f594
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 13:27:17 2015 -0700
+
+    Revert "Revert "updated README""
+    
+    This reverts commit 4238851f119d61ba755af9000e7c272aa3ed588f.
+
+commit 4238851f119d61ba755af9000e7c272aa3ed588f
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sat Nov 14 13:25:37 2015 -0700
+
+    Revert "updated README"
+    
+    This reverts commit c7cc0df976cf5bb21c37719e14538797d97893a0.
+
+commit fc81ea0b64882ba9ef3958ebee79d7940507d3e5
+Merge: 0c93fb1 c7cc0df
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 13:24:43 2015 -0700
+
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
+
+commit 0c93fb13ac986a58ce766e2a2089bc2d9736d1fe
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 13:24:20 2015 -0700
+
+    Commit to try and push to github
+
+commit fe41050d0899dc38c91e8cfcf41572fef9bcaed1
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sat Nov 14 13:17:40 2015 -0700
+
+    REFACTOR - Removed identical functions (Draw) from two child classes and moved them into the parent class
+
+commit e2b9a3573e9a8cdf59a78984735b28af41413871
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Thu Nov 12 17:31:08 2015 -0700
+
+    Got some more GUI stuff done
+
+commit c7cc0df976cf5bb21c37719e14538797d97893a0
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Nov 12 12:17:14 2015 -0700
+
+    updated README
+
+commit 6e437737631aa29b6bcc3ab3a053a9a15696d59e
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Nov 12 12:14:29 2015 -0700
+
+    up-to-date w/ previous work
+
+commit a5f8849763f91ae77e503465e627cd14d958f2a8
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 17:05:17 2015 -0600
+Date:   Tue Oct 13 19:46:23 2015 -0600
 
-    fixed merge conflicts
+    changed out test excel file
 
-commit cbeb3e828d519a7ce1799b57e2d91d0a684ba5fd
+commit beea80ddf699914ed0fded96ae0c2578ff8b00a0
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Tue Oct 13 19:43:39 2015 -0600
+
+    excel file updated
+
+commit 3454bda017a4fc44be558b39e54d0a24d398b9ae
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Tue Oct 13 19:38:16 2015 -0600
+
+    no more tostring for boardcell
+
+commit 3cc9e0c27be80cde59cbd98fb551ecf2d1c8f4fb
+Merge: 40bc966 954e6bf
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Tue Oct 13 19:36:58 2015 -0600
+
+    Merge branch 'master' of https://github.com/HelluvaEnginerd/ClueGameExp
+
+commit 40bc9666d57503fa73d414a30a5b284760293482
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Tue Oct 13 19:36:54 2015 -0600
+
+    toString for boardcell
+
+commit 954e6bfc4f15df0b100b6a95df7af7ebbb829e9e
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 17:02:48 2015 -0600
+Date:   Tue Oct 13 19:35:39 2015 -0600
 
-    Updated loadMiscConfigFiles, loadWeapons
+    added log
 
-commit 411e2639a6664fc3ae3dc64506a3a4096afd4639
-Merge: f8214c6 de72cb0
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 16:45:58 2015 -0600
-
-    more merge conflicts resolved from my testing branch
-
-commit f8214c60fc8105346e0e8c7f07ec42c1777fcd85
-Merge: ea5ed7b 18f279b
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 16:41:18 2015 -0600
-
-    merge conflicts fixed
-
-commit 18f279b6ecedd746c08a7607702f456cd9d57267
+commit d97ee2ddc090adfff6c4dfb339fa96a0a1201afe
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 16:34:42 2015 -0600
+Date:   Tue Oct 13 19:35:14 2015 -0600
 
-    Reverted change to PeopleCards.txt, added testAllCardsLoaded
+    fixed closet movement
 
-commit de72cb0196d366a848ae92a8fa6489095ccbe658
+commit 3be9dbf7442bd5884806e2dbd81d171b278b16f7
 Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 16:34:19 2015 -0600
+Date:   Tue Oct 13 19:25:08 2015 -0600
 
-    failing test for loadingPeopleTest written
+    all our tests working
 
-commit e66ae6cba1c56a7865a76b9f34c1706b6decd268
+commit 9a97dc6a35f46ab11d1a37556845892dbe26e9dc
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Tue Oct 13 19:01:32 2015 -0600
+
+    all of our tests besides calc6steps working
+
+commit 668b21db79f923279fb5977d25e5228bd69240d0
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Tue Oct 13 18:32:33 2015 -0600
+
+    all tests but 'Targets into room', 'targets6steps', and 'targets4steps' working
+
+commit 26f5c1259fc26bc0ac39c295fd8349cff5ff0259
+Author: unknown <hascott@MZ022-37.adit.mines.edu>
+Date:   Tue Oct 13 12:14:23 2015 -0600
+
+    test adjacencies starting to work
+
+commit 1bd34eeca39b6fa76b263541f4a917753e28cfa2
+Author: unknown <hascott@MZ022-37.adit.mines.edu>
+Date:   Tue Oct 13 11:53:27 2015 -0600
+
+    calc Adjacencies written - try 1
+
+commit bdfece0c89bc239220aeecc0a50b4e6f09acff98
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Oct 13 11:39:16 2015 -0600
+
+    fixed scanner, added necessary Sets for adj
+
+commit d5f0b20f62f04617176011440272eb11c242e0ff
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Oct 13 11:34:31 2015 -0600
+
+    Finished definitions for BoardCell methods
+
+commit 5f1b99ec6c86e0798e83b3d32cbf97596acb65a8
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 15:58:54 2015 -0600
+Date:   Mon Oct 12 22:38:21 2015 -0600
 
-    Reduced PeopleCards.txt to essential info only
+    Part II
 
-commit ea5ed7b1ab1bc1e83775257295bbbb37f8afb3cf
-Merge: 3cc45f3 d177e69
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 15:49:50 2015 -0600
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit 3cc45f302b6768645b1b36a6e4349b87330b1934
-Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 15:49:45 2015 -0600
-
-    setting up game load tests
-
-commit d177e696f7b7280ebbf5f8a3dbdead9f26f2ed34
+commit f0166f75a25a837580e2f534228a274707832570
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
-Date:   Sun Oct 25 15:44:58 2015 -0600
+Date:   Mon Oct 12 22:38:04 2015 -0600
 
-    Added PeopleCards.txt, updated .xlsx file
+    adjusted, tested with CR code
 
-commit 06d4f160d702f39c02da3be17ac732aa033a2011
+commit 47be5f595cd630d24590b0f55e41525259c3c744
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Mon Oct 12 22:22:07 2015 -0600
+
+    finished, all tests working
+
+commit 26933f05875ea2fade7f2e221bdda77076cc47d0
+Merge: 126a1e2 61c2c49
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Mon Oct 12 20:18:29 2015 -0600
+
+    Merge branch 'master' of https://github.com/HelluvaEnginerd/ClueGameExp
+
+commit 126a1e2c605e80b964771b25e39d40607a5cab1a
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Mon Oct 12 20:18:25 2015 -0600
+
+    some work on loadBoardConfig
+
+commit 61c2c498992ec3bf75a1c5968b578bba995f5438
 Author: HelluvaEnginerd <haydenscott573@gmail.com>
-Date:   Sun Oct 25 15:28:03 2015 -0600
+Date:   Mon Oct 12 20:15:29 2015 -0600
 
-    weaponCards.txt file created
+    FileInitTests attempt #1
 
-commit 9b193faaa4210417574ee383da3a5e62523ffc3b
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 12:14:46 2015 -0600
+commit a016a0b0a9911701f1e57195f6df2797f0a7218d
+Merge: 8fcd620 346fabb
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Mon Oct 12 19:57:03 2015 -0600
 
-    board class updated with player and weapon Sets and load methods --skeleton
+    Merge branch 'master' of https://github.com/HelluvaEnginerd/ClueGameExp
 
-commit 3a63f781b4aa543d4f4be11ee382b7342902db45
-Merge: 734eac3 a5c8f3c
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 12:09:27 2015 -0600
+commit 8fcd6204b35c4ec6c2d72163aa2ce453300c5a8c
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Mon Oct 12 19:56:58 2015 -0600
 
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
+    board init tests
 
-commit a5c8f3cf387e36f058cdfcb8464d22374c7cc7e8
+commit f51651dad7df2d47f54cde40b342e0d35da3d0d0
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Mon Oct 12 19:53:43 2015 -0600
+
+    room config method
+
+commit 346fabbbba564d169cabbfaafcdbb498ca4df98d
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Mon Oct 12 19:52:35 2015 -0600
+
+    beginning of load board config and some changes to BoardCell
+
+commit 2cdf611ae0b1814096047a06c70955a342d00222
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Mon Oct 12 19:34:20 2015 -0600
+
+    set up for load function writing
+
+commit 2fdb0eebeb900781d6e7ab04d13aa98c7b3d6810
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Mon Oct 12 19:23:43 2015 -0600
+
+    added Cyndi's tests
+
+commit 2e4617a4f38e9cdd1739b47bd69ffeb2305114e2
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Mon Oct 12 19:11:29 2015 -0600
+
+    test layout xlsx color coded complete
+
+commit 2c37ac7312656a7881fe51b7c8a8fe1eeec1ae49
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Mon Oct 12 19:07:21 2015 -0600
+
+    coded missing tests, made use of NUM_ROOMS in current tests
+
+commit ec68462021a592dd3192faa4a89fc84079203ff6
+Author: Hayden Scott <hascott@mines.edu>
+Date:   Mon Oct 12 10:36:57 2015 -0600
+
+    Began edits on Test layout with color coded tests
+
+commit 53cb16719dc725862c53fc0642480f1b9867ef28
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Fri Oct 9 20:57:51 2015 -0600
+
+    updated room count check to use HashSet
+
+commit 322c0cdd0815fa158599e5de49431104125a6f76
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Fri Oct 9 19:50:23 2015 -0600
+
+    log, finished part I
+
+commit ece7ad024679e75d7a1f1900c2e451711e79c361
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Fri Oct 9 19:50:02 2015 -0600
+
+    finished FileInitTests
+
+commit c522d9e12ef865037a68a788f1dc410bcffbdc6b
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Fri Oct 9 17:02:53 2015 -0600
+
+    added most tests for file init
+
+commit de0d92230e8e4757fb74b3162b402038ed111d05
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Fri Oct 9 10:44:07 2015 -0600
+
+    BoardAsjTargetTests complete
+
+commit 1a9763fc92c7d323397587419c0fa97888ca9292
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Fri Oct 9 10:33:55 2015 -0600
+
+    1st draft of BoardAdjTargetTests finished.  Needs minor editing
+
+commit 91e268d7878e3dbd39c89af8cbcafbc5a2934944
+Merge: 05b72d6 4b90b09
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Oct 8 16:17:22 2015 -0600
+
+    merged
+
+commit 05b72d631b470701dac6b5a4aef85c8619a84fb0
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Oct 8 16:15:04 2015 -0600
+
+    start of init tests
+
+commit 4b90b09cd94ed8562fe352fce6196bc68dce7f80
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 16:13:59 2015 -0600
+
+    halfway through adj tests
+
+commit e99c4597f619a3f7e24ee308145bb72c0892bed5
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Oct 8 15:31:31 2015 -0600
+
+    changed Layout
+
+commit d17291b7c193151b0e3b042e9b05b044e62f342c
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 15:29:59 2015 -0600
+
+    BoardAdjTest updates
+
+commit d32306427c924f8ff593acc60ef418f87a46aed1
+Merge: efb0b9f 0c67795
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 14:52:30 2015 -0600
+
+    Merge branch 'master' of https://github.com/HelluvaEnginerd/ClueGameExp
+
+commit 0c67795811e34a7079a488defe21977823e84521
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Oct 8 14:52:05 2015 -0600
+
+    started test classes
+
+commit efb0b9f146af1091d816ff77ff795cb4d1e84517
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 14:51:56 2015 -0600
+
+    Initial Class stubs complete
+
+commit cd02b46b92d0deab12e80ec7c0a070913501ad0e
+Merge: af39339 038667a
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 14:41:11 2015 -0600
+
+    Merge branch 'master' of https://github.com/HelluvaEnginerd/ClueGameExp
+
+commit af39339ce79cd1a41663f256931c8d94772caa4a
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 14:41:06 2015 -0600
+
+    board class setup
+
+commit 038667a105d5763e5b1230ea6dbf320851f306e2
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Oct 8 14:40:47 2015 -0600
+
+    added exception, boardcell, doordirection skeleton
+
+commit 8db5da9fe815d3f3e6592025c44da03185a98e71
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Oct 8 14:25:41 2015 -0600
+
+    beginning Clue Board
+
+commit 60e2eba3e9c0369a7f7d4abda026ec55b17399be
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 14:11:50 2015 -0600
+
+    all tests passing
+
+commit e1dcb8f921d2c69374276fb6436b10f69db6220f
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 13:58:37 2015 -0600
+
+    most of test targets working
+
+commit fc9ea28d83b15f9be435c41f072548ecc1819bee
+Merge: b30a7d7 4c8288b
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 13:49:14 2015 -0600
+
+    Merge branch 'master' of https://github.com/HelluvaEnginerd/ClueGameExp
+
+commit b30a7d7423cccfbfc80d75fd9f8c4fe4e41e85d4
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 13:49:07 2015 -0600
+
+    minor target cell changes
+
+commit 4c8288bd8c49df39dd86b7e7ca826723cfa7ce53
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Oct 8 13:48:11 2015 -0600
+
+    Removed syso for calcAdj
+
+commit fe7b1d364943aa0e9f68482ff1186b627c7a5bbf
+Merge: 970b52c 590a526
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 13:44:29 2015 -0600
+
+    erge branch 'master' of https://github.com/HelluvaEnginerd/ClueGameExp
+
+commit 970b52c6ed4ced754e0a0c1d82665883b0fe67ee
+Author: HelluvaEnginerd <haydenscott573@gmail.com>
+Date:   Thu Oct 8 19:37:08 2015 -0600
+
+    reset
+
+commit 590a526a03c5191fd4839e56ecbed653b8c3b18e
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Thu Oct 8 13:42:01 2015 -0600
+
+    fixed .gitignore maybe?
+
+commit 628c72962fa7b3a50a4acc25497370700cee45a0
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 22 12:08:54 2015 -0600
+Date:   Thu Oct 8 12:21:14 2015 -0600
 
-    added theAnswer Solution variable to Board
+    fixed BoardCell Constructor
 
-commit 734eac395bfc12c21496da1fd97a2f5cab66bc06
-Merge: 1e80072 58db43e
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 12:06:52 2015 -0600
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit 1e80072ea1c9e97dc07021047619c0b2c582cd03
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 12:06:39 2015 -0600
-
-    its making me commit in order to pull
-
-commit 58db43ec2c2e658c88350070b316cc2d9bd137a3
-Merge: 9f01200 9786d9e
+commit bea639e595ad90d2c200532741b251d0992b2601
+Merge: 06ebec6 6fafae8
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 22 12:05:07 2015 -0600
+Date:   Thu Oct 8 12:05:33 2015 -0600
 
-    fixed merge conflicts
+    fixed merge conflict
 
-commit 9f012009a8a4034bc1decf02f3c1462484126dd5
+commit 06ebec6f73aed6a279678491cdc89e0c08b4df8c
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 22 12:04:01 2015 -0600
+Date:   Thu Oct 8 12:04:48 2015 -0600
 
-    changes to Board, will merge
+    fix for adjacency tests
 
-commit 9786d9e2ec9390dd85b4844c90931f6224cf39d2
-Author: HelluvaEnginerd <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 12:03:22 2015 -0600
+commit 6fafae889f43e34d487f1b5822a52f91d007a4ff
+Merge: d30ed03 f06ad1c
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Thu Oct 8 12:04:11 2015 -0600
 
-    fixed loadConfig methods - tests still pass
+    Merge branch 'master' of https://github.com/HelluvaEnginerd/ClueGameExp
 
-commit 146f3f051ebdec42398190734d65d83bf11d76ec
+commit d30ed03288de38b31e7e40e90cba616dfc5c2baf
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Thu Oct 8 12:03:50 2015 -0600
+
+    Calc all targets written- not working
+
+commit f06ad1c3a4dac12c6931d9a0513071aa2db0db38
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 22 11:58:51 2015 -0600
+Date:   Thu Oct 8 11:47:07 2015 -0600
 
-    added skeleton classes (for real)
+    passed Adjacency tests
 
-commit 1dd50642e7aa285eca7c58343146dc53a0f3f8ea
+commit d776d75567a97220f2c6de63aa5a5ec90827e9ce
+Merge: 13f2508 15d9fc9
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Thu Oct 8 11:42:59 2015 -0600
+
+    calc Targets 2
+
+commit 13f2508c6a65e2e3071d72792b3b425728eeeaa1
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Thu Oct 8 11:41:11 2015 -0600
+
+    calc Targets
+
+commit 15d9fc971d5a7007d8dc13f3ab24ace52cecbab1
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 22 11:56:36 2015 -0600
+Date:   Thu Oct 8 11:40:21 2015 -0600
 
-    added skeleton classes
+    calcAdjacencies bugged
 
-commit 3e9d2481d7c03aa705b08faff7a11028923c9638
-Author: unknown <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 11:48:32 2015 -0600
-
-    test classes created and Person.java fixed
-
-commit e7669a9501803d9cad78f65e4092a88ae4572366
-Merge: 9bfff92 709f251
-Author: unknown <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 11:42:43 2015 -0600
-
-    conflicts resolved
-
-commit 9bfff9293628feb7940d33ffe2cc51ffcdf4e16d
-Author: unknown <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 11:41:58 2015 -0600
-
-    all skeleton classes done
-
-commit 709f2518ef124e4c5f4044909060d69f9384dbbe
+commit f7d36fb547ce61e0ee7ae981eb2dd83a60cbc59d
+Merge: d3b5d97 68dcb3e
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 22 11:36:56 2015 -0600
+Date:   Thu Oct 8 11:21:48 2015 -0600
 
-    added additional skeleton classes
+    fixed merge conflict
 
-commit 5089b69c23a4c029387e1d6c2cc91493cdf12399
-Merge: c705664 7ed4813
-Author: unknown <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 11:32:45 2015 -0600
-
-    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame
-
-commit c70566420ef2192e2f1946d52484cf9480dda712
-Author: unknown <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 11:32:30 2015 -0600
-
-    skeleton abstract player and Solution classes
-
-commit 7ed48134a193469ff85d99415c1379a0aac0589a
+commit d3b5d97d0dbf1675bd1f76db680a097d94664997
 Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 22 11:31:15 2015 -0600
+Date:   Thu Oct 8 11:20:32 2015 -0600
 
-    Added CardType Enum Class
+    Started calcAdjacencies
 
-commit 62c66a02b0533dfda600dd254002081f20157cc7
-Author: unknown <hascott@MZ022-37.adit.mines.edu>
-Date:   Thu Oct 22 11:15:01 2015 -0600
+commit 68dcb3e70e16840767e9a3ca2356786a1a8d1856
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Thu Oct 8 11:19:48 2015 -0600
 
-    minor warnings fixed. Mostly closing scanners when throwing exceptions in the board class
+    instance variables setup
 
-commit 83aee324574071deb966303375e77e98ac97148a
-Author: jason-ziolo <jziolo@mymail.mines.edu>
-Date:   Thu Oct 15 11:47:30 2015 -0600
+commit c3ae5985894242687f1428bed87b5151ba9b381e
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 16:01:58 2015 -0600
 
-    updated clueLayout.xlsx to better show tests
+    log updated cause README was updated
 
-commit a7995d65f005f5cd152a3c509ef6b3ce8e830604
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Tue Oct 13 16:59:46 2015 -0600
+commit 6ab51524a236cbd5ff40d9ee1f055fb948dded55
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 16:01:05 2015 -0600
 
-    Untracked log file
+    README updated
 
-commit ec2cb4c8f0933c9b922dda35da417d5ea98d95b8
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Tue Oct 13 16:31:38 2015 -0600
+commit 6d57566b02e106a559f31cba582f475112ee880a
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:59:50 2015 -0600
 
-    ignored log.txt
+    log file added
 
-commit f5cabbd8e47ecdbe72ad4e7aaa303e62c905377f
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Tue Oct 13 16:30:26 2015 -0600
+commit fee975a6f332b5c2abe9f6a66f671d227a85ac96
+Merge: 61520bc 5043c5e
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:58:00 2015 -0600
 
-    made new log.txt for blackboard
+    failure testing complete-again
 
-commit 2019c7d6dbadf9ff27e9d83e168b73b86fe371e3
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Tue Oct 13 16:01:27 2015 -0600
+commit 61520bc27f1ccfe809e9efa9a9043a4225d8d641
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:56:27 2015 -0600
 
-    log.txt updated
+    failing tests complete
 
-commit 0aecd02cee85ba9286fc419ccba30ad7d83491b8
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Tue Oct 13 16:00:50 2015 -0600
+commit 5043c5e5fe21eacfc655b7821d0d38d6f4b09c02
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Oct 6 15:54:05 2015 -0600
 
-    Finished cleaning up code
+    testTargets15_4() function
 
-commit f1c4363ffb157462a4483cf2bd1832019028156c
-Author: erikkacsm <=>
-Date:   Tue Oct 13 15:47:47 2015 -0600
+commit bc4756e4b22a64bbaa45a3aefdfd8b613dfe33cc
+Merge: 060f961 236d9b3
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:45:38 2015 -0600
 
-    Updated .gitignore to ignore log file
+    testing updated
 
-commit 238fe6c7d6e168b626269b7b9a7e36095fc7d534
-Author: = <=>
-Date:   Tue Oct 13 15:36:42 2015 -0600
+commit 060f9615970990e24a6d2268039b53d4ea481b31
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:44:24 2015 -0600
 
-    Cleaned up the code by adding comments, whitespace, etc...)
+    testTargets1_3 written
 
-commit 7d23b9dfe79a7ad44f06fafe33b8b1945c32f91d
-Author: = <=>
-Date:   Tue Oct 13 15:11:16 2015 -0600
+commit 236d9b3411eb8bc375e8be55c7a79dcd001566da
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Oct 6 15:43:06 2015 -0600
 
-    Got adjacency and target tests to pass. Updated excel file as well, because some tests were changed to be more accurate).
+    testTargets2_2 function
 
-commit c362d5414c7eed30ba4985338ca75e9dd4ac9729
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Tue Oct 13 12:18:55 2015 -0600
+commit 45f05a141a270e53a1aae1889075c703f17083aa
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:32:01 2015 -0600
 
-    Started working on making targets and adjcency tests pass
+    adj tests again
 
-commit 3621dda59e87e9588655d593ac444c6a93977c7c
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Tue Oct 13 11:57:41 2015 -0600
+commit 5ff96b2a5f88cd1090888af2eb1ce3a7744ae179
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:29:19 2015 -0600
 
-    Formatted code in the calcAdjacencies function to look more readable.
+    updated adjancey tests
 
-commit d57aa330e31c2a0a4228bf4cca631032b67dad8d
-Merge: 98a1e91 09b4ec0
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Tue Oct 13 11:54:58 2015 -0600
+commit ca89f1936698210a150c2299166a18e85cd0c839
+Merge: ae028b1 6420604
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:24:27 2015 -0600
 
-    Merge branch 'master' of https://github.com/erikkacsm/ClueGame
+    Merge branch 'master' of https://github.com/HelluvaEnginerd/ClueGameExp
 
-commit 09b4ec0c8576958a8cc54a93bacf2dc366835b89
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Tue Oct 13 11:54:32 2015 -0600
+commit ae028b1749ceb20185930f70a115b72a11e49f30
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:24:17 2015 -0600
 
-    Wrote the calcAdjacencies function that tests various locations and ensures that it meets the criteria.
+    adjacency tests written
 
-commit 98a1e91c57898723e5d34b8d52392b37ac9c0867
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Tue Oct 13 11:53:43 2015 -0600
+commit 64206043c44b3b49f1c27f1b16b180caf1709698
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Oct 6 15:20:19 2015 -0600
 
-    Implemented the first version of calcTargets function
+    Added testTargets0_3
 
-commit 0a905f187eba3a023c56765adbf2922ce02f4d21
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Tue Oct 13 11:15:09 2015 -0600
+commit 9202dadc6d8cc79a40eb64ef1508f246d0674368
+Merge: a5fa6ac 52aed15
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Oct 6 15:15:43 2015 -0600
 
-    Updated getAdjMatrix and getTargets to return the appropriate values
+    Testing merge
 
-commit 8695ea0c5122bfb6d7e749bff8c6555d6f876fb6
-Author: = <=>
-Date:   Mon Oct 12 23:42:17 2015 -0600
+commit a5fa6ace3bc9508b3787874dcbb15606d0c98b04
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Oct 6 15:15:36 2015 -0600
 
-    Moved code to allocate variables out of initialize and into constructors to make bad config format exception tests more accurate
+    test
 
-commit 6f6404a30cd492d0de7f2dd0f1304c2ad8cf2cb9
-Author: = <=>
-Date:   Mon Oct 12 21:32:07 2015 -0600
+commit 52aed15285d64205602972793172861c1b43c99d
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:14:55 2015 -0600
 
-    Added Cyndi's config files so that we could run her JUnit tests to ensure they succeed with our code
+    2 failure tests done
 
-commit 42390d75356435ba54f757e486c4c737bf6b9258
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Mon Oct 12 20:39:28 2015 -0600
+commit 526fb928d8e6948bf7acb218da813aef41332b7c
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 15:10:26 2015 -0600
 
-    Added Cyndi's test file
+    fail testing updates
 
-commit 7a79f79d26accdfffac249909b35dbee281beb34
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Mon Oct 12 20:37:02 2015 -0600
+commit 275cb8827aa91d6aa27012df1e64b4b380509bb4
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 14:52:14 2015 -0600
 
-    Edited the color coding on the clueLayout excel file.
+    fail tests half written
 
-commit d911687c14e25387b48633a68ea1669a5c8e4a36
-Merge: 58f0ade 402c724
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Mon Oct 12 20:34:28 2015 -0600
+commit 467e6dd4b8bc6354287acbd2b7fd74542ae78b9a
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 14:44:30 2015 -0600
 
-    Merge branch 'master' of https://github.com/erikkacsm/ClueGame
+    README actually there now
 
-commit 58f0adeeadb98a61c19289fb8d758b98745c0284
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Mon Oct 12 20:33:33 2015 -0600
+commit 6c2d12b15a2290731ef7d1033a8231729ee017c1
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 14:42:52 2015 -0600
 
-    created class CR_BoardAdjTargetTests.
+    setting up failing tests
 
-commit 402c724feab75106e0193fdde1a12188182a0a32
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Mon Oct 12 20:31:00 2015 -0600
+commit 6a6a5a1aff6af22b27c4ac76ef6c887e2b047660
+Author: Hayden Scott <hascott@mymail.mines.edu>
+Date:   Tue Oct 6 12:19:13 2015 -0600
 
-    Added more conditions to functions in Board so that an exception is thrown if the files have bad formats
-
-commit ca5222c2e7dec7cb231f2a7f369e2b8235778e77
-Merge: b7b0a45 9ada583
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Mon Oct 12 20:01:15 2015 -0600
-
-    Merge branch 'master' of https://github.com/erikkacsm/ClueGame
-
-commit b7b0a4502d90edc0a0c17cd953dd67039bff3560
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Mon Oct 12 20:00:59 2015 -0600
-
-    Added skeleton functions for getting adj list and getting targets
-
-commit 9ada58338fd3c7e47c20188ed7c4d4dd18feddef
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Mon Oct 12 20:00:28 2015 -0600
-
-    Color coded the clueLayout file to show which cells are being tested. Also edited the points being tested in CR_BoardAdjTargetTests.
-
-commit 3041bf48ffcb3292a6e389e10821bc6451715cba
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Mon Oct 12 19:54:33 2015 -0600
-
-    Got most of the tests working, added bad format files
-
-commit 3007134ecdc7b3e4c9f597b3dc9af62d3330809b
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Mon Oct 12 18:38:18 2015 -0600
-
-    Started working on making first jUnit tests pass
-
-commit 3a727c1b62ad920a4ad290ff9e5fc1699405f723
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Thu Oct 8 19:32:07 2015 -0600
-
-    Updated getters to return values that make JUnit tests compile without errors
-
-commit 195ce7d9a4f4073b51c95b5a58f510177ae79849
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Thu Oct 8 19:20:04 2015 -0600
-
-    added getNumRows to Board and added getDoorDirection to BoardCell
-
-commit cbc5e69d5296e1a5c1eb12ad59d14a07c6d87061
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Thu Oct 8 19:14:08 2015 -0600
-
-    added getNumColumns and getRooms to Board
-
-commit 88470ee9895107381fad6087e1f8f323fb7e538d
-Merge: d63f110 eb96687
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Thu Oct 8 19:02:39 2015 -0600
-
-    Merge branch 'master' of https://github.com/erikkacsm/ClueGame
-
-commit eb966878e9b3c225820ade29004a18793ec13a7d
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Thu Oct 8 19:01:42 2015 -0600
-
-    Filled in the tests for testRooms, testBoardDimensions, FourDoorDirections, and testNumberOfDoorways.
-
-commit d63f110f329ae6c35d9a1a7d7c6652cf2c5c2ece
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Thu Oct 8 19:01:37 2015 -0600
-
-    Updated .gitignore to ignore temporary excel files
-
-commit 8e0975244ebe8312f2288cab059a7461d6043538
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Thu Oct 8 19:00:26 2015 -0600
-
-    Filled in the last half of the JUnit test file
-
-commit f9cb1e0b877be5c7dcea58de346e7bd3f0af23c7
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Thu Oct 8 18:21:50 2015 -0600
-
-    Added skeleton tests for part I
-
-commit 2c39676b253c0c4b04866c6d0fa75b21d5953547
-Author: = <=>
-Date:   Thu Oct 8 13:38:30 2015 -0600
-
-    Added doorDirection variable to BoardCell
-
-commit 40fcb0fb4c1094433da6e1e528ec4970e9353a9b
-Author: = <=>
-Date:   Thu Oct 8 13:35:56 2015 -0600
-
-    Finished creating class stubs
-
-commit ffb1c34916a90dd68f659e0db9416ba3e3d7e148
-Author: Erikka Baker <erikkanj@gmail.com>
-Date:   Thu Oct 8 13:22:03 2015 -0600
-
-    Added name fields to excel sheet and csv file
-
-commit 794d39a3c4c3db08359a21790ff94fd31d2b1953
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Thu Oct 8 12:13:38 2015 -0600
-
-    Added function stubs
-
-commit 52e21252a96a92cec5fef91064d03dfa86431f84
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Thu Oct 8 12:10:22 2015 -0600
-
-    created private ints row and column and private char initial in BoardCell. Also created functions isWalkway, isRoom, and isDoorway in BoardCell.
-
-commit fe9c42d6cfd38672029c8d5c69e17b62270c0307
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Thu Oct 8 11:53:46 2015 -0600
-
-    added clueLayout.csv, clueLayout.xlsx, and clueLayoutLegend.txt files to the project folder
-
-commit ec6304892ab37697a1eaa29095631415ba42f66d
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Thu Oct 8 11:42:48 2015 -0600
-
-    Created new package clueGame and classes BadConfigFormatException, Board, BoardCell, and enum DoorDirection
-
-commit fc2e0e60d5257cbeb16fb8a69727b0cb9d760567
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Thu Oct 8 11:35:13 2015 -0600
-
-    Changed board size back to (4, 4)
-
-commit 39877dc0c62b7509f15e6fb5d47cf785ed8d113c
-Author: syoshiha <syoshiha@mymail.mines.edu>
-Date:   Thu Oct 8 11:34:09 2015 -0600
-
-    Changed board from (4, 4) to (3, 4)
-
-commit 4e9d6e2b78bf45d74a0a61d7e88881f148e91c9a
-Author: erikkacsm <ebaker@mymail.mines.edu>
-Date:   Thu Oct 8 11:18:30 2015 -0600
-
-    Project Created
+    Initial commit
