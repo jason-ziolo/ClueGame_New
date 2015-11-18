@@ -18,7 +18,12 @@ public class ComputerPlayer extends Player {
 			ClueGame.playerAccusation(this.getPlayerName(), acc);
 		}
 		board.calcTargets(row, column, roll);
-		move(pickLocation(board.getTargets()));
+		BoardCell location = pickLocation(board.getTargets());
+		move(location);
+		if(location.isRoom()) {
+			Solution sugg = makeSuggestion(board, location);
+			ClueGame.playerSuggestion(this.getPlayerName(), sugg, location);
+		}
 	}
 	
 	public BoardCell pickLocation(Set<BoardCell> targets) {

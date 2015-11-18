@@ -130,16 +130,20 @@ public class ClueGame extends JFrame {
 		// Main Board Logic
 		currPlayerIndex = players.size() - 1;
 		currPlayer = players.get(currPlayerIndex);
+		
+		// Enable interaction
+		waitingForTurn = false;
 	}
 	
-	public static int rollDie() {
+	private static int rollDie() {
 		Random rand = new Random();
 		return rand.nextInt(6) + 1;
 	}
 	
 	public static void nextPlayerBtnPress() {
 		if(waitingForTurn) {
-			System.out.println("Finish your turn!"); //TODO
+			String message = "You need to finish your turn!";
+			JOptionPane.showMessageDialog(null, message);
 			return;
 		}
 		else {
@@ -155,14 +159,21 @@ public class ClueGame extends JFrame {
 	public static void playerAccusation(String playerName, Solution accusation) {
 		boolean gameWon = board.checkAccusation(accusation);
 		if(gameWon) {
-			System.out.println("Game is won"); // TODO
+			String message = playerName + " has found the solution! The game is over.";
+			JOptionPane.showMessageDialog(null, message);
 		}
 		else {
 			waitingForTurn = false;
 		}
 	}
+
+	public static void playerSuggestion(String sPlayer, Solution suggestion, BoardCell clicked) {
+		Card result = board.handleSuggestion(players, suggestion, sPlayer, clicked);
+		display.updateGuess(suggestion.toString(), result.getCardName());
+		waitingForTurn = false;
+	}
 	
-	public static Player getCurrentPlayer(){
-		return currPlayer;
+	public static Player getCurrentPlayer() {
+		return currPlayer;	// For when the human player clicks the board
 	}
 }

@@ -541,7 +541,7 @@ public class Board extends JPanel implements MouseListener {
 			}
 		}
 		if (clickedCell != null){
-			if (targets.contains(clickedCell)){
+			if (targets.contains(clickedCell)) {
 				this.clickedCell = clickedCell;
 				ClueGame.getCurrentPlayer().move(clickedCell);
 			} else {

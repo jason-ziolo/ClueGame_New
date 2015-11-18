@@ -21,6 +21,8 @@ public class DisplayPanel extends JPanel {
 	public JButton accusationButton;
 	private DiePanel die;
 	private WhoseTurnPanel playerDisplay;
+	private GuessPanel guess;
+	private GuessResultPanel guessResult;
 	public static boolean nextTurnPressed;
 	
 	public DisplayPanel() {
@@ -33,9 +35,15 @@ public class DisplayPanel extends JPanel {
 		add(bottom);
 	}
 	
-	public void updateDisplay(String player, int roll){
+	public void updateDisplay(String player, int roll) {
 		die.setDie(roll);
 		playerDisplay.setPlayer(player);
+		
+	}
+	
+	public void updateGuess(String theGuess, String theResult) {
+		guess.setGuess(theGuess);
+		guessResult.setGuessResult(theResult);
 	}
 	
 	public class TopPanel extends JPanel{
@@ -129,6 +137,10 @@ public class DisplayPanel extends JPanel {
 			add(Guess);
 			setBorder(new TitledBorder (new EtchedBorder(), "Guess"));
 		}
+		
+		public void setGuess(String in){
+			Guess.setText(in);
+		}
 	}
 	
 	public class GuessResultPanel extends JPanel {
@@ -141,6 +153,10 @@ public class DisplayPanel extends JPanel {
 			add(title);
 			add(GuessResult);
 			setBorder(new TitledBorder (new EtchedBorder(), "Guess Result"));
+		}
+		
+		public void setGuessResult(String in){
+			GuessResult.setText(in);
 		}
 	}
 }
