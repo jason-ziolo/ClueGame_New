@@ -150,8 +150,8 @@ public class ClueGame extends JFrame {
 		else {
 			waitingForTurn = true;
 			playerMayMove = true; // important for human player only
-			int nextPlayerIndex = (currPlayerIndex + 1) % players.size();
-			currPlayer = players.get(nextPlayerIndex);
+			currPlayerIndex = (currPlayerIndex + 1) % players.size();
+			currPlayer = players.get(currPlayerIndex);
 			currDiceRoll = rollDie();
 			display.updateDisplay(currPlayer.getPlayerName(), currDiceRoll);
 			currPlayer.doTurn(board, currDiceRoll);

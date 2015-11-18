@@ -328,8 +328,8 @@ public class Board extends JPanel implements MouseListener {
 		// Clear values from last targets calculation
 		targets.clear();
 		visited.clear();
-		visited.add(board[row][column]); // Ensure the starting point is not a target
-		doCalcTargets(row, column, pathLength);
+		visited.add(board[column][row]); // Ensure the starting point is not a target
+		doCalcTargets(column, row, pathLength);
 	}
 
 	public void doCalcTargets(int row, int column, int pathLength) {
@@ -544,6 +544,7 @@ public class Board extends JPanel implements MouseListener {
 			}
 		}
 		if (clickedCell != null){
+			System.out.println(clickedCell.toString());
 			if (targets.contains(clickedCell)) {
 				this.clickedCell = clickedCell;
 				ClueGame.getCurrentPlayer().move(clickedCell);

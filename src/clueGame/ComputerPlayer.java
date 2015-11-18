@@ -22,6 +22,7 @@ public class ComputerPlayer extends Player {
 		board.calcTargets(row, column, roll);
 		BoardCell location = pickLocation(board.getTargets());
 		move(location);
+		board.repaint();
 		/* Coming soon!
 		if(location.isRoom()) {
 			Solution sugg = makeSuggestion(board, location);
@@ -36,17 +37,18 @@ public class ComputerPlayer extends Player {
 		//if room matches recently visited, run random choice instead of automatic room choice
 		//unless there is another room. Then go to that room
 		int rooms = 0;
-		for (BoardCell i: targets){
+		for (BoardCell i : targets){
 			if (i.isRoom())
 				rooms++;
 		}
-		if (rooms == 0){ //gonna be random
+		if (rooms == 0) { // no rooms in range, pick a random square
 			int size = targets.size(); //get size of targets
 			int picked = new Random().nextInt(size); //get random number between 0 and size -1
 			int i = 0;
 			for (BoardCell cell: targets){
-				if (i == picked) //if i = the random number, return the cell
+				if (i == picked) { //if i = the random number, return the cell
 					return cell;
+				}
 				i++;
 			}
 		}
