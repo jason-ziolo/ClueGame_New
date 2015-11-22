@@ -68,7 +68,7 @@ public class MakeGuessDialog extends JDialog {
 				ClueGame.humanPlayerSuggestion(new Solution((String) personPopup.getSelectedItem(), 
 						yourRoom.getText(), 
 						(String) weaponPopup.getSelectedItem()));
-			ClueGame.toggleMakeGuessDlg();
+			ClueGame.toggleMakeGuessDlg("");
 		}
 	}
 	

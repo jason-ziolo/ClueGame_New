@@ -48,7 +48,6 @@ public abstract class Player {
 		}
 		if(match.size() > 0) {
 			Random rand = new Random();
-			rand.setSeed(System.nanoTime());
 			return match.get(rand.nextInt(match.size()));
 		}
 		return null;
@@ -79,7 +78,7 @@ public abstract class Player {
 	public int getColumn() {
 		return column;
 	}
-
+	
 	public Color getColor() {
 		return color;
 	}
@@ -90,7 +89,6 @@ public abstract class Player {
 	}
 
 	public void doTurn(Board board, int roll) {
-		// TODO Auto-generated method stub
 		
 	}
 }

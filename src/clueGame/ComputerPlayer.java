@@ -13,24 +13,24 @@ public class ComputerPlayer extends Player {
 	}
 	
 	public void doTurn(Board board, int roll) {
-		/* For part II, WIP
+		// For part II, WIP
 		if(willAccuse(board.getSeenCards(), board.getCards())) {
 			Solution acc = makeAccusation(board.getSeenCards(), board.getCards());
 			ClueGame.playerAccusation(this.getPlayerName(), acc);
-			ClueGame.computerPlayerFinished();
-		} */
+			ClueGame.endPlayerTurn();
+		} 
 		board.calcTargets(column, row, roll); // TODO: Figure out why arguments do not align
 		BoardCell location = pickLocation(board.getTargets());
 		if (location.isRoom())
 			lastRoom = location.getInitial();
 		move(location);
 		board.repaint();
-		/* Coming soon!
+		// Does a suggestion if the location is a room
 		if(location.isRoom()) {
 			Solution sugg = makeSuggestion(board, location);
 			ClueGame.playerSuggestion(this.getPlayerName(), sugg, location);
 		}
-		*/
+		
 		ClueGame.endPlayerTurn();
 	}
 	

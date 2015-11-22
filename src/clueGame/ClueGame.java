@@ -139,6 +139,19 @@ public class ClueGame extends JFrame {
 		
 		// Enable interaction
 		waitingForTurn = false;
+		
+		// Trouble Shooting for a bug where the AI *Might* be suggesting a card it has
+		System.out.println(board.getTheAnswer());
+		for (Player players : board.getPotentialPlayers()){
+			System.out.println(players.getPlayerName() + ":" + players.getCards());
+		}
+		
+		for (Card card :board.getCards()){
+			if (card.getCardType().equals(CardType.ROOM)){
+				board.getSeenCards().add(card);
+			}
+		}
+		board.getSeenCards().remove(board.getTheAnswer().room);
 	}
 	
 	private static int rollDie() {
@@ -163,22 +176,30 @@ public class ClueGame extends JFrame {
 		}
 	}
 	
+	// Part II WIP
 	public static void playerAccusation(String playerName, Solution accusation) {
 		boolean gameWon = board.checkAccusation(accusation);
 		if(gameWon) {
 			String message = playerName + " has found the solution! The game is over.";
 			JOptionPane.showMessageDialog(null, message);
 			System.exit(1);
+		} else {
+			String message = playerName + " has made an incorrect accusation!";
+			JOptionPane.showMessageDialog(null, message);
 		}
 	}
 
 	public static void playerSuggestion(String sPlayer, Solution suggestion, BoardCell clicked) {
 		Card result = board.handleSuggestion(players, suggestion, sPlayer, clicked);
-		display.updateGuess(suggestion.toString(), result.getCardName());
+		//System.out.println(suggestion + ":" + result);
+		if (result != (null))
+			display.updateGuess(suggestion, result.getCardName());
+		else
+			display.updateGuess(suggestion, "None");
 	}
 	
 	public static void humanPlayerSuggestion(Solution suggestion) {
-		playerSuggestion(currPlayer.toString(), suggestion, board.getCellAt(currPlayer.getRow(), currPlayer.getColumn()));
+		playerSuggestion(currPlayer.toString(), suggestion, board.getCellAt(currPlayer.getColumn(), currPlayer.getRow()));
 	}
 	
 	public static void endPlayerTurn() {
@@ -198,7 +219,8 @@ public class ClueGame extends JFrame {
 		return currPlayer;	// For when the human player clicks the board
 	}
 
-	public static void toggleMakeGuessDlg() {
+	public static void toggleMakeGuessDlg(String yourRoom) {
+		((MakeGuessDialog) guessDialog).setYourRoom(yourRoom);
 		guessDialog.setVisible(!guessDialog.isVisible());
 	}
 }

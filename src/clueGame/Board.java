@@ -143,10 +143,21 @@ public class Board extends JPanel implements MouseListener {
 	public Card handleSuggestion(ArrayList<Player> players, Solution suggestion, String sPlayer, BoardCell clicked){
 		int playerNum = 0;
 		for (int i = 0; i < players.size(); i++){
-			if (players.get(i).getPlayerName().equals(sPlayer))
+			if (players.get(i).getPlayerName().equals(sPlayer)){
 				playerNum = i;
+				break;
+			}
 		}
 		
+		// Moves the player that is suggested to the suggested room
+		for (Player currPlayer : players){
+			if (currPlayer.getPlayerName().equals(suggestion.person)){
+				currPlayer.move(clicked);
+				this.repaint();
+				break;
+			}
+		}
+
 		Card returnedCard = null;
 		for (int i = 1; i < players.size(); i++){
 			returnedCard = players.get((i + playerNum) % players.size()).disproveSuggestion(suggestion);
@@ -544,7 +555,6 @@ public class Board extends JPanel implements MouseListener {
 			}
 		}
 		if (clickedCell != null){
-			//System.out.println(clickedCell.toString());
 			if (targets.contains(clickedCell)) {
 				this.clickedCell = clickedCell;
 				ClueGame.getCurrentPlayer().move(clickedCell);
@@ -553,7 +563,7 @@ public class Board extends JPanel implements MouseListener {
 				ClueGame.endPlayerTurn(); // Besides showing the suggestion prompt, the
 				// player's turn is over
 				if(clickedCell.isRoom()) {
-					ClueGame.toggleMakeGuessDlg();
+					ClueGame.toggleMakeGuessDlg(rooms.get(clickedCell.getInitial()));
 				}
 			} else {
 				String message = "Invalid move! Please select a cyan box";
