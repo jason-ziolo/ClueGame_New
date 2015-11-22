@@ -6,11 +6,14 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import clueGame.BoardCell;
 import clueGame.ClueGame;
+import clueGame.Solution;
 
 public class MakeGuessDialog extends JDialog {
 	// NAME is both the name of the window and the title
@@ -20,6 +23,8 @@ public class MakeGuessDialog extends JDialog {
 	static public final int HEIGHT = 200;
 	private JButton submitBtn;
 	private JButton cancelBtn;
+	private JComboBox<String> personPopup;
+	private JComboBox<String> weaponPopup;
 	private JTextField yourRoom = new JTextField("");
 	
 	public MakeGuessDialog(ArrayList<String> people, ArrayList<String> weapons) {
@@ -42,10 +47,12 @@ public class MakeGuessDialog extends JDialog {
 		this.add(yourRoom);
 		// second row: "Person" label, then popDownMenu
 		this.add(new JLabel("Person"));
-		this.add(new PopDownPanel("Person Guess", people).getPopup());
+		personPopup = new PopDownPanel("Person Guess", people).getPopup();
+		this.add(personPopup);
 		// third row: "Weapon" label, then popDownMenu
 		this.add(new JLabel("Weapon"));
-		this.add(new PopDownPanel("Weapon Guess", weapons).getPopup());
+		weaponPopup = new PopDownPanel("Weapon Guess", weapons).getPopup();
+		this.add(weaponPopup);
 		// fourth row: "Submit" button, then "Cancel" button
 		submitBtn = new JButton("Submit");
 		submitBtn.addActionListener(new ButtonListener());
@@ -58,7 +65,9 @@ public class MakeGuessDialog extends JDialog {
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == submitBtn)
-				System.out.println("Submit"); //TODO: Hook up to ClueGame function
+				ClueGame.humanPlayerSuggestion(new Solution((String) personPopup.getSelectedItem(), 
+						yourRoom.getText(), 
+						(String) weaponPopup.getSelectedItem()));
 			ClueGame.toggleMakeGuessDlg();
 		}
 	}
@@ -66,5 +75,4 @@ public class MakeGuessDialog extends JDialog {
 	public void setYourRoom(String text) {
 		this.yourRoom.setText(text);
 	}
-	
 }

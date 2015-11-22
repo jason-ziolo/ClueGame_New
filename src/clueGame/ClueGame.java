@@ -177,6 +177,10 @@ public class ClueGame extends JFrame {
 		display.updateGuess(suggestion.toString(), result.getCardName());
 	}
 	
+	public static void humanPlayerSuggestion(Solution suggestion) {
+		playerSuggestion(currPlayer.toString(), suggestion, board.getCellAt(currPlayer.getRow(), currPlayer.getColumn()));
+	}
+	
 	public static void endPlayerTurn() {
 		playerMayMove = false;
 		waitingForTurn = false;
