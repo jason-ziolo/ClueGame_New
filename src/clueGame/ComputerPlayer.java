@@ -166,7 +166,7 @@ public class ComputerPlayer extends Player {
 		ArrayList<Card> weaponCards = new ArrayList<Card>();
 		
 		// Make an ArrayList of all cards the computer has seen
-		ArrayList<Card> computerSeenCards = board.getCards();
+		ArrayList<Card> computerSeenCards = (ArrayList<Card>) board.getCards().clone();
 		computerSeenCards.addAll(myCards);
 		
 		for(Card i : computerSeenCards) {

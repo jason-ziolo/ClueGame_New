@@ -141,17 +141,16 @@ public class ClueGame extends JFrame {
 		waitingForTurn = false;
 		
 		// Trouble Shooting for a bug where the AI *Might* be suggesting a card it has
-		System.out.println(board.getTheAnswer());
+		/*System.out.println(board.getTheAnswer());
 		for (Player players : board.getPotentialPlayers()){
 			System.out.println(players.getPlayerName() + ":" + players.getCards());
 		}
 		
 		for (Card card :board.getCards()){
-			if (card.getCardType().equals(CardType.ROOM)){
+			if (card.getCardType().equals(CardType.ROOM) && !board.getTheAnswer().room.equals(card.getCardName())){
 				board.getSeenCards().add(card);
 			}
-		}
-		board.getSeenCards().remove(board.getTheAnswer().room);
+		}*/
 	}
 	
 	private static int rollDie() {
