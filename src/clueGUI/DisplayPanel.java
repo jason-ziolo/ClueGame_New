@@ -76,7 +76,7 @@ public class DisplayPanel extends JPanel {
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == accusationButton)
-				System.out.println("Accused!");
+				System.out.println("Accused!"); //TODO: Hook up to ClueGame function
 			else {
 				ClueGame.nextPlayerBtnPress();
 			}

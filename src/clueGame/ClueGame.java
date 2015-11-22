@@ -71,6 +71,10 @@ public class ClueGame extends JFrame {
 		notesDialog = new DetectiveNotesDialog(peopleInfo, roomsInfo, weaponsInfo);
 	}
 	
+	public void initializeMakeGuessDialog(Board board) {
+		//TODO
+	}
+	
 	private JMenuBar mainJMenuBar() {
 		JMenuBar bar = new JMenuBar();
 		JMenu menu = new JMenu("File");
@@ -159,19 +163,19 @@ public class ClueGame extends JFrame {
 		}
 	}
 	
-	/* Part II WIP
 	public static void playerAccusation(String playerName, Solution accusation) {
 		boolean gameWon = board.checkAccusation(accusation);
 		if(gameWon) {
 			String message = playerName + " has found the solution! The game is over.";
 			JOptionPane.showMessageDialog(null, message);
+			System.exit(1);
 		}
 	}
 
 	public static void playerSuggestion(String sPlayer, Solution suggestion, BoardCell clicked) {
 		Card result = board.handleSuggestion(players, suggestion, sPlayer, clicked);
 		display.updateGuess(suggestion.toString(), result.getCardName());
-	} */
+	}
 	
 	public static void endPlayerTurn() {
 		playerMayMove = false;
