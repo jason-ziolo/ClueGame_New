@@ -25,12 +25,12 @@ public class ComputerPlayer extends Player {
 			lastRoom = location.getInitial();
 		move(location);
 		board.repaint();
-		/* Coming soon!
+		// Does a suggestion if the location is a room
 		if(location.isRoom()) {
 			Solution sugg = makeSuggestion(board, location);
 			ClueGame.playerSuggestion(this.getPlayerName(), sugg, location);
 		}
-		*/
+		
 		ClueGame.endPlayerTurn();
 	}
 	

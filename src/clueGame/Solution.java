@@ -12,4 +12,8 @@ public class Solution {
 		this.weapon = weapon;
 	}
 	
+	public String toString(){
+		return person + ":" + room + ":" + weapon;
+	}
+	
 }

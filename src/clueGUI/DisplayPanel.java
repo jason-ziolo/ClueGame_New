@@ -14,6 +14,7 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
 import clueGame.ClueGame;
+import clueGame.Solution;
 
 @SuppressWarnings("serial")
 public class DisplayPanel extends JPanel {
@@ -29,8 +30,10 @@ public class DisplayPanel extends JPanel {
 		setLayout(new GridLayout(0,1));
 		die = new DiePanel();
 		playerDisplay = new WhoseTurnPanel();
+		guessResult = new GuessResultPanel();
+		guess = new GuessPanel();
 		TopPanel top = new TopPanel(playerDisplay);
-		BottomPanel bottom = new BottomPanel(die);
+		BottomPanel bottom = new BottomPanel(die, guess, guessResult);
 		add(top);
 		add(bottom);
 	}
@@ -40,7 +43,7 @@ public class DisplayPanel extends JPanel {
 		playerDisplay.setPlayer(player);
 	}
 	
-	public void updateGuess(String theGuess, String theResult) {
+	public void updateGuess(Solution theGuess, String theResult) {
 		guess.setGuess(theGuess);
 		guessResult.setGuessResult(theResult);
 	}
@@ -60,16 +63,14 @@ public class DisplayPanel extends JPanel {
 	}
 	
 	public class BottomPanel extends JPanel{
-		public BottomPanel(DiePanel die){
+		public BottomPanel(DiePanel die, GuessPanel guess, GuessResultPanel result){
 			setLayout(new FlowLayout());
 			// Adding the Die Panel
 			add(die);
 			// Adding the guess Panel
-			GuessPanel guessPanel = new GuessPanel();
-			add(guessPanel);
+			add(guess);
 			// Adding the guess Result Panel
-			GuessResultPanel guessResultPanel = new GuessResultPanel();
-			add(guessResultPanel);
+			add(result);
 		}
 	}
 		
@@ -129,7 +130,7 @@ public class DisplayPanel extends JPanel {
 		private JTextField Guess;
 		
 		public GuessPanel() {
-			Guess = new JTextField(25);
+			Guess = new JTextField(35);
 			Guess.setEditable(false);
 			JLabel title = new JLabel("Guess");
 			add(title);
@@ -137,8 +138,8 @@ public class DisplayPanel extends JPanel {
 			setBorder(new TitledBorder (new EtchedBorder(), "Guess"));
 		}
 		
-		public void setGuess(String in){
-			Guess.setText(in);
+		public void setGuess(Solution suggestion){
+			Guess.setText(suggestion.person + " in the " + suggestion.room + " with the " + suggestion.weapon + ".");
 		}
 	}
 	
@@ -146,7 +147,7 @@ public class DisplayPanel extends JPanel {
 		private JTextField GuessResult;
 		
 		public GuessResultPanel() {
-			GuessResult = new JTextField(20);
+			GuessResult = new JTextField(15);
 			GuessResult.setEditable(false);
 			JLabel title = new JLabel("Response");
 			add(title);
@@ -155,7 +156,7 @@ public class DisplayPanel extends JPanel {
 		}
 		
 		public void setGuessResult(String in){
-			GuessResult.setText(in);
+				GuessResult.setText(in);
 		}
 	}
 }

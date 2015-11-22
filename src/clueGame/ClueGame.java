@@ -135,6 +135,11 @@ public class ClueGame extends JFrame {
 		
 		// Enable interaction
 		waitingForTurn = false;
+		
+		System.out.println(board.getTheAnswer());
+		for (Player players : board.getPotentialPlayers()){
+			System.out.println(players.getPlayerName() + ":" + players.getCards());
+		}
 	}
 	
 	private static int rollDie() {
@@ -159,7 +164,7 @@ public class ClueGame extends JFrame {
 		}
 	}
 	
-	/* Part II WIP
+	// Part II WIP
 	public static void playerAccusation(String playerName, Solution accusation) {
 		boolean gameWon = board.checkAccusation(accusation);
 		if(gameWon) {
@@ -170,8 +175,12 @@ public class ClueGame extends JFrame {
 
 	public static void playerSuggestion(String sPlayer, Solution suggestion, BoardCell clicked) {
 		Card result = board.handleSuggestion(players, suggestion, sPlayer, clicked);
-		display.updateGuess(suggestion.toString(), result.getCardName());
-	} */
+		//System.out.println(suggestion + ":" + result);
+		if (result != (null))
+			display.updateGuess(suggestion, result.getCardName());
+		else
+			display.updateGuess(suggestion, "None");
+	}
 	
 	public static void endPlayerTurn() {
 		playerMayMove = false;
