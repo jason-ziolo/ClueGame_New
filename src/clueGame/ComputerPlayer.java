@@ -13,12 +13,12 @@ public class ComputerPlayer extends Player {
 	}
 	
 	public void doTurn(Board board, int roll) {
-		/* For part II, WIP
+		// For part II, WIP
 		if(willAccuse(board.getSeenCards(), board.getCards())) {
 			Solution acc = makeAccusation(board.getSeenCards(), board.getCards());
 			ClueGame.playerAccusation(this.getPlayerName(), acc);
-			ClueGame.computerPlayerFinished();
-		} */
+			ClueGame.endPlayerTurn();
+		} 
 		board.calcTargets(column, row, roll); // TODO: Figure out why arguments do not align
 		BoardCell location = pickLocation(board.getTargets());
 		if (location.isRoom())

@@ -77,9 +77,18 @@ public class DisplayPanel extends JPanel {
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == accusationButton)
-				System.out.println("Accused!");
+				handleAccusation();
 			else {
 				ClueGame.nextPlayerBtnPress();
+			}
+		}
+		
+		public void handleAccusation(){
+			if (!ClueGame.playerMayMove()){
+				String message = "It's not your turn!";
+				JOptionPane.showMessageDialog(null, message);
+			} else {
+				//Do the accusation
 			}
 		}
 	}
