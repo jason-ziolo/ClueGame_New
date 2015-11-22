@@ -3,7 +3,13 @@ package clueGUI;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.TitledBorder;
 
 public class MakeGuessDialog extends JDialog {
 	// NAME is both the name of the window and the title
@@ -11,7 +17,7 @@ public class MakeGuessDialog extends JDialog {
 	// Expected dimensions of 300 x 200.
 	static public final int WIDTH = 300;
 	static public final int HEIGHT = 200;
-	private String yourRoom = "";
+	private JTextField yourRoom = new JTextField("");
 	
 	public MakeGuessDialog(ArrayList<String> people, ArrayList<String> weapons) {
 		/* MakeGuessDialog will use grid layout, with 2 columns and 4 rows
@@ -23,11 +29,27 @@ public class MakeGuessDialog extends JDialog {
 		 * A submit button, which will call ClueGame.playerSuggestion
 		 * A cancel button, which will close the dialog (set it non-visible)
 		 */
+		this.setName(NAME);
+		this.setTitle(NAME);
+		this.setSize(WIDTH, HEIGHT);
 		this.setLayout(new GridLayout(4, 2));
+		// first row: "Your room" label, then static text field
+		this.add(new JLabel("Your room"));
+		yourRoom.setEditable(false);
+		this.add(yourRoom);
+		// second row: "Person" label, then popDownMenu
+		this.add(new JLabel("Person"));
+		this.add(new popDownPanel("Person Guess", people).getPopup());
+		// third row: "Weapon" label, then popDownMenu
+		this.add(new JLabel("Weapon"));
+		this.add(new popDownPanel("Weapon Guess", weapons).getPopup());
+		// fourth row: "Submit" button, then "Cancel" button
+		this.add(new JButton("Submit"));
+		this.add(new JButton("Cancel"));
 	}
 	
-	public void setYourRoom(String yourRoom) {
-		this.yourRoom = yourRoom;
+	public void setYourRoom(String text) {
+		this.yourRoom.setText(text);
 	}
 	
 }
