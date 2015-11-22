@@ -139,7 +139,6 @@ public class ClueGame extends JFrame {
 		
 		// Enable interaction
 		waitingForTurn = false;
-		guessDialog.setVisible(true);
 	}
 	
 	private static int rollDie() {
@@ -193,5 +192,9 @@ public class ClueGame extends JFrame {
 
 	public static Player getCurrentPlayer() {
 		return currPlayer;	// For when the human player clicks the board
+	}
+
+	public static void toggleMakeGuessDlg() {
+		guessDialog.setVisible(!guessDialog.isVisible());
 	}
 }

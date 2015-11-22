@@ -552,6 +552,9 @@ public class Board extends JPanel implements MouseListener {
 				repaint(); // After moving, update the board
 				ClueGame.endPlayerTurn(); // Besides showing the suggestion prompt, the
 				// player's turn is over
+				if(clickedCell.isRoom()) {
+					ClueGame.toggleMakeGuessDlg();
+				}
 			} else {
 				String message = "Invalid move! Please select a cyan box";
 				JOptionPane.showMessageDialog(null, message);

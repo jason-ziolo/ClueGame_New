@@ -1,15 +1,16 @@
 package clueGUI;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
+
+import clueGame.ClueGame;
 
 public class MakeGuessDialog extends JDialog {
 	// NAME is both the name of the window and the title
@@ -17,6 +18,8 @@ public class MakeGuessDialog extends JDialog {
 	// Expected dimensions of 300 x 200.
 	static public final int WIDTH = 300;
 	static public final int HEIGHT = 200;
+	private JButton submitBtn;
+	private JButton cancelBtn;
 	private JTextField yourRoom = new JTextField("");
 	
 	public MakeGuessDialog(ArrayList<String> people, ArrayList<String> weapons) {
@@ -44,8 +47,20 @@ public class MakeGuessDialog extends JDialog {
 		this.add(new JLabel("Weapon"));
 		this.add(new PopDownPanel("Weapon Guess", weapons).getPopup());
 		// fourth row: "Submit" button, then "Cancel" button
-		this.add(new JButton("Submit"));
-		this.add(new JButton("Cancel"));
+		submitBtn = new JButton("Submit");
+		submitBtn.addActionListener(new ButtonListener());
+		this.add(submitBtn);
+		cancelBtn = new JButton("Cancel");
+		cancelBtn.addActionListener(new ButtonListener());
+		this.add(cancelBtn);
+	}
+	
+	public class ButtonListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == submitBtn)
+				System.out.println("Submit"); //TODO: Hook up to ClueGame function
+			ClueGame.toggleMakeGuessDlg();
+		}
 	}
 	
 	public void setYourRoom(String text) {
