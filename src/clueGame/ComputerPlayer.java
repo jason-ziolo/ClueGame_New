@@ -21,6 +21,8 @@ public class ComputerPlayer extends Player {
 		} */
 		board.calcTargets(column, row, roll); // TODO: Figure out why arguments do not align
 		BoardCell location = pickLocation(board.getTargets());
+		if (location.isRoom())
+			lastRoom = location.getInitial();
 		move(location);
 		board.repaint();
 		/* Coming soon!
@@ -83,6 +85,13 @@ public class ComputerPlayer extends Player {
 				if (p.isRoom()){
 					return p;
 				}
+			}
+			int picked = new Random().nextInt(targets.size());
+			int i = 0;
+			for (BoardCell bcell: targets){
+				if (i == picked) //if i = the random number, return the cell
+					return bcell;
+				i++;
 			}
 		}
 		return null;

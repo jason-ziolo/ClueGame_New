@@ -120,13 +120,14 @@ public class ClueGame extends JFrame {
 		cgWindow.add(board, BorderLayout.CENTER);
 		cgWindow.add(display, BorderLayout.SOUTH);
 		cgWindow.add(cards, BorderLayout.EAST);
+		cgWindow.setVisible(true);  //setting visible after makes it populate much quicker
+		cgWindow.initializeNotesDialog(board);
 		
 		// Splash screen
 		JOptionPane firstDisplay = new JOptionPane("You are " + humanPlayer.getPlayerName() + ". Press OK to continue.");
 		JDialog information = firstDisplay.createDialog(cgWindow, "Welcome to Clue");
 		information.setVisible(true);
-		cgWindow.setVisible(true);  //setting visible after makes it populate much quicker
-		cgWindow.initializeNotesDialog(board);
+		
 		
 		// Main Board Logic
 		currPlayerIndex = players.size() - 1;
