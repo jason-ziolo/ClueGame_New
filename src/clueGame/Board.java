@@ -152,9 +152,8 @@ public class Board extends JPanel implements MouseListener {
 		// Moves the player that is suggested to the suggested room
 		for (Player currPlayer : players){
 			if (currPlayer.getPlayerName().equals(suggestion.person)){
-				currPlayer.getRow();
 				currPlayer.move(clicked);
-				currPlayer.getRow();
+				this.repaint();
 				break;
 			}
 		}
@@ -563,6 +562,9 @@ public class Board extends JPanel implements MouseListener {
 				repaint(); // After moving, update the board
 				ClueGame.endPlayerTurn(); // Besides showing the suggestion prompt, the
 				// player's turn is over
+				if(clickedCell.isRoom()) {
+					ClueGame.toggleMakeGuessDlg(rooms.get(clickedCell.getInitial()));
+				}
 			} else {
 				String message = "Invalid move! Please select a cyan box";
 				JOptionPane.showMessageDialog(null, message);

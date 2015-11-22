@@ -197,6 +197,10 @@ public class ClueGame extends JFrame {
 			display.updateGuess(suggestion, "None");
 	}
 	
+	public static void humanPlayerSuggestion(Solution suggestion) {
+		playerSuggestion(currPlayer.toString(), suggestion, board.getCellAt(currPlayer.getColumn(), currPlayer.getRow()));
+	}
+	
 	public static void endPlayerTurn() {
 		playerMayMove = false;
 		waitingForTurn = false;
@@ -212,5 +216,10 @@ public class ClueGame extends JFrame {
 
 	public static Player getCurrentPlayer() {
 		return currPlayer;	// For when the human player clicks the board
+	}
+
+	public static void toggleMakeGuessDlg(String yourRoom) {
+		((MakeGuessDialog) guessDialog).setYourRoom(yourRoom);
+		guessDialog.setVisible(!guessDialog.isVisible());
 	}
 }

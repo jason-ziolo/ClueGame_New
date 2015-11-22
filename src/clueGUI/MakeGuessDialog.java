@@ -1,25 +1,32 @@
 package clueGUI;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
+
+import clueGame.BoardCell;
+import clueGame.ClueGame;
+import clueGame.Solution;
 
 public class MakeGuessDialog extends JDialog {
-	// NAME is both the name of the window and the title
-	static public final String NAME = "Make a Guess";
 	// Expected dimensions of 300 x 200.
 	static public final int WIDTH = 300;
 	static public final int HEIGHT = 200;
+	private boolean isAccusationMenu;
+	private JButton submitBtn;
+	private JButton cancelBtn;
+	private JComboBox<String> personPopup;
+	private JComboBox<String> weaponPopup;
 	private JTextField yourRoom = new JTextField("");
 	
-	public MakeGuessDialog(ArrayList<String> people, ArrayList<String> weapons) {
+	public MakeGuessDialog(ArrayList<String> people, ArrayList<String> weapons, boolean isAccusationMenu) {
 		/* MakeGuessDialog will use grid layout, with 2 columns and 4 rows
 		 * There will be, in order of addition:
 		 * 3 text fields (non-editable)
@@ -29,8 +36,10 @@ public class MakeGuessDialog extends JDialog {
 		 * A submit button, which will call ClueGame.playerSuggestion
 		 * A cancel button, which will close the dialog (set it non-visible)
 		 */
-		this.setName(NAME);
-		this.setTitle(NAME);
+		//if()
+		String name = "";
+		this.setName(name);
+		this.setTitle(name);
 		this.setSize(WIDTH, HEIGHT);
 		this.setLayout(new GridLayout(4, 2));
 		// first row: "Your room" label, then static text field
@@ -39,17 +48,32 @@ public class MakeGuessDialog extends JDialog {
 		this.add(yourRoom);
 		// second row: "Person" label, then popDownMenu
 		this.add(new JLabel("Person"));
-		this.add(new PopDownPanel("Person Guess", people).getPopup());
+		personPopup = new PopDownPanel("Person Guess", people).getPopup();
+		this.add(personPopup);
 		// third row: "Weapon" label, then popDownMenu
 		this.add(new JLabel("Weapon"));
-		this.add(new PopDownPanel("Weapon Guess", weapons).getPopup());
+		weaponPopup = new PopDownPanel("Weapon Guess", weapons).getPopup();
+		this.add(weaponPopup);
 		// fourth row: "Submit" button, then "Cancel" button
-		this.add(new JButton("Submit"));
-		this.add(new JButton("Cancel"));
+		submitBtn = new JButton("Submit");
+		submitBtn.addActionListener(new ButtonListener());
+		this.add(submitBtn);
+		cancelBtn = new JButton("Cancel");
+		cancelBtn.addActionListener(new ButtonListener());
+		this.add(cancelBtn);
+	}
+	
+	public class ButtonListener implements ActionListener {
+		public void actionPerformed(ActionEvent e) {
+			if (e.getSource() == submitBtn)
+				ClueGame.humanPlayerSuggestion(new Solution((String) personPopup.getSelectedItem(), 
+						yourRoom.getText(), 
+						(String) weaponPopup.getSelectedItem()));
+			ClueGame.toggleMakeGuessDlg("");
+		}
 	}
 	
 	public void setYourRoom(String text) {
 		this.yourRoom.setText(text);
 	}
-	
 }
