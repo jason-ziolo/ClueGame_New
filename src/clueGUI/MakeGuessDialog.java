@@ -39,10 +39,10 @@ public class MakeGuessDialog extends JDialog {
 		this.add(yourRoom);
 		// second row: "Person" label, then popDownMenu
 		this.add(new JLabel("Person"));
-		this.add(new popDownPanel("Person Guess", people).getPopup());
+		this.add(new PopDownPanel("Person Guess", people).getPopup());
 		// third row: "Weapon" label, then popDownMenu
 		this.add(new JLabel("Weapon"));
-		this.add(new popDownPanel("Weapon Guess", weapons).getPopup());
+		this.add(new PopDownPanel("Weapon Guess", weapons).getPopup());
 		// fourth row: "Submit" button, then "Cancel" button
 		this.add(new JButton("Submit"));
 		this.add(new JButton("Cancel"));

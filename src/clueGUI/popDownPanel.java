@@ -7,11 +7,11 @@ import javax.swing.JPanel;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
-public class popDownPanel extends JPanel {
+public class PopDownPanel extends JPanel {
 	private TitledBorder panelTitle;
 	private JComboBox<String> popup;
 	
-	public popDownPanel(String title, ArrayList<String> options) {
+	public PopDownPanel(String title, ArrayList<String> options) {
 		panelTitle = new TitledBorder(new EtchedBorder(), title);
 		this.setBorder(panelTitle);
 		popup = new JComboBox<String>();

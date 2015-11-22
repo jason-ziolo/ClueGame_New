@@ -32,7 +32,7 @@ public class DetectiveNotesDialog extends JDialog {
 		// Person guess 
 		ArrayList<String> temp = (ArrayList<String>) people.clone();
 		temp.add("?");
-		this.add(new popDownPanel("Person Guess", temp));
+		this.add(new PopDownPanel("Person Guess", temp));
 		// Rooms panel
 		JPanel roomsPanel = checkBoxPanel("Rooms", rooms.size());
 		for(int i = 0; i < rooms.size(); i++) {
@@ -42,7 +42,7 @@ public class DetectiveNotesDialog extends JDialog {
 		// Room guess
 		temp = (ArrayList<String>) rooms.clone();
 		temp.add("?");
-		this.add(new popDownPanel("Room Guess", temp));
+		this.add(new PopDownPanel("Room Guess", temp));
 		// Weapons panel
 		JPanel weaponsPanel = checkBoxPanel("Weapons", weapons.size());
 		for(int i = 0; i < weapons.size(); i++) {
@@ -52,7 +52,7 @@ public class DetectiveNotesDialog extends JDialog {
 		// Weapons guess
 		temp = (ArrayList<String>) weapons.clone();
 		temp.add("?");
-		this.add(new popDownPanel("Weapon Guess", temp));
+		this.add(new PopDownPanel("Weapon Guess", temp));
 	}
 	
 	private JPanel checkBoxPanel(String title, int numOptions) {
