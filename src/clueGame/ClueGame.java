@@ -18,6 +18,7 @@ import java.awt.Graphics;
 
 import clueGUI.DetectiveNotesDialog;
 import clueGUI.DisplayPanel;
+import clueGUI.MakeGuessDialog;
 import clueGUI.MyCards;
 import clueGame.Player;
 
@@ -39,6 +40,7 @@ public class ClueGame extends JFrame {
 	private static DisplayPanel display;
 	
 	private JDialog notesDialog;
+	private static JDialog guessDialog; //TODO: may not need to be static
 	
 	public ClueGame() {
 		this.setJMenuBar(mainJMenuBar());
@@ -49,7 +51,7 @@ public class ClueGame extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	public void initializeNotesDialog(Board board) {
+	public void initializeDialogMenus(Board board) {
 		// One of the easiest ways to get the required info
 		// is from the cards created by the Board class.
 		ArrayList<Card> allInfo = board.getCards();
@@ -68,7 +70,9 @@ public class ClueGame extends JFrame {
 				weaponsInfo.add(i.getCardName());
 			}
 		}
+		// Initialize both the DetectiveNotesDialog and the MakeGuessDialog
 		notesDialog = new DetectiveNotesDialog(peopleInfo, roomsInfo, weaponsInfo);
+		guessDialog = new MakeGuessDialog(peopleInfo, weaponsInfo);
 	}
 	
 	private JMenuBar mainJMenuBar() {
@@ -121,7 +125,7 @@ public class ClueGame extends JFrame {
 		cgWindow.add(display, BorderLayout.SOUTH);
 		cgWindow.add(cards, BorderLayout.EAST);
 		cgWindow.setVisible(true);  //setting visible after makes it populate much quicker
-		cgWindow.initializeNotesDialog(board);
+		cgWindow.initializeDialogMenus(board); // initialize both det.-notes and make-guess dialogs
 		
 		// Splash screen
 		JOptionPane firstDisplay = new JOptionPane("You are " + humanPlayer.getPlayerName() + ". Press OK to continue.");
@@ -178,6 +182,7 @@ public class ClueGame extends JFrame {
 		if(gameWon) {
 			String message = playerName + " has found the solution! The game is over.";
 			JOptionPane.showMessageDialog(null, message);
+			System.exit(1);
 		} else {
 			String message = playerName + " has made an incorrect accusation!";
 			JOptionPane.showMessageDialog(null, message);

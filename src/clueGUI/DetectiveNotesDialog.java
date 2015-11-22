@@ -30,7 +30,9 @@ public class DetectiveNotesDialog extends JDialog {
 		}
 		this.add(peoplePanel);
 		// Person guess 
-		this.add(popDownPanel("Person Guess", people));
+		ArrayList<String> temp = (ArrayList<String>) people.clone();
+		temp.add("?");
+		this.add(new PopDownPanel("Person Guess", temp));
 		// Rooms panel
 		JPanel roomsPanel = checkBoxPanel("Rooms", rooms.size());
 		for(int i = 0; i < rooms.size(); i++) {
@@ -38,7 +40,9 @@ public class DetectiveNotesDialog extends JDialog {
 		}
 		this.add(roomsPanel);
 		// Room guess
-		this.add(popDownPanel("Room Guess", rooms));
+		temp = (ArrayList<String>) rooms.clone();
+		temp.add("?");
+		this.add(new PopDownPanel("Room Guess", temp));
 		// Weapons panel
 		JPanel weaponsPanel = checkBoxPanel("Weapons", weapons.size());
 		for(int i = 0; i < weapons.size(); i++) {
@@ -46,7 +50,9 @@ public class DetectiveNotesDialog extends JDialog {
 		}
 		this.add(weaponsPanel);
 		// Weapons guess
-		this.add(popDownPanel("Weapon Guess", weapons));
+		temp = (ArrayList<String>) weapons.clone();
+		temp.add("?");
+		this.add(new PopDownPanel("Weapon Guess", temp));
 	}
 	
 	private JPanel checkBoxPanel(String title, int numOptions) {
@@ -54,19 +60,6 @@ public class DetectiveNotesDialog extends JDialog {
 		JPanel panel = new JPanel(new GridLayout(x, 2));
 		TitledBorder panelTitle = new TitledBorder(new EtchedBorder(), title);
 		panel.setBorder(panelTitle);
-		return panel;
-	}
-	
-	private JPanel popDownPanel(String title, ArrayList<String> options) {
-		JPanel panel = new JPanel();
-		TitledBorder panelTitle = new TitledBorder(new EtchedBorder(), title);
-		panel.setBorder(panelTitle);
-		JComboBox<String> popup = new JComboBox<String>();
-		popup.addItem("?");
-		for(int i = 0; i < options.size(); i++) {
-			popup.addItem(options.get(i));
-		}
-		panel.add(popup);
 		return panel;
 	}
 	
