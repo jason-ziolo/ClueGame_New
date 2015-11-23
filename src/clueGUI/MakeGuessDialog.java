@@ -49,6 +49,7 @@ public class MakeGuessDialog extends JDialog {
 		
 		this.setName(name);
 		this.setTitle(name);
+		this.setResizable(false);
 		this.setSize(WIDTH, HEIGHT);
 		this.setLayout(new GridLayout(4, 2));
 		// first row: "Your room" label, then static text field OR popDownMenu
