@@ -41,6 +41,7 @@ public class ClueGame extends JFrame {
 	
 	private JDialog notesDialog;
 	private static JDialog guessDialog; //TODO: may not need to be static
+	private static JDialog accDialog;
 	
 	public ClueGame() {
 		this.setJMenuBar(mainJMenuBar());
@@ -70,9 +71,10 @@ public class ClueGame extends JFrame {
 				weaponsInfo.add(i.getCardName());
 			}
 		}
-		// Initialize both the DetectiveNotesDialog and the MakeGuessDialog
+		// Initialize the DetectiveNotesDialog, MakeGuessDialog, and MakeAccDialog
 		notesDialog = new DetectiveNotesDialog(peopleInfo, roomsInfo, weaponsInfo);
-		guessDialog = new MakeGuessDialog(peopleInfo, weaponsInfo);
+		guessDialog = new MakeGuessDialog(peopleInfo, null, weaponsInfo, false);
+		accDialog = new MakeGuessDialog(peopleInfo, roomsInfo, weaponsInfo, true);
 	}
 	
 	private JMenuBar mainJMenuBar() {
@@ -222,5 +224,13 @@ public class ClueGame extends JFrame {
 	public static void toggleMakeGuessDlg(String yourRoom) {
 		((MakeGuessDialog) guessDialog).setYourRoom(yourRoom);
 		guessDialog.setVisible(!guessDialog.isVisible());
+	}
+
+	public static void humanPlayerAccusation(Solution solution) {
+		playerAccusation(currPlayer.toString(), solution);
+	}
+
+	public static void toggleMakeAccusationDlg() {
+		accDialog.setVisible(!accDialog.isVisible());
 	}
 }

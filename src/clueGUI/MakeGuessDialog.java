@@ -23,10 +23,14 @@ public class MakeGuessDialog extends JDialog {
 	private JButton submitBtn;
 	private JButton cancelBtn;
 	private JComboBox<String> personPopup;
+	private JComboBox<String> roomPopup;
 	private JComboBox<String> weaponPopup;
 	private JTextField yourRoom = new JTextField("");
 	
-	public MakeGuessDialog(ArrayList<String> people, ArrayList<String> weapons, boolean isAccusationMenu) {
+	public MakeGuessDialog(ArrayList<String> people, 
+			ArrayList<String> rooms, 
+			ArrayList<String> weapons, 
+			boolean isAccusationMenu) {
 		/* MakeGuessDialog will use grid layout, with 2 columns and 4 rows
 		 * There will be, in order of addition:
 		 * 3 text fields (non-editable)
@@ -36,23 +40,33 @@ public class MakeGuessDialog extends JDialog {
 		 * A submit button, which will call ClueGame.playerSuggestion
 		 * A cancel button, which will close the dialog (set it non-visible)
 		 */
-		//if()
 		String name = "";
+		this.isAccusationMenu = isAccusationMenu;
+		if(!this.isAccusationMenu)
+			name = "Make a Guess";
+		else
+			name = "Accuse";
+		
 		this.setName(name);
 		this.setTitle(name);
 		this.setSize(WIDTH, HEIGHT);
 		this.setLayout(new GridLayout(4, 2));
-		// first row: "Your room" label, then static text field
+		// first row: "Your room" label, then static text field OR popDownMenu
 		this.add(new JLabel("Your room"));
-		yourRoom.setEditable(false);
-		this.add(yourRoom);
+		if(!this.isAccusationMenu) {
+			yourRoom.setEditable(false);
+			this.add(yourRoom);
+		} else {
+			roomPopup = new PopDownPanel("", rooms).getPopup();
+			this.add(roomPopup);
+		}
 		// second row: "Person" label, then popDownMenu
 		this.add(new JLabel("Person"));
-		personPopup = new PopDownPanel("Person Guess", people).getPopup();
+		personPopup = new PopDownPanel("", people).getPopup();
 		this.add(personPopup);
 		// third row: "Weapon" label, then popDownMenu
 		this.add(new JLabel("Weapon"));
-		weaponPopup = new PopDownPanel("Weapon Guess", weapons).getPopup();
+		weaponPopup = new PopDownPanel("", weapons).getPopup();
 		this.add(weaponPopup);
 		// fourth row: "Submit" button, then "Cancel" button
 		submitBtn = new JButton("Submit");
@@ -66,10 +80,17 @@ public class MakeGuessDialog extends JDialog {
 	public class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == submitBtn)
-				ClueGame.humanPlayerSuggestion(new Solution((String) personPopup.getSelectedItem(), 
-						yourRoom.getText(), 
-						(String) weaponPopup.getSelectedItem()));
-			ClueGame.toggleMakeGuessDlg("");
+				if(!isAccusationMenu) {
+					ClueGame.humanPlayerSuggestion(new Solution((String) personPopup.getSelectedItem(), 
+							yourRoom.getText(), (String) weaponPopup.getSelectedItem()));
+				} else {
+					ClueGame.humanPlayerAccusation(new Solution((String) personPopup.getSelectedItem(), 
+							(String) roomPopup.getSelectedItem(), (String) weaponPopup.getSelectedItem()));
+				}
+			if(!isAccusationMenu)
+				ClueGame.toggleMakeGuessDlg("");
+			else
+				ClueGame.toggleMakeAccusationDlg();
 		}
 	}
 	

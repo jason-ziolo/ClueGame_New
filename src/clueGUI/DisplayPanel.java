@@ -88,7 +88,7 @@ public class DisplayPanel extends JPanel {
 				String message = "It's not your turn!";
 				JOptionPane.showMessageDialog(null, message);
 			} else {
-				//Do the accusation
+				ClueGame.toggleMakeAccusationDlg();
 			}
 		}
 	}
