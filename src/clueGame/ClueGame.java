@@ -142,18 +142,17 @@ public class ClueGame extends JFrame {
 		// Enable interaction
 		waitingForTurn = false;
 		
-		// Trouble Shooting for a bug where the AI *Might* be suggesting a card it has
-		System.out.println(board.getTheAnswer());
+		/* Trouble Shooting for a bug where the AI *Might* be suggesting a card it has
+		System.out.println(board.getTheAnswer().toString());
 		for (Player players : board.getPotentialPlayers()){
 			System.out.println(players.getPlayerName() + ":" + players.getCards());
 		}
 		
 		for (Card card :board.getCards()){
-			if (card.getCardType().equals(CardType.ROOM)){
+			if (card.getCardType().equals(CardType.ROOM) && !board.getTheAnswer().room.equals(card.getCardName())){
 				board.getSeenCards().add(card);
 			}
-		}
-		board.getSeenCards().remove(board.getTheAnswer().room);
+		} */
 	}
 	
 	private static int rollDie() {
@@ -182,11 +181,11 @@ public class ClueGame extends JFrame {
 	public static void playerAccusation(String playerName, Solution accusation) {
 		boolean gameWon = board.checkAccusation(accusation);
 		if(gameWon) {
-			String message = playerName + " has found the solution! The game is over.";
+			String message = playerName + " has found the solution! The game is over." + "\n" + "The answer was: " + accusation.toString();
 			JOptionPane.showMessageDialog(null, message);
 			System.exit(1);
 		} else {
-			String message = playerName + " has made an incorrect accusation!";
+			String message = playerName + " has made an incorrect accusation!"+ "\n" + "The guess was: " + accusation.toString();
 			JOptionPane.showMessageDialog(null, message);
 		}
 	}
@@ -197,11 +196,11 @@ public class ClueGame extends JFrame {
 		if (result != (null))
 			display.updateGuess(suggestion, result.getCardName());
 		else
-			display.updateGuess(suggestion, "None");
+			display.updateGuess(suggestion, "No new clue");
 	}
 	
 	public static void humanPlayerSuggestion(Solution suggestion) {
-		playerSuggestion(currPlayer.toString(), suggestion, board.getCellAt(currPlayer.getColumn(), currPlayer.getRow()));
+		playerSuggestion(currPlayer.getPlayerName(), suggestion, board.getCellAt(currPlayer.getColumn(), currPlayer.getRow()));
 	}
 	
 	public static void endPlayerTurn() {
@@ -227,7 +226,9 @@ public class ClueGame extends JFrame {
 	}
 
 	public static void humanPlayerAccusation(Solution solution) {
-		playerAccusation(currPlayer.toString(), solution);
+		playerAccusation(currPlayer.getPlayerName(), solution);
+		endPlayerTurn();
+		board.setHighlight(false);
 	}
 
 	public static void toggleMakeAccusationDlg() {
