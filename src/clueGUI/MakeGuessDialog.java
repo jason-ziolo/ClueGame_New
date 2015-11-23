@@ -26,7 +26,7 @@ public class MakeGuessDialog extends JDialog {
 	private JComboBox<String> weaponPopup;
 	private JTextField yourRoom = new JTextField("");
 	
-	public MakeGuessDialog(ArrayList<String> people, ArrayList<String> weapons, boolean isAccusationMenu) {
+	public MakeGuessDialog(ArrayList<String> people, ArrayList<String> weapons) {
 		/* MakeGuessDialog will use grid layout, with 2 columns and 4 rows
 		 * There will be, in order of addition:
 		 * 3 text fields (non-editable)
