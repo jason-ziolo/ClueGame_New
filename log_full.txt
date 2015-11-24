@@ -1,3 +1,115 @@
+commit 85d64244a0919952b1dec0b0d23efae708c43310
+Merge: 50eeb46 a92e755
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 17:18:10 2015 -0700
+
+    Finished make accusation
+
+commit 50eeb46d120720d8144914ed15531d9cd0eb507b
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 17:10:31 2015 -0700
+
+    made acc window and make-guess window non-resizable
+
+commit a92e755c29a76d7ac65a5008bde099cb80e5042c
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sun Nov 22 17:09:59 2015 -0700
+
+    Changed the toString of the solution to be easier to read
+
+commit b48d2ae4fff5201be10125b69ca6bce0e4a8f74b
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 17:09:56 2015 -0700
+
+    make accusation hooked up to button
+
+commit a4d339f952320cf2235d554e44a849682e024cb2
+Merge: fa2a290 bda9993
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sun Nov 22 16:56:19 2015 -0700
+
+    Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
+
+commit fa2a290700dba43e96c31e7e6646f804417b4f51
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sun Nov 22 16:56:13 2015 -0700
+
+    Finished troubleshooting a problem with player accusation
+
+commit bda99938241b07502698c476f226527648cc36f8
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 16:54:58 2015 -0700
+
+    adding accusation dlg option
+
+commit f579c8bb6543878d9f9075da59ecd320556b981d
+Merge: 5a193cf e2fed17
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 16:42:12 2015 -0700
+
+    Player suggestions finished
+
+commit e2fed1702f7c8e00444e1eb78bdf134a8a97466e
+Merge: 9b19c2d 1a7acf2
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sun Nov 22 16:29:56 2015 -0700
+
+    Finished merging
+
+commit 5a193cf6825140d96e0526e7d8fb53fb77b3ecc5
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 16:26:44 2015 -0700
+
+    progress towards functional submitting of suggestion
+
+commit 9b19c2da1291d259aa3261e3ee87d45e0c39dc72
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sun Nov 22 16:26:27 2015 -0700
+
+    commit that has a lot of comments in it
+
+commit 733a0a02347a101e96f3a75f8bac1c58ac81abc0
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 16:15:31 2015 -0700
+
+    Make suggestion dialog successfully pops up on entering room
+
+commit d51fcc66d945eb1183e5ba91f95dbac6af56ca5e
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sun Nov 22 16:06:33 2015 -0700
+
+    Finished all the computer AI for suggestions. Players now move to the room someone is in if that player suggests them.
+
+commit 1a7acf2dc5cf37b483700ed0fb51651ce2de06fc
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 16:02:14 2015 -0700
+
+    renamed PopDownPanel for consistency
+
+commit b7f2071e48f95ccabecf35fabe545e9dd50a2182
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 16:01:37 2015 -0700
+
+    finished skeleton gui MakeGuessDialog
+
+commit d3e4bd23fe50335d2bdfe7d78a52155c172a5fcf
+Author: jason-ziolo <jziolo@mymail.mines.edu>
+Date:   Sun Nov 22 15:33:03 2015 -0700
+
+    migrated popDownPanel to own class, began definition of MakeGuessDialog
+
+commit caea5883b8d703a03d613ac1f582dafcd51bd329
+Author: Henry Dau <hdau@mymail.mines.edu>
+Date:   Sun Nov 22 14:41:12 2015 -0700
+
+    Fixed the bug that caused the game to crash. It was in the calculation for 2+ rooms. It happened when a CPU was next to a room with 2 doors and it calculated both rooms as options, but it was also the last seen room. This caused the funciton to return null, breaking everything
+
+commit 74a3564ae34a27621165601428a584d4cb2ca255
+Author: Jason Ziolo <jziolo@mymail.mines.edu>
+Date:   Tue Nov 17 20:53:57 2015 -0700
+
+    ClueGameI Complete
+
 commit 85048ee4d6569b2fd0818776e6da726767653dbe
 Author: Jason Ziolo <jziolo@mymail.mines.edu>
 Date:   Tue Nov 17 20:50:02 2015 -0700

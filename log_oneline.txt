@@ -1,3 +1,21 @@
+85d64244a0919952b1dec0b0d23efae708c43310 Finished make accusation
+50eeb46d120720d8144914ed15531d9cd0eb507b made acc window and make-guess window non-resizable
+a92e755c29a76d7ac65a5008bde099cb80e5042c Changed the toString of the solution to be easier to read
+b48d2ae4fff5201be10125b69ca6bce0e4a8f74b make accusation hooked up to button
+a4d339f952320cf2235d554e44a849682e024cb2 Merge branch 'master' of https://github.com/jason-ziolo/ClueGame_New
+fa2a290700dba43e96c31e7e6646f804417b4f51 Finished troubleshooting a problem with player accusation
+bda99938241b07502698c476f226527648cc36f8 adding accusation dlg option
+f579c8bb6543878d9f9075da59ecd320556b981d Player suggestions finished
+e2fed1702f7c8e00444e1eb78bdf134a8a97466e Finished merging
+5a193cf6825140d96e0526e7d8fb53fb77b3ecc5 progress towards functional submitting of suggestion
+9b19c2da1291d259aa3261e3ee87d45e0c39dc72 commit that has a lot of comments in it
+733a0a02347a101e96f3a75f8bac1c58ac81abc0 Make suggestion dialog successfully pops up on entering room
+d51fcc66d945eb1183e5ba91f95dbac6af56ca5e Finished all the computer AI for suggestions. Players now move to the room someone is in if that player suggests them.
+1a7acf2dc5cf37b483700ed0fb51651ce2de06fc renamed PopDownPanel for consistency
+b7f2071e48f95ccabecf35fabe545e9dd50a2182 finished skeleton gui MakeGuessDialog
+d3e4bd23fe50335d2bdfe7d78a52155c172a5fcf migrated popDownPanel to own class, began definition of MakeGuessDialog
+caea5883b8d703a03d613ac1f582dafcd51bd329 Fixed the bug that caused the game to crash. It was in the calculation for 2+ rooms. It happened when a CPU was next to a room with 2 doors and it calculated both rooms as options, but it was also the last seen room. This caused the funciton to return null, breaking everything
+74a3564ae34a27621165601428a584d4cb2ca255 ClueGameI Complete
 85048ee4d6569b2fd0818776e6da726767653dbe calcTargets cleared up to be less confusing, for now. Tests fixed
 a4b8732fe50b0bd664288a3d8fbea3f2e6ff71bc fixed an important bug with calcTargets (parameters misnamed)
 9eef7fd3b71706c45bf1484bd9d2bb54d38eda84 finished player movement, working on player cycling

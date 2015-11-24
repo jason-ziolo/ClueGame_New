@@ -19,7 +19,7 @@ public class ComputerPlayer extends Player {
 			ClueGame.playerAccusation(this.getPlayerName(), acc);
 			ClueGame.endPlayerTurn();
 		} 
-		board.calcTargets(column, row, roll); // TODO: Figure out why arguments do not align
+		board.calcTargets(column, row, roll);
 		BoardCell location = pickLocation(board.getTargets());
 		if (location.isRoom())
 			lastRoom = location.getInitial();

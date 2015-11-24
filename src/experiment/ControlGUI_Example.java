@@ -111,15 +111,4 @@ public class ControlGUI_Example extends JFrame {
 			break;
 		}
 	}
-	
-	/* TODO: Remove
-	public static void main(String[] args) {
-		ControlGUI_Example gui = new ControlGUI_Example();	
-		gui.setVisible(true);
-		gui.setValue(Values.TURN, "Miss Scarlet");
-		gui.setValue(Values.ROLL, "6");
-		gui.setValue(Values.GUESS, "Mrs. White, Knife, Study");
-		gui.setValue(Values.RESPONSE, "Knife");
-	}
-	*/
 }

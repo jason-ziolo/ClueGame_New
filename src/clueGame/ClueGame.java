@@ -40,7 +40,7 @@ public class ClueGame extends JFrame {
 	private static DisplayPanel display;
 	
 	private JDialog notesDialog;
-	private static JDialog guessDialog; //TODO: may not need to be static
+	private static JDialog guessDialog;
 	private static JDialog accDialog;
 	
 	public ClueGame() {
@@ -134,25 +134,12 @@ public class ClueGame extends JFrame {
 		JDialog information = firstDisplay.createDialog(cgWindow, "Welcome to Clue");
 		information.setVisible(true);
 		
-		
 		// Main Board Logic
 		currPlayerIndex = players.size() - 1;
 		currPlayer = players.get(currPlayerIndex);
 		
 		// Enable interaction
 		waitingForTurn = false;
-		
-		/* Trouble Shooting for a bug where the AI *Might* be suggesting a card it has
-		System.out.println(board.getTheAnswer().toString());
-		for (Player players : board.getPotentialPlayers()){
-			System.out.println(players.getPlayerName() + ":" + players.getCards());
-		}
-		
-		for (Card card :board.getCards()){
-			if (card.getCardType().equals(CardType.ROOM) && !board.getTheAnswer().room.equals(card.getCardName())){
-				board.getSeenCards().add(card);
-			}
-		} */
 	}
 	
 	private static int rollDie() {
